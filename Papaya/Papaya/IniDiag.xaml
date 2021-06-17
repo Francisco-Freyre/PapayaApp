@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Papaya.IniDiag">
+    <ContentPage.Content>
+        <Grid BackgroundColor="WhiteSmoke">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="banner1.png" WidthRequest="200" HeightRequest="250" Margin="0, 50, 0, 25" />
+
+                <StackLayout Grid.Row="1" Margin="50, 50, 50, 50">
+                    <Label Text="Consigue resultados con una alimentacion saludable e inteligente" FontSize="Medium" TextColor="Black" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Margin="50, 50, 50, 50">
+                    <Button Text="Empezar" BackgroundColor="#FCB322" CornerRadius="25" TextColor="White" x:Name="btnEmpezar" Clicked="btnEmpezar_Clicked" />
+                </StackLayout>
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

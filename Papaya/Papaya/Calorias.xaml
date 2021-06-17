@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Papaya.Calorias">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White" Margin="10, 10, 10, 10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="250"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Text="Tus calorias a consumir son 1,193 - 1458 kcal" TextColor="Black" FontSize="Large" HorizontalTextAlignment="Center" />
+
+            <Image Grid.Row="1" Source="banner.png" WidthRequest="200" HeightRequest="250" Margin="0, 50, 0, 25" />
+
+            <StackLayout Grid.Row="2" HorizontalOptions="Center" >
+                <Label Text="Mientras te mantengas en este rango, maximizaras la oxidacion de grasas" TextColor="DarkGray" FontSize="Medium" HorizontalTextAlignment="Start" />
+
+                <Label Text="Todos los alimentos te aportan una cantidad de calorias a traves de una combinacion de proteinas, carbohidratos y grasas" TextColor="DarkGray" FontSize="Medium" HorizontalTextAlignment="Start" />
+            </StackLayout>
+
+            <Grid Grid.Row="3" ColumnSpacing="100" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Atras" BackgroundColor="White" Grid.Column="0" CornerRadius="30" />
+
+                <Button Text="Siguiente" BackgroundColor="White" Grid.Column="1" CornerRadius="30" x:Name="btnSiguiente" Clicked="btnSiguiente_Clicked" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

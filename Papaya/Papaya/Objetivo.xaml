@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Papaya.Objetivo"
+             Title="Objetivo">
+    <ContentPage.Content>
+        <Grid BackgroundColor="WhiteSmoke">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Margin="30">
+                <Label Text="¿Cual es tu objetivo?" FontSize="Large" TextColor="Black" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Margin="20, 10, 20, 10">
+                <ImageButton Source="perder.jpg" CornerRadius="25" BackgroundColor="White" HeightRequest="130" x:Name="btnPerder" Clicked="btnPerder_Clicked" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Margin="20, 10, 20, 10">
+                <ImageButton Source="mantener.jpg" CornerRadius="25" BackgroundColor="White" HeightRequest="130" x:Name="btnMantener" Clicked="btnMantener_Clicked" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Margin="20, 10, 20, 10">
+                <ImageButton Source="ganar.jpg" CornerRadius="25" BackgroundColor="White" HeightRequest="130" x:Name="btnGanar" Clicked="btnGanar_Clicked" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

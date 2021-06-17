@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Papaya.Master"
+             Title="Master">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Mi perfil" x:Name="btnPerfil" BackgroundColor="White" Clicked="btnPerfil_Clicked" />
+            <Button Text="Mi perfil" x:Name="btnRecetas" BackgroundColor="White" Clicked="btnRecetas_Clicked"  />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

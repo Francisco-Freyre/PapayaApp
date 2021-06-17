@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Papaya.Empezar">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="White" >
+            <Grid RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label HorizontalOptions="Start" Margin="0, 10, 0, 0" FontSize="Title" TextColor="Black" Grid.Column="1" Grid.Row="0" Text="¿Que incluye?" />
+
+                <Image Grid.Row="1" Grid.Column="0" Source="logo.png" WidthRequest="90" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+                <StackLayout Grid.Row="1" Grid.Column="1" >
+                    <Label HorizontalOptions="Start" FontSize="Large" TextColor="Black" Text="Recetas inteligentes" />
+                    <Label HorizontalOptions="Start" FontSize="Medium" TextColor="Black" Text="Cientos de recetas personalizables y adaptadas a tus necesidades" />
+                </StackLayout>
+
+                <Image Grid.Row="2" Grid.Column="0" Source="logo.png" WidthRequest="90" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+                <StackLayout Grid.Row="2" Grid.Column="1" >
+                    <Label HorizontalOptions="Start" FontSize="Large" TextColor="Black" Text="Recetas inteligentes" />
+                    <Label HorizontalOptions="Start" FontSize="Medium" TextColor="Black" Text="Cientos de recetas personalizables y adaptadas a tus necesidades" />
+                </StackLayout>
+
+                <Image Grid.Row="3" Grid.Column="0" Source="logo.png" WidthRequest="90" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+                <StackLayout Grid.Row="3" Grid.Column="1" >
+                    <Label HorizontalOptions="Start" FontSize="Large" TextColor="Black" Text="Recetas inteligentes" />
+                    <Label HorizontalOptions="Start" FontSize="Medium" TextColor="Black" Text="Cientos de recetas personalizables y adaptadas a tus necesidades" />
+                </StackLayout>
+
+                <Image Grid.Row="4" Grid.Column="0" Source="logo.png" WidthRequest="90" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+                <StackLayout Grid.Row="4" Grid.Column="1" >
+                    <Label HorizontalOptions="Start" FontSize="Large" TextColor="Black" Text="Recetas inteligentes" />
+                    <Label HorizontalOptions="Start" FontSize="Medium" TextColor="Black" Text="Cientos de recetas personalizables y adaptadas a tus necesidades" />
+                </StackLayout>
+
+                <Image Grid.Row="5" Grid.Column="0" Source="logo.png" WidthRequest="90" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+                <StackLayout Grid.Row="5" Grid.Column="1" >
+                    <Label HorizontalOptions="Start" FontSize="Large" TextColor="Black" Text="Recetas inteligentes" />
+                    <Label HorizontalOptions="Start" FontSize="Medium" TextColor="Black" Text="Cientos de recetas personalizables y adaptadas a tus necesidades" />
+                </StackLayout>
+
+                <Image Grid.Row="6" Grid.Column="0" Source="logo.png" WidthRequest="90" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+                <StackLayout Grid.Row="6" Grid.Column="1" >
+                    <Label HorizontalOptions="Start" FontSize="Large" TextColor="Black" Text="Recetas inteligentes" />
+                    <Label HorizontalOptions="Start" FontSize="Medium" TextColor="Black" Text="Cientos de recetas personalizables y adaptadas a tus necesidades" />
+                </StackLayout>
+
+                <Image Grid.Row="7" Grid.Column="0" Source="logo.png" WidthRequest="90" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+                <StackLayout Grid.Row="7" Grid.Column="1" >
+                    <Label HorizontalOptions="Start" FontSize="Large" TextColor="Black" Text="Recetas inteligentes" />
+                    <Label HorizontalOptions="Start" FontSize="Medium" TextColor="Black" Text="Cientos de recetas personalizables y adaptadas a tus necesidades" />
+                </StackLayout>
+
+                <Image Grid.Row="8" Grid.Column="0" Source="logo.png" WidthRequest="90" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+                <StackLayout Grid.Row="8" Grid.Column="1" >
+                    <Label HorizontalOptions="Start" FontSize="Large" TextColor="Black" Text="Recetas inteligentes" />
+                    <Label HorizontalOptions="Start" FontSize="Medium" TextColor="Black" Text="Cientos de recetas personalizables y adaptadas a tus necesidades" />
+                </StackLayout>
+
+                <Image Grid.Row="9" Grid.Column="0" Source="logo.png" WidthRequest="90" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+                <StackLayout Grid.Row="9" Grid.Column="1" >
+                    <Label HorizontalOptions="Start" FontSize="Large" TextColor="Black" Text="Recetas inteligentes" />
+                    <Label HorizontalOptions="Start" FontSize="Medium" TextColor="Black" Text="Cientos de recetas personalizables y adaptadas a tus necesidades" />
+                </StackLayout>
+
+                <Button Text="Vuelvete premiun" BackgroundColor="#FCB322" TextColor="White" CornerRadius="30" Grid.Row="10" Grid.Column="1" Margin="0,0,0,10" x:Name="btnPremiun" Clicked="btnPremiun_Clicked" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

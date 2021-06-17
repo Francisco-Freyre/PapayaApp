@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Papaya.Bebidas"
+             Title="Bebidas">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand" >
+            <Grid RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="170"></RowDefinition>
+                    <RowDefinition Height="140"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid RowSpacing="10" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="¿Consumes bebidas alcohólicas?" HorizontalOptions="Center" FontSize="Large" Grid.Row="0" />
+
+                    <Grid Grid.Row="1" Margin="10, 10, 10, 10" RowSpacing="10" ColumnSpacing="10" HorizontalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Text="Si" Grid.Row="0" Grid.Column="0" />
+                        <Button Text="No" Grid.Row="0" Grid.Column="1"/>
+                    </Grid>
+                </Grid>
+
+                <Grid RowSpacing="10" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="¿Con que frecuencia?" HorizontalOptions="Center" FontSize="Large" Grid.Row="0" />
+
+                    <StackLayout Grid.Row="1" Margin="10, 10, 10, 10">
+                        <Picker x:Name="PickerFrecuencia" Title="Selecciona una frecuencia" TitleColor="Black">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}" >
+                                    <x:String>Diario</x:String>
+                                    <x:String>Fin de semana</x:String>
+                                    <x:String>Una vez al mes</x:String>
+                                    <x:String>Ocasionalmente</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
+                </Grid>
+
+                <Grid RowSpacing="10" Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="700"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="¿Que consumes?" HorizontalOptions="Center" FontSize="Large" Grid.Row="0" />
+
+                    <Grid Grid.Row="1" Margin="10, 10, 10, 10" RowSpacing="10" ColumnSpacing="10" HorizontalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="100"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Text="Cerveza" Grid.Row="0" Grid.Column="0" />
+                        <Button Text="Wiski" Grid.Row="0" Grid.Column="1"/>
+                        <Button Text="Tequila" Grid.Row="0" Grid.Column="2"/>
+                        <Button Text="Ron" Grid.Row="1" Grid.Column="0"/>
+                        <Button Text="Vino" Grid.Row="1" Grid.Column="1"/>
+                        <Button Text="Mezcal" Grid.Row="1" Grid.Column="2"/>
+                        <Button Text="Sidra" Grid.Row="2" Grid.Column="0"/>
+                        <Button Text="Vodka" Grid.Row="2" Grid.Column="1"/>
+                        <Button Text="Pulque" Grid.Row="2" Grid.Column="2"/>
+                        <Button Text="Ginebra" Grid.Row="3" Grid.Column="0"/>
+                        <Button Text="Brandy" Grid.Row="3" Grid.Column="1"/>
+                        <Button Text="Champagme" Grid.Row="3" Grid.Column="2"/>
+                        <Button Text="Bebidas Preparadas" Grid.Row="4" Grid.Column="0"/>
+                        <Button Text="Continuar" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" Grid.Row="4" Grid.Column="2"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

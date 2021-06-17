@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Papaya.Registro">
+
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="login.jpg"  Aspect="AspectFill"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="logo.png" WidthRequest="100" HeightRequest="130" Margin="0, 50, 0, 50" />
+
+                <StackLayout Grid.Row="1" Padding="30,20">
+                    <Entry Placeholder="Nombre" PlaceholderColor="White" TextColor="White" x:Name="txtNombre" />
+                    <Entry Placeholder="Apellido" PlaceholderColor="White" TextColor="White" x:Name="txtApellido" />
+                    <Entry Placeholder="Edad" PlaceholderColor="White" TextColor="White" x:Name="txtEdad" />
+                    <Entry Placeholder="Sexo" PlaceholderColor="White" TextColor="White" x:Name="txtSexo" />
+                    <Entry Placeholder="Correo" PlaceholderColor="White" TextColor="White" x:Name="txtCorreo" />
+                    <Entry Placeholder="Contraseña" PlaceholderColor="White" TextColor="White" x:Name="txtPassword" />
+                    <Button Text="Crear usuario" BackgroundColor="#4ecdc4" CornerRadius="10" TextColor="White" x:Name="btnCrear" Clicked="btnCrear_Clicked" />
+                </StackLayout>
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
