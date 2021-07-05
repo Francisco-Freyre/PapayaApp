@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Papaya.Bebidas"
-             Title="Bebidas">
+             Title="Bebidas" 
+             BackgroundColor="White">
     <ContentPage.Content>
         <ScrollView VerticalOptions="FillAndExpand" >
             <Grid RowSpacing="10">
@@ -29,8 +30,8 @@
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <Button Text="Si" Grid.Row="0" Grid.Column="0" />
-                        <Button Text="No" Grid.Row="0" Grid.Column="1"/>
+                        <Button Text="Si" CornerRadius="35" Grid.Row="0" Grid.Column="0" />
+                        <Button Text="No" CornerRadius="35" Grid.Row="0" Grid.Column="1"/>
                     </Grid>
                 </Grid>
 
@@ -71,26 +72,27 @@
                             <RowDefinition Height="100"></RowDefinition>
                             <RowDefinition Height="100"></RowDefinition>
                             <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"></ColumnDefinition>
                             <ColumnDefinition Width="100"></ColumnDefinition>
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Button Text="Cerveza" Grid.Row="0" Grid.Column="0" />
-                        <Button Text="Wiski" Grid.Row="0" Grid.Column="1"/>
-                        <Button Text="Tequila" Grid.Row="0" Grid.Column="2"/>
-                        <Button Text="Ron" Grid.Row="1" Grid.Column="0"/>
-                        <Button Text="Vino" Grid.Row="1" Grid.Column="1"/>
-                        <Button Text="Mezcal" Grid.Row="1" Grid.Column="2"/>
-                        <Button Text="Sidra" Grid.Row="2" Grid.Column="0"/>
-                        <Button Text="Vodka" Grid.Row="2" Grid.Column="1"/>
-                        <Button Text="Pulque" Grid.Row="2" Grid.Column="2"/>
-                        <Button Text="Ginebra" Grid.Row="3" Grid.Column="0"/>
-                        <Button Text="Brandy" Grid.Row="3" Grid.Column="1"/>
-                        <Button Text="Champagme" Grid.Row="3" Grid.Column="2"/>
-                        <Button Text="Bebidas Preparadas" Grid.Row="4" Grid.Column="0"/>
-                        <Button Text="Continuar" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" Grid.Row="4" Grid.Column="2"/>
+                        <Button Text="Cerveza" CornerRadius="35" Grid.Row="0" Grid.Column="0" />
+                        <Button Text="Wiski" CornerRadius="35" Grid.Row="0" Grid.Column="1"/>
+                        <Button Text="Tequila" CornerRadius="35" Grid.Row="0" Grid.Column="2"/>
+                        <Button Text="Ron" CornerRadius="35" Grid.Row="1" Grid.Column="0"/>
+                        <Button Text="Vino" CornerRadius="35" Grid.Row="1" Grid.Column="1"/>
+                        <Button Text="Mezcal" CornerRadius="35" Grid.Row="1" Grid.Column="2"/>
+                        <Button Text="Sidra" CornerRadius="35" Grid.Row="2" Grid.Column="0"/>
+                        <Button Text="Vodka" CornerRadius="35" Grid.Row="2" Grid.Column="1"/>
+                        <Button Text="Pulque" CornerRadius="35" Grid.Row="2" Grid.Column="2"/>
+                        <Button Text="Ginebra" CornerRadius="35" Grid.Row="3" Grid.Column="0"/>
+                        <Button Text="Brandy" CornerRadius="35" Grid.Row="3" Grid.Column="1"/>
+                        <Button Text="Champagme" CornerRadius="35" Grid.Row="3" Grid.Column="2"/>
+                        <Button Text="Bebidas Preparadas" CornerRadius="35" Grid.Row="4" Grid.Column="1"/>
+                        <Button Text="Continuar" TextColor="White" BackgroundColor="#FCB322" HeightRequest="70" CornerRadius="35" Grid.ColumnSpan="3" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" Grid.Row="5"/>
                     </Grid>
                 </Grid>
             </Grid>

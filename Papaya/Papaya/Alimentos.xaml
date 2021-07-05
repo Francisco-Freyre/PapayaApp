@@ -249,8 +249,8 @@
                     </StackLayout>
                 </Grid>
 
-                <Label Text="Carnes" Margin="10, 1880, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
-                <Grid Margin="15, 1930, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
+                <Label Text="Carnes" Margin="10, 1680, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
+                <Grid Margin="15, 1730, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"></ColumnDefinition>
                         <ColumnDefinition Width="100"></ColumnDefinition>
@@ -324,8 +324,8 @@
                     </StackLayout>
                 </Grid>
 
-                <Label Text="Lacteos" Margin="10, 2480, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
-                <Grid Margin="15, 2530, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
+                <Label Text="Lacteos" Margin="10, 2180, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
+                <Grid Margin="15, 2230, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"></ColumnDefinition>
                         <ColumnDefinition Width="100"></ColumnDefinition>
@@ -364,13 +364,13 @@
                     </StackLayout>
 
                     <StackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="Center">
-                        <Label Text="Bebida Coco" TextColor="Black" FontSize="Medium" />
+                        <Label Text="BebidaCoco" TextColor="Black" FontSize="Medium" />
                         <ImageButton Source="coconutmilk.png" BackgroundColor="White" />
                     </StackLayout>
                 </Grid>
 
-                <Label Text="Grasas" Margin="10, 3080, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
-                <Grid Margin="15, 3130, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
+                <Label Text="Grasas" Margin="10, 2480, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
+                <Grid Margin="15, 2530, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"></ColumnDefinition>
                         <ColumnDefinition Width="100"></ColumnDefinition>
@@ -434,8 +434,8 @@
                     </StackLayout>
                 </Grid>
 
-                <Label Text="Azucares" Margin="10, 3680, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
-                <Grid Margin="15, 3730, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
+                <Label Text="Azucares" Margin="10, 2980, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
+                <Grid Margin="15, 3030, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"></ColumnDefinition>
                         <ColumnDefinition Width="100"></ColumnDefinition>
@@ -509,7 +509,7 @@
                     </StackLayout>
                 </Grid>
 
-                <Button Text="Continuar" Margin="15, 4270, 10, 10" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" />
+                <Button Text="Continuar" TextColor="White" Margin="15, 3570, 10, 10" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" CornerRadius="25" BackgroundColor="#FCB322" />
             </Grid>
         </ScrollView>
     </ContentPage.Content>

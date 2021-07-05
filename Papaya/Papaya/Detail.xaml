@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="Papaya.Detail"
+             Title="Home"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label FontSize="Large" HorizontalOptions="CenterAndExpand" Text="IMC" />
+            <forms:ChartView x:Name="DonutChart" HeightRequest="200" WidthRequest="100" />
+
+            <Label FontSize="Large" HorizontalOptions="CenterAndExpand" Text="Avances" />
+            <forms:ChartView x:Name="LinetChart" HeightRequest="200" WidthRequest="100" />
+
+            <Label Text="¿Tu peso ha cambiado? Actualizalo aqui." FontSize="Medium" HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Escribe aqui tu nuevo peso" HorizontalOptions="Center" WidthRequest="250" Keyboard="Numeric"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

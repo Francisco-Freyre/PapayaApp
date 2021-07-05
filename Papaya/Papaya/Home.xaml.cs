@@ -16,7 +16,7 @@ namespace Papaya
         {
             InitializeComponent();
             this.Master = new Master();
-            this.Detail = new NavigationPage(new HomeDetail());
+            this.Detail = new NavigationPage(new Detail());
             App.MasterDet = this;
         }
     }

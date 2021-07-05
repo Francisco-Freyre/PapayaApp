@@ -3,10 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Papaya.Perfil">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Mi perfil" TextColor="Red" FontSize="Header"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source="userpic.png" WidthRequest="120" HeightRequest="180" Margin="0, 50, 0, 50" />
+
+            <StackLayout Grid.Row="1" Padding="30,20">
+                <Label TextColor="Black" Text="Nombre" FontSize="Medium" HorizontalOptions="Center" />
+                <Label TextColor="Black" Text="Correo electronico" FontSize="Medium" HorizontalOptions="Center" />
+                <Label TextColor="Black" Text="Edad" FontSize="Medium" HorizontalOptions="Center" />
+                <Label TextColor="Black" Text="Peso" FontSize="Medium" HorizontalOptions="Center" />
+                <Label TextColor="Black" Text="Sexo" FontSize="Medium" HorizontalOptions="Center" />
+                <Label TextColor="Black" Text="Tipo de Cuenta" FontSize="Medium" HorizontalOptions="Center" />
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

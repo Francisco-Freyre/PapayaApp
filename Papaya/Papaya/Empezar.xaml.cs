@@ -20,8 +20,8 @@ namespace Papaya
 
         private async void btnPremiun_Clicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new Home();
             await Navigation.PushAsync(new Home());
+            Application.Current.MainPage = new Home();
         }
     }
 }

@@ -12,8 +12,46 @@
                 
                 <Image Grid.Row="0" Source="tomahawksteak.jpg" Aspect="AspectFill" />
 
-                <Grid Grid.Row="1">
-                    <Label TextColor="Black" Text="Tomahawk Steak" FontSize="Title" HorizontalOptions="Center" />
+                <Grid Grid.Row="1" RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="250"></RowDefinition>
+                        <RowDefinition Height="250"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" TextColor="Black" Text="Tomahawk Steak" FontSize="Title" HorizontalOptions="Center" />
+                    <StackLayout Grid.Row="1">
+                        <Label TextColor="Black" Text="Ingredientes" FontSize="Large" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Grid.Row="2">
+                        <Label TextColor="Black" Text="Procedimiento" FontSize="Large" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Text="Algun tipo de procedimiento para la elaboracion de cualquier tipo de comida estaria muy bien poder ponerlo aqui" FontSize="Medium" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <Label Grid.Row="3" TextColor="Black" Text="Tiempo de elaboracion: 30 min" FontSize="Medium" HorizontalOptions="Start" />
+                    <StackLayout Grid.Row="4">
+                        <Label TextColor="Black" Text="Aporte Nutricional" FontSize="Large" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Text="Energia" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Proteinas" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Carbohidratos" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Grasas" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Sodio" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Potasio" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Calcio" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Vitamina A" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Vitamina C" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Vitamina D" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Vitamina E" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Text="Acido Folico" FontSize="Medium" HorizontalOptions="Center" />
+                    </StackLayout>
                 </Grid>
             </Grid>
         </ScrollView>

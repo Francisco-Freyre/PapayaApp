@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,8 +11,15 @@ namespace Papaya
         public App()
         {
             InitializeComponent();
-
-            MainPage = MainPage = new NavigationPage(new MainPage());
+            Application.Current.UserAppTheme = OSAppTheme.Light;
+            if (Preferences.ContainsKey("token") && Preferences.ContainsKey("userid"))
+            {
+                MainPage = new Home();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
         }
 
         protected override void OnStart()

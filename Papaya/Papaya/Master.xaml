@@ -2,11 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Papaya.Master"
-             Title="Master">
+             Title="Master"
+             BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Mi perfil" x:Name="btnPerfil" BackgroundColor="White" Clicked="btnPerfil_Clicked" />
-            <Button Text="Mi perfil" x:Name="btnRecetas" BackgroundColor="White" Clicked="btnRecetas_Clicked"  />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="userpic.png" WidthRequest="120" HeightRequest="120" Margin="0, 30, 0, 30" />
+            <Label Grid.Row="1"  HorizontalOptions="Center" Padding="20" VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="Large" x:Name="LblNombre" HeightRequest="100" />
+            <Button Grid.Row="2" Text="Perfil" BackgroundColor="White" x:Name="btnPerfil" Clicked="btnPerfil_Clicked" />
+            <Button Grid.Row="3" Text="Platillos" BackgroundColor="White" x:Name="btnPlatillos" Clicked="btnPlatillos_Clicked" />
+            <Button Grid.Row="4" Text="Mi dieta" BackgroundColor="White" x:Name="btnDieta" Clicked="btnDieta_Clicked" />
+            <Button Grid.Row="5" Text="Ejercicios" BackgroundColor="White" x:Name="btnEjer" Clicked="btnEjer_Clicked" />
+            <Button Grid.Row="6" Text="Cerrar sesion" BackgroundColor="White" x:Name="btnCerrar" Clicked="btnCerrar_Clicked" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

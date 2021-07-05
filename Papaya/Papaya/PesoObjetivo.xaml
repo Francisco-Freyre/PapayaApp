@@ -45,7 +45,7 @@
                 <Label Text="Pérdida de grasa sin afectar la masa muscular" Grid.Row="1" HorizontalOptions="Start" FontSize="Medium" />
                 <Label Text="Resultados visibles en el corto plazo" Grid.Row="2" HorizontalOptions="Start" FontSize="Medium" />
                 <Label Text="Alimentación sostenible" Grid.Row="3" HorizontalOptions="Start" FontSize="Medium" />
-                <Button Text="Continuar" HorizontalOptions="Center" CornerRadius="25" Grid.Row="4" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" />
+                <Button Text="Continuar" TextColor="White" BackgroundColor="#FCB322" WidthRequest="300" HorizontalOptions="Center" CornerRadius="25" Grid.Row="4" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" />
             </Grid>
         </Grid>
     </ContentPage.Content>

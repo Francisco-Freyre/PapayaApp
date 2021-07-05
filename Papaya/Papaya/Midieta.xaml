@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Papaya.Midieta"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10">
+            <Button Text="Lunes" BackgroundColor="White" WidthRequest="350" x:Name="btnLunes" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnLunes_Clicked"/>
+            <Button Text="Martes" BackgroundColor="White" WidthRequest="350" x:Name="btnMartes" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnMartes_Clicked" />
+            <Button Text="Miercoles" BackgroundColor="White" WidthRequest="350" x:Name="btnMiercoles" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnMiercoles_Clicked" />
+            <Button Text="Jueves" BackgroundColor="White" WidthRequest="350" x:Name="btnJueves" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnJueves_Clicked" />
+            <Button Text="Viernes" BackgroundColor="White" WidthRequest="350" x:Name="btnViernes" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnViernes_Clicked" />
+            <Button Text="Sabado" BackgroundColor="White" WidthRequest="350" x:Name="btnSabado" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnSabado_Clicked" />
+            <Button Text="Domingo" BackgroundColor="White" WidthRequest="350" x:Name="btnDomingo" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnDomingo_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
