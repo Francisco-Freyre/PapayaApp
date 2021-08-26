@@ -11,7 +11,7 @@
                 <RowDefinition Height="80"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Text="Tus calorias a consumir son 1,193 - 1458 kcal" TextColor="Black" FontSize="Large" HorizontalTextAlignment="Center" />
+            <Label Grid.Row="0" Text="" x:Name="lblCalorias" TextColor="Black" FontSize="Large" HorizontalTextAlignment="Center" />
 
             <Image Grid.Row="1" Source="banner.png" WidthRequest="200" HeightRequest="250" Margin="0, 50, 0, 25" />
 

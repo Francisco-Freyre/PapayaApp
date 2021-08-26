@@ -7,7 +7,7 @@
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Label FontSize="Large" HorizontalOptions="CenterAndExpand" Text="IMC" />
+            <Label x:Name="lblIMC" FontSize="Large" HorizontalOptions="CenterAndExpand" Text="IMC" />
             <forms:ChartView x:Name="DonutChart" HeightRequest="200" WidthRequest="100" />
 
             <Label FontSize="Large" HorizontalOptions="CenterAndExpand" Text="Avances" />

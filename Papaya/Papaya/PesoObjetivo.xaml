@@ -7,8 +7,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"></RowDefinition>
-                <RowDefinition Height="170"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="250"></RowDefinition>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" Margin="10, 10 , 10, 10" HorizontalOptions="Center" RowSpacing="10">
@@ -18,7 +17,7 @@
                 </Grid.RowDefinitions>
 
                 <Label Text="Peso actual" Grid.Row="0" HorizontalOptions="Center" FontSize="Large" TextColor="Black"/>
-                <Label Text="95 Kg" Grid.Row="1" HorizontalOptions="Center" FontSize="Large"  TextColor="Red"/>
+                <Label Text="0 Kg" x:Name="lblPesoInicial" Grid.Row="1" HorizontalOptions="Center" FontSize="Large"  TextColor="Red"/>
             </Grid>
 
             <Grid Grid.Row="1" Margin="10, 10 , 10, 10" HorizontalOptions="Center" RowSpacing="10">
@@ -26,26 +25,19 @@
                     <RowDefinition Height="30"></RowDefinition>
                     <RowDefinition Height="80"></RowDefinition>
                     <RowDefinition Height="60"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Label Text="Peso Objetivo" Grid.Row="0" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
-                <Entry Text="80 kg" Grid.Row="1" HorizontalOptions="Center" />
-                <Label Text="Segun la escala del IMC, tu peso debe estar entre 75Kg - 85Kg" Grid.Row="2" HorizontalOptions="Start" FontSize="Medium" />
-            </Grid>
-
-            <Grid Grid.Row="2" Margin="10, 30 , 10, 10" HorizontalOptions="Center" RowSpacing="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
                     <RowDefinition Height="50"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Label Text="Recomendado" Grid.Row="0" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
-                <Label Text="Pérdida de grasa sin afectar la masa muscular" Grid.Row="1" HorizontalOptions="Start" FontSize="Medium" />
-                <Label Text="Resultados visibles en el corto plazo" Grid.Row="2" HorizontalOptions="Start" FontSize="Medium" />
-                <Label Text="Alimentación sostenible" Grid.Row="3" HorizontalOptions="Start" FontSize="Medium" />
-                <Button Text="Continuar" TextColor="White" BackgroundColor="#FCB322" WidthRequest="300" HorizontalOptions="Center" CornerRadius="25" Grid.Row="4" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" />
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"></ColumnDefinition>
+                    <ColumnDefinition Width="175"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Peso Objetivo" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
+                <Entry Text="" x:Name="entryPesoObjetivo" Keyboard="Numeric" WidthRequest="100" Grid.Row="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="End" FontSize="Medium" />
+                <Label Text="Kg" TextColor="Black" VerticalTextAlignment="End" FontSize="Medium" HorizontalTextAlignment="Start" Grid.Column="1" Grid.Row="1" />
+                <Label Text="" x:Name="lblIMC" Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Start" FontSize="Medium" />
+                <Button Text="Continuar" Grid.ColumnSpan="2" TextColor="White" BackgroundColor="#FCB322" WidthRequest="350" HorizontalOptions="Center" CornerRadius="25" Grid.Row="3" x:Name="btnSiguiente" Clicked="btnSiguiente_Clicked" />
             </Grid>
         </Grid>
     </ContentPage.Content>

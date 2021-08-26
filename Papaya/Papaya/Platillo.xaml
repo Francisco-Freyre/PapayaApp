@@ -10,47 +10,31 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 
-                <Image Grid.Row="0" Source="tomahawksteak.jpg" Aspect="AspectFill" />
+                <Image Grid.Row="0" x:Name="Etiquetaimg" Aspect="AspectFill" />
 
                 <Grid Grid.Row="1" RowSpacing="10">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50"></RowDefinition>
-                        <RowDefinition Height="250"></RowDefinition>
-                        <RowDefinition Height="250"></RowDefinition>
-                        <RowDefinition Height="50"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" TextColor="Black" Text="Tomahawk Steak" FontSize="Title" HorizontalOptions="Center" />
-                    <StackLayout Grid.Row="1">
-                        <Label TextColor="Black" Text="Ingredientes" FontSize="Large" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Ingrediente" FontSize="Medium" HorizontalOptions="Center" />
+                    <Label Grid.Row="0" x:Name="lblNombre" TextColor="Black" FontSize="Title" HorizontalOptions="Center" />
+                    <StackLayout x:Name="stackIngredientes" Grid.Row="1">
+                        <Label TextColor="Black" Text="Ingredientes" FontSize="Large" HorizontalOptions="Center" />
                     </StackLayout>
-                    <StackLayout Grid.Row="2">
+                    <StackLayout Grid.Row="2" Margin="20">
                         <Label TextColor="Black" Text="Procedimiento" FontSize="Large" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Text="Algun tipo de procedimiento para la elaboracion de cualquier tipo de comida estaria muy bien poder ponerlo aqui" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Margin="20" x:Name="lblProcedimiento" FontSize="Medium" HorizontalOptions="Start" />
                     </StackLayout>
-                    <Label Grid.Row="3" TextColor="Black" Text="Tiempo de elaboracion: 30 min" FontSize="Medium" HorizontalOptions="Start" />
-                    <StackLayout Grid.Row="4">
+                    <Label Grid.Row="3" Margin="20" x:Name="lblTiempo" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" />
+                    <StackLayout Grid.Row="4" Margin="20">
                         <Label TextColor="Black" Text="Aporte Nutricional" FontSize="Large" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Text="Energia" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Proteinas" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Carbohidratos" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Grasas" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Sodio" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Potasio" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Calcio" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Vitamina A" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Vitamina C" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Vitamina D" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Vitamina E" FontSize="Medium" HorizontalOptions="Center" />
-                        <Label TextColor="Black" Text="Acido Folico" FontSize="Medium" HorizontalOptions="Center" />
+                        <Label TextColor="Black" Margin="20" x:Name="lblEnergia" FontSize="Medium" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Margin="20" x:Name="lblProteinas" FontSize="Medium" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Margin="20" x:Name="lblCarbo" FontSize="Medium" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Margin="20" x:Name="lblGrasas" FontSize="Medium" HorizontalOptions="Start" />
                     </StackLayout>
                 </Grid>
             </Grid>

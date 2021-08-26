@@ -6,21 +6,10 @@
     <ContentPage.Content>
         <Grid BackgroundColor="White">
             <StackLayout Margin="20, 20, 20, 20">
-                <Label Text="Sexo" TextColor="Black" FontSize="Large" />
-                <Picker x:Name="PickerSexo" Title="Selecciona tu sexo" TitleColor="Gray">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}" >
-                            <x:String>Hombre</x:String>
-                            <x:String>Mujer</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-                <Label Text="Fecha de nacimiento" TextColor="Black" FontSize="Large" />
-                <DatePicker MinimumDate="01/01/1900" MaximumDate="12/31/2050" />
                 <Label Text="Estatura" TextColor="Black" FontSize="Large" />
-                <Entry Placeholder="Escribe aqui tu estatura" Keyboard="Numeric" />
+                <Entry Placeholder="Escribe aqui tu estatura" x:Name="EntryEstatura" Keyboard="Numeric" />
                 <Label Text="Peso actual" TextColor="Black" FontSize="Large" />
-                <Entry Placeholder="Escribe aqui tu peso actual" Keyboard="Numeric" />
+                <Entry Placeholder="Escribe aqui tu peso actual" x:Name="EntryPeso" Keyboard="Numeric" />
                 <Button Text="Continuar" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" BackgroundColor="#FCB322" CornerRadius="15" TextColor="White" HeightRequest="60" />
             </StackLayout>
         </Grid>

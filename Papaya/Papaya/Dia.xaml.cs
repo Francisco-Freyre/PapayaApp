@@ -24,25 +24,25 @@ namespace Papaya
         private async void btnDesayuno_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(2));
         }
 
         private async void btnAlmuerzo_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(2));
         }
 
         private async void btnComida_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(2));
         }
 
         private async void btnCena_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(2));
         }
     }
 }

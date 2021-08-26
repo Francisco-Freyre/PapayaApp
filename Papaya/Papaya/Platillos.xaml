@@ -6,7 +6,7 @@
              Title="Platillos saludables" >
     <ContentPage.Content>
         <StackLayout Margin="20,20,20,20">
-            <ListView ItemsSource="{Binding Platos}" HasUnevenRows="True" ItemSelected="ListView_ItemSelected">
+            <ListView x:Name="listaPlatillos" HasUnevenRows="True" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -19,10 +19,11 @@
                                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.RowSpan="2" Source="{Binding Img}" 
+                                <Image Grid.RowSpan="2" Source="{Binding img}" 
                                        Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
-                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding Nombre}" VerticalOptions="End" TextColor="Black" FontSize="Medium" />
-                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding Id}" VerticalOptions="End" />
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding nombre}" VerticalOptions="End" TextColor="Black" FontSize="Medium" />
+                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding energia}" VerticalOptions="End" />
+                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding id}" VerticalOptions="End" IsVisible="false" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
