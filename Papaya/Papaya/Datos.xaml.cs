@@ -27,6 +27,10 @@ namespace Papaya
             public decimal peso { get; set; }
 
             public decimal estatura { get; set; }
+
+            public int edad { get; set; }
+
+            public string sexo { get; set; }
         }
 
         public class Respuesta
@@ -40,8 +44,10 @@ namespace Papaya
             {
                 idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
                 peso = Convert.ToDecimal(EntryPeso.Text),
-                estatura = Convert.ToDecimal(EntryEstatura.Text)
-            };
+                estatura = Convert.ToDecimal(EntryEstatura.Text),
+                edad = DateTime.Today.AddTicks(-fechaNacimiento.Date.Ticks).Year - 1,
+                sexo = Convert.ToString(PickerSexo.SelectedItem)
+        };
 
             Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php");
 
@@ -61,7 +67,7 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new ActividadFisica());
+                    await Navigation.PushAsync(new PesoObjetivo());
                 }
                 else
                 {
@@ -69,6 +75,11 @@ namespace Papaya
                 }
             }
             
+        }
+
+        private void PickerSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

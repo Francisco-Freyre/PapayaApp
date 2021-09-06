@@ -32,42 +32,6 @@ namespace Papaya
             public bool resultado { get; set; }
         }
 
-        private async void btnGanar_Clicked(object sender, EventArgs e)
-        {
-            Meta meta = new Meta
-            {
-                idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
-                meta = "Ganar peso"
-            };
-
-            Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php");
-
-            var client = new HttpClient();
-
-            var json = JsonConvert.SerializeObject(meta);
-
-            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(RequestUri, contentJson);
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-
-                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                if (resultado.resultado)
-                {
-                    await Navigation.PushAsync(new Datos());
-                }
-                else
-                {
-                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
-                }
-            }
-            
-        }
-
         private async void btnMantener_Clicked(object sender, EventArgs e)
         {
             Meta meta = new Meta

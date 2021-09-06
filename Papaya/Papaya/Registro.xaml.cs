@@ -34,8 +34,7 @@ namespace Papaya
             {
                 nombre = txtNombre.Text,
                 apellido = txtApellido.Text,
-                edad = Convert.ToInt16(txtEdad.Text),
-                sexo = txtSexo.Text,
+                estado = txtEstado.Text,
                 email = txtCorreo.Text,
                 password = txtPassword.Text
             };
@@ -60,9 +59,8 @@ namespace Papaya
                 {
                     txtNombre.Text = "";
                     txtApellido.Text = "";
-                    txtEdad.Text = "";
+                    txtEstado.Text = "";
                     txtCorreo.Text = "";
-                    txtSexo.Text = "";
                     txtPassword.Text = "";
                     await DisplayAlert("Mensaje", resultado.msg, "OK");
                 }

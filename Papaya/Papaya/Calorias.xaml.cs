@@ -47,7 +47,7 @@ namespace Papaya
         public async void kcal()
         {
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?idCliente=" + Preferences.Get("userid", ""));
+            request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?calorias=0&idCliente=" + Preferences.Get("userid", ""));
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
             var client = new HttpClient();
@@ -83,7 +83,7 @@ namespace Papaya
                             tmb = tmb * Convert.ToDecimal(1.5);
                         }
 
-                        lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(tmb) + " kcal";
+                        lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(Decimal.Round(tmb)) + " kcal";
                     }
                     else
                     {
@@ -106,7 +106,7 @@ namespace Papaya
                             tmb = tmb * Convert.ToDecimal(1.5);
                         }
 
-                        lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(tmb) + " kcal";
+                        lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(Decimal.Round(tmb)) + " kcal";
                     }
                 }
                 else
@@ -122,7 +122,7 @@ namespace Papaya
 
         private async void btnSiguiente_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Proteinas());
+            await Navigation.PushAsync(new Empezar());
         }
     }
 }

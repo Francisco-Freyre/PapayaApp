@@ -6,15 +6,111 @@
              Title="Home"
              BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="lblIMC" FontSize="Large" HorizontalOptions="CenterAndExpand" Text="IMC" />
-            <forms:ChartView x:Name="DonutChart" HeightRequest="200" WidthRequest="100" />
-
-            <Label FontSize="Large" HorizontalOptions="CenterAndExpand" Text="Avances" />
-            <forms:ChartView x:Name="LinetChart" HeightRequest="200" WidthRequest="100" />
-
-            <Label Text="¿Tu peso ha cambiado? Actualizalo aqui." FontSize="Medium" HorizontalOptions="CenterAndExpand" />
-            <Entry Placeholder="Escribe aqui tu nuevo peso" HorizontalOptions="Center" WidthRequest="250" Keyboard="Numeric"/>
-        </StackLayout>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <Grid RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" RowSpacing="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" HorizontalOptions="Center" Text="Desayuno" TextColor="Black" FontSize="Title" />
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2" Source="tomahawksteak.jpg" 
+                           Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        <Label Grid.Column="1" Grid.Row="0" Text="Tomahawk Steak" VerticalOptions="End" 
+                           TextColor="Black" FontSize="Medium" />
+                        <Label Grid.Column="1" Grid.Row="1" Text="Descripcion" VerticalOptions="End" />
+                        <Button Grid.Row="2" Grid.ColumnSpan="2" x:Name="btnDesayuno" Clicked="btnDesayuno_Clicked" WidthRequest="200" CornerRadius="20" HorizontalOptions="Center" Text="Ver mas"  />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1" RowSpacing="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" HorizontalOptions="Center" Text="Almuerzo" TextColor="Black" FontSize="Title" />
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2" Source="tomahawksteak.jpg" 
+                           Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        <Label Grid.Column="1" Grid.Row="0" Text="Tomahawk Steak" VerticalOptions="End" 
+                           TextColor="Black" FontSize="Medium" />
+                        <Label Grid.Column="1" Grid.Row="1" Text="Descripcion" VerticalOptions="End" />
+                        <Button Grid.Row="2" Grid.ColumnSpan="2" x:Name="btnAlmuerzo" Clicked="btnAlmuerzo_Clicked" WidthRequest="200" CornerRadius="20" HorizontalOptions="Center" Text="Ver mas"  />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2" RowSpacing="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" HorizontalOptions="Center" Text="Comida" TextColor="Black" FontSize="Title" />
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2" Source="tomahawksteak.jpg" 
+                           Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        <Label Grid.Column="1" Grid.Row="0" Text="Tomahawk Steak" VerticalOptions="End" 
+                           TextColor="Black" FontSize="Medium" />
+                        <Label Grid.Column="1" Grid.Row="1" Text="Descripcion" VerticalOptions="End" />
+                        <Button Grid.Row="2" Grid.ColumnSpan="2" x:Name="btnComida" Clicked="btnComida_Clicked" WidthRequest="200" CornerRadius="20" HorizontalOptions="Center" Text="Ver mas"  />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3" RowSpacing="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" HorizontalOptions="Center" Text="Cena" TextColor="Black" FontSize="Title" />
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2" Source="tomahawksteak.jpg" 
+                           Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        <Label Grid.Column="1" Grid.Row="0" Text="Tomahawk Steak" VerticalOptions="End" 
+                           TextColor="Black" FontSize="Medium" />
+                        <Label Grid.Column="1" Grid.Row="1" Text="Descripcion" VerticalOptions="End" />
+                        <Button Grid.Row="2" Grid.ColumnSpan="2" x:Name="btnCena" Clicked="btnCena_Clicked" WidthRequest="200" CornerRadius="20" HorizontalOptions="Center" Text="Ver mas"  />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

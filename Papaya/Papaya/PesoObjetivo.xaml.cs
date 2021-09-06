@@ -40,7 +40,7 @@ namespace Papaya
         public async void IMC()
         {
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?idCliente=" + Preferences.Get("userid", ""));
+            request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?meta=0&idCliente=" + Preferences.Get("userid", ""));
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
             var client = new HttpClient();
@@ -59,8 +59,8 @@ namespace Papaya
                     decimal alturaCuadrada = altura * altura;
                     decimal rangoAlto = alturaCuadrada * Convert.ToDecimal(24.9);
                     decimal rangoBajo = alturaCuadrada * Convert.ToDecimal(18.5);
-                    lblIMC.Text = "Segun la escala del IMC, tu peso debe estar entre " + Convert.ToString(rangoBajo) + "Kg - " + Convert.ToString(rangoAlto) + " Kg";
-                    entryPesoObjetivo.Text = Convert.ToString(rangoAlto);
+                    lblIMC.Text = "Segun la escala del IMC, tu peso debe estar entre " + Convert.ToString(Decimal.Round(rangoBajo)) + "Kg - " + Convert.ToString(Decimal.Round(rangoAlto)) + " Kg";
+                    entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoAlto));
                 }
                 else
                 {
@@ -113,7 +113,7 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new Bienvenida());
+                    await Navigation.PushAsync(new ActividadFisica());
                 }
                 else
                 {

@@ -18,10 +18,6 @@ namespace Papaya
         public ActividadFisica()
         {
             InitializeComponent();
-            btnSedentario.Text = "Sedentario " + Environment.NewLine + "Nada de ejercicio";
-            btnLigero.Text = "Ligero " + Environment.NewLine + "Ejercicio 2-3 dias por semana";
-            btnModerado.Text = "Moderado " + Environment.NewLine + "Ejercicio 4-5 dias por semana";
-            btnAlto.Text = "Alto " + Environment.NewLine + "Ejercicio 6-7 dias por semana";
         }
 
         public class Meta
@@ -62,7 +58,7 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new Alimentos());
+                    await Navigation.PushAsync(new Bebidas());
                 }
                 else
                 {
@@ -98,7 +94,7 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new Alimentos());
+                    await Navigation.PushAsync(new Bebidas());
                 }
                 else
                 {
@@ -133,7 +129,7 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new Alimentos());
+                    await Navigation.PushAsync(new Bebidas());
                 }
                 else
                 {
@@ -168,13 +164,38 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new Alimentos());
+                    await Navigation.PushAsync(new Bebidas());
                 }
                 else
                 {
                     await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
                 }
             }
+        }
+
+        private void btnSedentario2_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Sedentario", "Nada de ejercicio", "OK");
+        }
+
+        private void btnLigero2_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Ligero", "Ejercicio 2-3 dias por semana", "OK");
+        }
+
+        private void btnModerado2_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Moderado", "Ejercicio 4-5 dias por semana", "OK");
+        }
+
+        private void btnAlto_Clicked_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlto2_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Alto", "Ejercicio 6-7 dias por semana", "OK");
         }
     }
 }

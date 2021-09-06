@@ -23,10 +23,6 @@
             <StackLayout Grid.Row="2" Margin="20, 10, 20, 10">
                 <ImageButton Source="mantener.jpg" CornerRadius="25" BackgroundColor="White" HeightRequest="130" x:Name="btnMantener" Clicked="btnMantener_Clicked" />
             </StackLayout>
-
-            <StackLayout Grid.Row="3" Margin="20, 10, 20, 10">
-                <ImageButton Source="ganar.jpg" CornerRadius="25" BackgroundColor="White" HeightRequest="130" x:Name="btnGanar" Clicked="btnGanar_Clicked" />
-            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

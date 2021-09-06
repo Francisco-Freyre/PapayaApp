@@ -59,7 +59,7 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new PesoObjetivo());
+                    await Navigation.PushAsync(new Alimentos());
                 }
                 else
                 {
@@ -105,7 +105,7 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new PesoObjetivo());
+                    await Navigation.PushAsync(new Alimentos());
                 }
                 else
                 {

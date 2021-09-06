@@ -61,7 +61,7 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new Bebidas());
+                    await Navigation.PushAsync(new Bienvenida());
                 }
                 else
                 {

@@ -10,6 +10,19 @@
                 <Entry Placeholder="Escribe aqui tu estatura" x:Name="EntryEstatura" Keyboard="Numeric" />
                 <Label Text="Peso actual" TextColor="Black" FontSize="Large" />
                 <Entry Placeholder="Escribe aqui tu peso actual" x:Name="EntryPeso" Keyboard="Numeric" />
+                <Label Text="¿Cual es tu sexo?" FontSize="Large" TextColor="Black"/>
+                <StackLayout Margin="10, 10, 10, 10">
+                    <Picker x:Name="PickerSexo" Title="Selecciona tu sexo" SelectedIndexChanged="PickerSexo_SelectedIndexChanged" TitleColor="Black">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}" >
+                                <x:String>Mujer</x:String>
+                                <x:String>Hombre</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+                <Label Text="Fecha de nacimiento" TextColor="Black" FontSize="Large" />
+                <DatePicker Date="01/01/2000" x:Name="fechaNacimiento"/>
                 <Button Text="Continuar" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" BackgroundColor="#FCB322" CornerRadius="15" TextColor="White" HeightRequest="60" />
             </StackLayout>
         </Grid>

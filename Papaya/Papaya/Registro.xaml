@@ -18,8 +18,7 @@
                 <StackLayout Grid.Row="1" Padding="30,20">
                     <Entry Placeholder="Nombre" PlaceholderColor="White" TextColor="White" x:Name="txtNombre" />
                     <Entry Placeholder="Apellido" PlaceholderColor="White" TextColor="White" x:Name="txtApellido" />
-                    <Entry Placeholder="Edad" PlaceholderColor="White" TextColor="White" x:Name="txtEdad" />
-                    <Entry Placeholder="Sexo" PlaceholderColor="White" TextColor="White" x:Name="txtSexo" />
+                    <Entry Placeholder="Estado" PlaceholderColor="White" TextColor="White" x:Name="txtEstado" />
                     <Entry Placeholder="Correo" PlaceholderColor="White" TextColor="White" x:Name="txtCorreo" />
                     <Entry Placeholder="Contraseña" PlaceholderColor="White" TextColor="White" x:Name="txtPassword" />
                     <Button Text="Crear usuario" BackgroundColor="#4ecdc4" CornerRadius="10" TextColor="White" x:Name="btnCrear" Clicked="btnCrear_Clicked" />

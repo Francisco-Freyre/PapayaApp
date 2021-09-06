@@ -10,9 +10,7 @@ namespace Papaya.Models
 
         public string apellido { get; set; }
 
-        public int edad { get; set; }
-
-        public string sexo { get; set; }
+        public string estado { get; set; }
 
         public string email { get; set; }
 

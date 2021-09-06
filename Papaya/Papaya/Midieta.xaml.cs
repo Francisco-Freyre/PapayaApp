@@ -20,43 +20,43 @@ namespace Papaya
         private async void btnLunes_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Dia());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Detail());
         }
 
         private async void btnMartes_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Dia());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Detail());
         }
 
         private async void btnMiercoles_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Dia());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Detail());
         }
 
         private async void btnJueves_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Dia());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Detail());
         }
 
         private async void btnViernes_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Dia());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Detail());
         }
 
         private async void btnSabado_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Dia());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Detail());
         }
 
         private async void btnDomingo_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Dia());
+            await App.MasterDet.Detail.Navigation.PushAsync(new Detail());
         }
     }
 }
