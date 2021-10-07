@@ -16,6 +16,7 @@ namespace Papaya
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Platillos : ContentPage
     {
+        public List<Respuesta> respuestas; 
         public Platillos()
         {
             InitializeComponent();
@@ -47,6 +48,8 @@ namespace Papaya
 
                 var resultado = JsonConvert.DeserializeObject<List<Respuesta>>(content);
 
+                respuestas = resultado;
+
                 listaPlatillos.ItemsSource = resultado;
             }
             else
@@ -60,6 +63,11 @@ namespace Papaya
             Respuesta seleccionado = e.SelectedItem as Respuesta;
             App.MasterDet.IsPresented = false;
             await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(seleccionado.id));
+        }
+
+        private void entryBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            listaPlatillos.ItemsSource = respuestas.Where(r => r.nombre.Contains(entryBuscar.Text));
         }
     }
 }

@@ -6,6 +6,7 @@
              Title="Platillos saludables" >
     <ContentPage.Content>
         <StackLayout Margin="20,20,20,20">
+            <Entry Keyboard="Default" x:Name="entryBuscar" TextColor="Black" PlaceholderColor="Black" Placeholder="Buscar platillo" TextChanged="entryBuscar_TextChanged" />
             <ListView x:Name="listaPlatillos" HasUnevenRows="True" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
