@@ -51,7 +51,9 @@ namespace Papaya
                 if (resultado.resultado)
                 {
                     Etiquetaimg.Source = "https://bithives.com/PapayaApp/" + resultado.img;
-                    lblNombre.Text = resultado.nombre;
+                    char del = '-';
+                    string[] desa = resultado.nombre.Split(del);
+                    lblNombre.Text = desa[0];
                     lblProcedimiento.Text = resultado.procedimiento;
                     lblTiempo.Text = "Tiempo de elaboracion: " + resultado.tiempo;
                     lblEnergia.Text = "Energia: " + resultado.energia;

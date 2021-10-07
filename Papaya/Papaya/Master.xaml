@@ -17,11 +17,11 @@
             </Grid.RowDefinitions>
             <Image Grid.Row="0" Source="userpic.png" WidthRequest="120" HeightRequest="120" Margin="0, 30, 0, 30" />
             <Label Grid.Row="1"  HorizontalOptions="Center" Padding="20" VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="Large" x:Name="LblNombre" HeightRequest="100" />
-            <Button Grid.Row="2" Text="Perfil" BackgroundColor="White" x:Name="btnPerfil" Clicked="btnPerfil_Clicked" />
-            <Button Grid.Row="3" Text="Platillos" BackgroundColor="White" x:Name="btnPlatillos" Clicked="btnPlatillos_Clicked" />
-            <Button Grid.Row="4" Text="Mi dieta" BackgroundColor="White" x:Name="btnDieta" Clicked="btnDieta_Clicked" />
-            <Button Grid.Row="5" Text="Ejercicios" BackgroundColor="White" x:Name="btnEjer" Clicked="btnEjer_Clicked" />
-            <Button Grid.Row="6" Text="Cerrar sesion" BackgroundColor="White" x:Name="btnCerrar" Clicked="btnCerrar_Clicked" />
+            <Button Grid.Row="2" Text="Perfil" BackgroundColor="White" TextColor="Black" x:Name="btnPerfil" Clicked="btnPerfil_Clicked" />
+            <Button Grid.Row="3" Text="Platillos" BackgroundColor="White" TextColor="Black" x:Name="btnPlatillos" Clicked="btnPlatillos_Clicked" />
+            <Button Grid.Row="4" Text="Mi dieta" BackgroundColor="White" TextColor="Black" x:Name="btnDieta" Clicked="btnDieta_Clicked" />
+            <Button Grid.Row="5" Text="Ejercicios" BackgroundColor="White" TextColor="Black" x:Name="btnEjer" Clicked="btnEjer_Clicked" />
+            <Button Grid.Row="6" Text="Cerrar sesion" BackgroundColor="White" TextColor="Black" x:Name="btnCerrar" Clicked="btnCerrar_Clicked" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

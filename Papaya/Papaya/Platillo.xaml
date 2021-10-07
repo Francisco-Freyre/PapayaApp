@@ -24,17 +24,17 @@
                     <StackLayout x:Name="stackIngredientes" Grid.Row="1">
                         <Label TextColor="Black" Text="Ingredientes" FontSize="Large" HorizontalOptions="Center" />
                     </StackLayout>
-                    <StackLayout Grid.Row="2" Margin="20">
+                    <StackLayout Grid.Row="2" Margin="15">
                         <Label TextColor="Black" Text="Procedimiento" FontSize="Large" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Margin="20" x:Name="lblProcedimiento" FontSize="Medium" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Margin="15" x:Name="lblProcedimiento" FontSize="Medium" HorizontalOptions="Start" />
                     </StackLayout>
-                    <Label Grid.Row="3" Margin="20" x:Name="lblTiempo" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" />
-                    <StackLayout Grid.Row="4" Margin="20">
+                    <Label Grid.Row="3" Margin="10" x:Name="lblTiempo" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" />
+                    <StackLayout Grid.Row="4" Margin="15">
                         <Label TextColor="Black" Text="Aporte Nutricional" FontSize="Large" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Margin="20" x:Name="lblEnergia" FontSize="Medium" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Margin="20" x:Name="lblProteinas" FontSize="Medium" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Margin="20" x:Name="lblCarbo" FontSize="Medium" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Margin="20" x:Name="lblGrasas" FontSize="Medium" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Margin="15" x:Name="lblEnergia" FontSize="Medium" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Margin="15" x:Name="lblProteinas" FontSize="Medium" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Margin="15" x:Name="lblCarbo" FontSize="Medium" HorizontalOptions="Start" />
+                        <Label TextColor="Black" Margin="15" x:Name="lblGrasas" FontSize="Medium" HorizontalOptions="Start" />
                     </StackLayout>
                 </Grid>
             </Grid>

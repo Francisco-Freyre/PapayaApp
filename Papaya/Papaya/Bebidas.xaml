@@ -18,7 +18,7 @@
                         <RowDefinition Height="100"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Label Text="¿Consumes bebidas alcohólicas?" HorizontalOptions="Center" FontSize="Large" Grid.Row="0" />
+                    <Label Text="¿Consumes bebidas alcohólicas?" TextColor="Black" HorizontalOptions="Center" FontSize="Large" Grid.Row="0" />
 
                     <Grid Grid.Row="1" Margin="10, 10, 10, 10" RowSpacing="10" ColumnSpacing="10" HorizontalOptions="Center">
                         <Grid.RowDefinitions>
@@ -41,7 +41,7 @@
                         <RowDefinition Height="70"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Label Text="¿Con que frecuencia?" HorizontalOptions="Center" FontSize="Large" Grid.Row="0" />
+                    <Label Text="¿Con que frecuencia?" TextColor="Black" HorizontalOptions="Center" FontSize="Large" Grid.Row="0" />
 
                     <StackLayout Grid.Row="1" Margin="10, 10, 10, 10">
                         <Picker x:Name="PickerFrecuencia" SelectedIndexChanged="PickerFrecuencia_SelectedIndexChanged" Title="Selecciona una frecuencia" TitleColor="Black">
@@ -63,7 +63,7 @@
                         <RowDefinition Height="700"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Label Text="¿Que consumes?" HorizontalOptions="Center" FontSize="Large" Grid.Row="0" />
+                    <Label Text="¿Que consumes?" TextColor="Black" HorizontalOptions="Center" FontSize="Large" Grid.Row="0" />
 
                     <Grid Grid.Row="1" Margin="10, 10, 10, 10" RowSpacing="10" ColumnSpacing="10" HorizontalOptions="Center">
                         <Grid.RowDefinitions>
@@ -79,19 +79,19 @@
                             <ColumnDefinition Width="100"></ColumnDefinition>
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Button Text="Cerveza" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnCerveza" Clicked="btnCerveza_Clicked" CornerRadius="35" Grid.Row="0" Grid.Column="0" />
-                        <Button Text="Wiski" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnWiski" Clicked="btnWiski_Clicked" CornerRadius="35" Grid.Row="0" Grid.Column="1"/>
-                        <Button Text="Tequila" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnTequila" Clicked="btnTequila_Clicked" CornerRadius="35" Grid.Row="0" Grid.Column="2"/>
-                        <Button Text="Ron" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnRon" Clicked="btnRon_Clicked" CornerRadius="35" Grid.Row="1" Grid.Column="0"/>
-                        <Button Text="Vino" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnVino" Clicked="btnVino_Clicked" CornerRadius="35" Grid.Row="1" Grid.Column="1"/>
-                        <Button Text="Mezcal" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnMezcal" Clicked="btnMezcal_Clicked" CornerRadius="35" Grid.Row="1" Grid.Column="2"/>
-                        <Button Text="Sidra" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnSidra" Clicked="btnSidra_Clicked" CornerRadius="35" Grid.Row="2" Grid.Column="0"/>
-                        <Button Text="Vodka" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnVodka" Clicked="btnVodka_Clicked" CornerRadius="35" Grid.Row="2" Grid.Column="1"/>
-                        <Button Text="Pulque" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnPulque" Clicked="btnPulque_Clicked" CornerRadius="35" Grid.Row="2" Grid.Column="2"/>
-                        <Button Text="Ginebra" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnGinebra" Clicked="btnGinebra_Clicked" CornerRadius="35" Grid.Row="3" Grid.Column="0"/>
-                        <Button Text="Brandy" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnBrandy" Clicked="btnBrandy_Clicked" CornerRadius="35" Grid.Row="3" Grid.Column="1"/>
-                        <Button Text="Champagme" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnChamp" Clicked="btnChamp_Clicked" CornerRadius="35" Grid.Row="3" Grid.Column="2"/>
-                        <Button Text="Bebidas Preparadas" BackgroundColor="White" BorderColor="White" BorderWidth="5" x:Name="btnPreparadas" Clicked="btnPreparadas_Clicked" CornerRadius="35" Grid.Row="4" Grid.Column="1"/>
+                        <Button Text="Cerveza" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnCerveza" Clicked="btnCerveza_Clicked" CornerRadius="35" Grid.Row="0" Grid.Column="0" />
+                        <Button Text="Wiski" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnWiski" Clicked="btnWiski_Clicked" CornerRadius="35" Grid.Row="0" Grid.Column="1"/>
+                        <Button Text="Tequila" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnTequila" Clicked="btnTequila_Clicked" CornerRadius="35" Grid.Row="0" Grid.Column="2"/>
+                        <Button Text="Ron" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnRon" Clicked="btnRon_Clicked" CornerRadius="35" Grid.Row="1" Grid.Column="0"/>
+                        <Button Text="Vino" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnVino" Clicked="btnVino_Clicked" CornerRadius="35" Grid.Row="1" Grid.Column="1"/>
+                        <Button Text="Mezcal" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnMezcal" Clicked="btnMezcal_Clicked" CornerRadius="35" Grid.Row="1" Grid.Column="2"/>
+                        <Button Text="Sidra" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnSidra" Clicked="btnSidra_Clicked" CornerRadius="35" Grid.Row="2" Grid.Column="0"/>
+                        <Button Text="Vodka" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnVodka" Clicked="btnVodka_Clicked" CornerRadius="35" Grid.Row="2" Grid.Column="1"/>
+                        <Button Text="Pulque" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnPulque" Clicked="btnPulque_Clicked" CornerRadius="35" Grid.Row="2" Grid.Column="2"/>
+                        <Button Text="Ginebra" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnGinebra" Clicked="btnGinebra_Clicked" CornerRadius="35" Grid.Row="3" Grid.Column="0"/>
+                        <Button Text="Brandy" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnBrandy" Clicked="btnBrandy_Clicked" CornerRadius="35" Grid.Row="3" Grid.Column="1"/>
+                        <Button Text="Champagme" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnChamp" Clicked="btnChamp_Clicked" CornerRadius="35" Grid.Row="3" Grid.Column="2"/>
+                        <Button Text="Bebidas Preparadas" BackgroundColor="White" TextColor="Black" BorderColor="White" BorderWidth="5" x:Name="btnPreparadas" Clicked="btnPreparadas_Clicked" CornerRadius="35" Grid.Row="4" Grid.Column="1"/>
                         <Button Text="Continuar" TextColor="White" BackgroundColor="#FCB322" HeightRequest="70" CornerRadius="35" Grid.ColumnSpan="3" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" Grid.Row="5"/>
                     </Grid>
                 </Grid>

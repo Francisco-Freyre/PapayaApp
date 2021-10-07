@@ -2,17 +2,87 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Papaya.Datos"
-             Title="Datos">
+             Title="Datos"
+             BackgroundColor="White">
     <ContentPage.Content>
         <Grid BackgroundColor="White">
             <StackLayout Margin="20, 20, 20, 20">
                 <Label Text="Estatura" TextColor="Black" FontSize="Large" />
-                <Entry Placeholder="Escribe aqui tu estatura" x:Name="EntryEstatura" Keyboard="Numeric" />
+                <StackLayout Margin="10, 10, 10, 10">
+                    <Picker x:Name="PickerEstatura" Title="Selecciona tu estatura" TextColor="Black">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}" >
+                                <x:String>1.40 Mts</x:String>
+                                <x:String>1.41 Mts</x:String>
+                                <x:String>1.42 Mts</x:String>
+                                <x:String>1.43 Mts</x:String>
+                                <x:String>1.44 Mts</x:String>
+                                <x:String>1.45 Mts</x:String>
+                                <x:String>1.46 Mts</x:String>
+                                <x:String>1.47 Mts</x:String>
+                                <x:String>1.48 Mts</x:String>
+                                <x:String>1.49 Mts</x:String>
+                                <x:String>1.50 Mts</x:String>
+                                <x:String>1.51 Mts</x:String>
+                                <x:String>1.52 Mts</x:String>
+                                <x:String>1.53 Mts</x:String>
+                                <x:String>1.54 Mts</x:String>
+                                <x:String>1.55 Mts</x:String>
+                                <x:String>1.56 Mts</x:String>
+                                <x:String>1.57 Mts</x:String>
+                                <x:String>1.58 Mts</x:String>
+                                <x:String>1.59 Mts</x:String>
+                                <x:String>1.60 Mts</x:String>
+                                <x:String>1.61 Mts</x:String>
+                                <x:String>1.62 Mts</x:String>
+                                <x:String>1.63 Mts</x:String>
+                                <x:String>1.64 Mts</x:String>
+                                <x:String>1.65 Mts</x:String>
+                                <x:String>1.66 Mts</x:String>
+                                <x:String>1.67 Mts</x:String>
+                                <x:String>1.68 Mts</x:String>
+                                <x:String>1.69 Mts</x:String>
+                                <x:String>1.70 Mts</x:String>
+                                <x:String>1.71 Mts</x:String>
+                                <x:String>1.72 Mts</x:String>
+                                <x:String>1.73 Mts</x:String>
+                                <x:String>1.74 Mts</x:String>
+                                <x:String>1.75 Mts</x:String>
+                                <x:String>1.76 Mts</x:String>
+                                <x:String>1.77 Mts</x:String>
+                                <x:String>1.78 Mts</x:String>
+                                <x:String>1.79 Mts</x:String>
+                                <x:String>1.80 Mts</x:String>
+                                <x:String>1.81 Mts</x:String>
+                                <x:String>1.82 Mts</x:String>
+                                <x:String>1.83 Mts</x:String>
+                                <x:String>1.84 Mts</x:String>
+                                <x:String>1.85 Mts</x:String>
+                                <x:String>1.86 Mts</x:String>
+                                <x:String>1.87 Mts</x:String>
+                                <x:String>1.88 Mts</x:String>
+                                <x:String>1.89 Mts</x:String>
+                                <x:String>1.90 Mts</x:String>
+                                <x:String>1.91 Mts</x:String>
+                                <x:String>1.92 Mts</x:String>
+                                <x:String>1.93 Mts</x:String>
+                                <x:String>1.94 Mts</x:String>
+                                <x:String>1.95 Mts</x:String>
+                                <x:String>1.96 Mts</x:String>
+                                <x:String>1.97 Mts</x:String>
+                                <x:String>1.98 Mts</x:String>
+                                <x:String>1.99 Mts</x:String>
+                                <x:String>2.00 Mts</x:String>
+                                <x:String>2.01 Mts</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
                 <Label Text="Peso actual" TextColor="Black" FontSize="Large" />
-                <Entry Placeholder="Escribe aqui tu peso actual" x:Name="EntryPeso" Keyboard="Numeric" />
+                <Entry Placeholder="Escribe aqui tu peso en Kg" TextColor="Black" x:Name="EntryPeso" Keyboard="Numeric" PlaceholderColor="Black"/>
                 <Label Text="¿Cual es tu sexo?" FontSize="Large" TextColor="Black"/>
                 <StackLayout Margin="10, 10, 10, 10">
-                    <Picker x:Name="PickerSexo" Title="Selecciona tu sexo" SelectedIndexChanged="PickerSexo_SelectedIndexChanged" TitleColor="Black">
+                    <Picker x:Name="PickerSexo" Title="Selecciona tu sexo" TextColor="Black" SelectedIndexChanged="PickerSexo_SelectedIndexChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}" >
                                 <x:String>Mujer</x:String>
@@ -22,7 +92,7 @@
                     </Picker>
                 </StackLayout>
                 <Label Text="Fecha de nacimiento" TextColor="Black" FontSize="Large" />
-                <DatePicker Date="01/01/2000" x:Name="fechaNacimiento"/>
+                <DatePicker Date="01/01/2000" TextColor="Black" x:Name="fechaNacimiento"/>
                 <Button Text="Continuar" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" BackgroundColor="#FCB322" CornerRadius="15" TextColor="White" HeightRequest="60" />
             </StackLayout>
         </Grid>

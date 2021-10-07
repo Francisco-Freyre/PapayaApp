@@ -16,11 +16,50 @@
                 <Image Grid.Row="0" Source="logo.png" WidthRequest="100" HeightRequest="130" Margin="0, 50, 0, 50" />
 
                 <StackLayout Grid.Row="1" Padding="30,20">
-                    <Entry Placeholder="Nombre" PlaceholderColor="White" TextColor="White" x:Name="txtNombre" />
+                    <Entry Placeholder="Nombre" PlaceholderColor="White" TextColor="White" x:Name="txtNombre" Keyboard="Text"/>
                     <Entry Placeholder="Apellido" PlaceholderColor="White" TextColor="White" x:Name="txtApellido" />
-                    <Entry Placeholder="Estado" PlaceholderColor="White" TextColor="White" x:Name="txtEstado" />
+                    <StackLayout Margin="10, 10, 10, 10">
+                        <Picker x:Name="PickerEstado" Title="Selecciona el estado en el que vives" TitleColor="White" TextColor="White">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}" >
+                                    <x:String>Aguascalientes</x:String>
+                                    <x:String>Baja California</x:String>
+                                    <x:String>Baja California Sur</x:String>
+                                    <x:String>Campeche</x:String>
+                                    <x:String>Cd. de México</x:String>
+                                    <x:String>Chiapas</x:String>
+                                    <x:String>Chihuahua</x:String>
+                                    <x:String>Coahuila de Zaragoza</x:String>
+                                    <x:String>Colima</x:String>
+                                    <x:String>Durango</x:String>
+                                    <x:String>Estado de México</x:String>
+                                    <x:String>Guanajuato</x:String>
+                                    <x:String>Guerrero</x:String>
+                                    <x:String>Hidalgo</x:String>
+                                    <x:String>Jalisco</x:String>
+                                    <x:String>Michoacán de Ocampo</x:String>
+                                    <x:String>Morelos</x:String>
+                                    <x:String>Nayarit</x:String>
+                                    <x:String>Nuevo León</x:String>
+                                    <x:String>Oaxaca</x:String>
+                                    <x:String>Puebla</x:String>
+                                    <x:String>Querétaro</x:String>
+                                    <x:String>Quintana Roo</x:String>
+                                    <x:String>San Luis Potosí</x:String>
+                                    <x:String>Sinaloa</x:String>
+                                    <x:String>Sonora</x:String>
+                                    <x:String>Tabasco</x:String>
+                                    <x:String>Tamaulipas</x:String>
+                                    <x:String>Tlaxcala</x:String>
+                                    <x:String>Veracruz de Ignacio de la Llave</x:String>
+                                    <x:String>Yucatán</x:String>
+                                    <x:String>Zacatecas</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
                     <Entry Placeholder="Correo" PlaceholderColor="White" TextColor="White" x:Name="txtCorreo" />
-                    <Entry Placeholder="Contraseña" PlaceholderColor="White" TextColor="White" x:Name="txtPassword" />
+                    <Entry Placeholder="Contraseña" PlaceholderColor="White" TextColor="White" x:Name="txtPassword" IsPassword="True" />
                     <Button Text="Crear usuario" BackgroundColor="#4ecdc4" CornerRadius="10" TextColor="White" x:Name="btnCrear" Clicked="btnCrear_Clicked" />
                 </StackLayout>
             </Grid>

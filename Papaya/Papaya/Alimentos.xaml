@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Papaya.Alimentos"
-             Title="Alimentos">
+             Title="Alimentos"
+             BackgroundColor="White">
     <ContentPage.Content>
         <ScrollView VerticalOptions="FillAndExpand" >
             <Grid Margin="10,10,10,10" HorizontalOptions="Center">

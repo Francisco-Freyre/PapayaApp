@@ -44,10 +44,10 @@ namespace Papaya
             {
                 idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
                 peso = Convert.ToDecimal(EntryPeso.Text),
-                estatura = Convert.ToDecimal(EntryEstatura.Text),
+                estatura = Convert.ToDecimal(Convert.ToString(PickerEstatura.SelectedItem).Replace(" Mts", "")),
                 edad = DateTime.Today.AddTicks(-fechaNacimiento.Date.Ticks).Year - 1,
                 sexo = Convert.ToString(PickerSexo.SelectedItem)
-        };
+            };
 
             Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php");
 

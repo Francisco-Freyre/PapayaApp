@@ -15,12 +15,20 @@ namespace Papaya
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Calorias : ContentPage
     {
+        int kcalorias = 0;
         
         public Calorias()
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             kcal();
+        }
+
+        public class Dieta
+        {
+            public int idCliente { get; set; }
+
+            public int kcal { get; set; }
         }
 
         public class Respuesta
@@ -68,22 +76,23 @@ namespace Papaya
 
                         if (resultado.actividad == "Sedentario")
                         {
-                            tmb = tmb * Convert.ToDecimal(1.2);
+                            tmb = tmb * Convert.ToDecimal(1.1);
                         }
                         else if (resultado.actividad == "Ligero")
                         {
-                            tmb = tmb * Convert.ToDecimal(1.3);
+                            tmb = tmb * Convert.ToDecimal(1.2);
                         }
                         else if (resultado.actividad == "Moderado")
                         {
-                            tmb = tmb * Convert.ToDecimal(1.4);
+                            tmb = tmb * Convert.ToDecimal(1.3);
                         }
                         else if (resultado.actividad == "Alto")
                         {
-                            tmb = tmb * Convert.ToDecimal(1.5);
+                            tmb = tmb * Convert.ToDecimal(1.4);
                         }
 
                         lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(Decimal.Round(tmb)) + " kcal";
+                        kcalorias = Convert.ToInt32(Decimal.Round(tmb));
                     }
                     else
                     {
@@ -91,22 +100,23 @@ namespace Papaya
 
                         if (resultado.actividad == "Sedentario")
                         {
-                            tmb = tmb * Convert.ToDecimal(1.2);
+                            tmb = tmb * Convert.ToDecimal(1.1);
                         }
                         else if (resultado.actividad == "Ligero")
                         {
-                            tmb = tmb * Convert.ToDecimal(1.3);
+                            tmb = tmb * Convert.ToDecimal(1.2);
                         }
                         else if (resultado.actividad == "Moderado")
                         {
-                            tmb = tmb * Convert.ToDecimal(1.4);
+                            tmb = tmb * Convert.ToDecimal(1.3);
                         }
                         else if (resultado.actividad == "Alto")
                         {
-                            tmb = tmb * Convert.ToDecimal(1.5);
+                            tmb = tmb * Convert.ToDecimal(1.4);
                         }
 
                         lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(Decimal.Round(tmb)) + " kcal";
+                        kcalorias = Convert.ToInt32(Decimal.Round(tmb));
                     }
                 }
                 else
@@ -122,7 +132,38 @@ namespace Papaya
 
         private async void btnSiguiente_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Empezar());
+            Dieta meta = new Dieta
+            {
+                idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                kcal = kcalorias
+            };
+
+            Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php");
+
+            var client = new HttpClient();
+
+            var json = JsonConvert.SerializeObject(meta);
+
+            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(RequestUri, contentJson);
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+
+                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                if (resultado.resultado)
+                {
+                    await Navigation.PushAsync(new Empezar());
+                }
+                else
+                {
+                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                }
+            }
+            
         }
     }
 }

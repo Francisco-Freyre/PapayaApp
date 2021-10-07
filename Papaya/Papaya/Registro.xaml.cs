@@ -30,50 +30,55 @@ namespace Papaya
 
         private async void btnCrear_Clicked(object sender, EventArgs e)
         {
-            Regi registro = new Regi
+            if (txtCorreo.Text == "" || txtPassword.Text == "")
             {
-                nombre = txtNombre.Text,
-                apellido = txtApellido.Text,
-                estado = txtEstado.Text,
-                email = txtCorreo.Text,
-                password = txtPassword.Text
-            };
-
-            Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/registro.php");
-
-            var client = new HttpClient();
-
-            var json = JsonConvert.SerializeObject(registro);
-
-            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(RequestUri, contentJson);
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-
-                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                if (resultado.resultado == "exito")
-                {
-                    txtNombre.Text = "";
-                    txtApellido.Text = "";
-                    txtEstado.Text = "";
-                    txtCorreo.Text = "";
-                    txtPassword.Text = "";
-                    await DisplayAlert("Mensaje", resultado.msg, "OK");
-                }
-                else
-                {
-                    await DisplayAlert("Mensaje", resultado.msg, "OK");
-                }
+                await DisplayAlert("Mensaje", "Correo o contraseña vacios", "OK");
             }
             else
             {
-                await DisplayAlert("Mensaje", "La conexion con el servidor fallo, intenta de nuevo", "OK");
-            }
+                Regi registro = new Regi
+                {
+                    nombre = txtNombre.Text,
+                    apellido = txtApellido.Text,
+                    estado = Convert.ToString(PickerEstado.SelectedItem),
+                    email = txtCorreo.Text,
+                    password = txtPassword.Text
+                };
 
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/registro.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(registro);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == "exito")
+                    {
+                        txtNombre.Text = "";
+                        txtApellido.Text = "";
+                        txtCorreo.Text = "";
+                        txtPassword.Text = "";
+                        await DisplayAlert("Mensaje", resultado.msg, "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", resultado.msg, "OK");
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Mensaje", "La conexion con el servidor fallo, intenta de nuevo", "OK");
+                }
+            }
         }
     }
 }

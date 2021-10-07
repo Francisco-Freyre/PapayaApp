@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Papaya.PesoObjetivo"
-             Title="Peso Objetivo">
+             Title="Peso Objetivo"
+             BackgroundColor="White">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -34,9 +35,9 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Peso Objetivo" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
-                <Entry Text="" x:Name="entryPesoObjetivo" Keyboard="Numeric" WidthRequest="100" Grid.Row="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="End" FontSize="Medium" />
+                <Entry Text="" TextColor="Black" x:Name="entryPesoObjetivo" Keyboard="Numeric" WidthRequest="100" Grid.Row="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="End" FontSize="Medium" />
                 <Label Text="Kg" TextColor="Black" VerticalTextAlignment="End" FontSize="Medium" HorizontalTextAlignment="Start" Grid.Column="1" Grid.Row="1" />
-                <Label Text="" x:Name="lblIMC" Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Start" FontSize="Medium" />
+                <Label Text="" TextColor="Black" x:Name="lblIMC" Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Start" FontSize="Medium" />
                 <Button Text="Continuar" Grid.ColumnSpan="2" TextColor="White" BackgroundColor="#FCB322" WidthRequest="350" HorizontalOptions="Center" CornerRadius="25" Grid.Row="3" x:Name="btnSiguiente" Clicked="btnSiguiente_Clicked" />
             </Grid>
         </Grid>
