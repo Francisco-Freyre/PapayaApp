@@ -122,5 +122,19 @@ namespace Papaya
             }
                     
         }
+
+        private void btnSubir_Clicked(object sender, EventArgs e)
+        {
+            decimal valor = Convert.ToDecimal(entryPesoObjetivo.Text);
+            valor ++;
+            entryPesoObjetivo.Text = Convert.ToString(valor);
+        }
+
+        private void btnBajar_Clicked(object sender, EventArgs e)
+        {
+            decimal valor = Convert.ToDecimal(entryPesoObjetivo.Text);
+            valor --;
+            entryPesoObjetivo.Text = Convert.ToString(valor);
+        }
     }
 }

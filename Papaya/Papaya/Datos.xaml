@@ -79,7 +79,154 @@
                     </Picker>
                 </StackLayout>
                 <Label Text="Peso actual" TextColor="Black" FontSize="Large" />
-                <Entry Placeholder="Escribe aqui tu peso en Kg" TextColor="Black" x:Name="EntryPeso" Keyboard="Numeric" PlaceholderColor="Black"/>
+                <StackLayout Margin="10, 10, 10, 10">
+                    <Picker x:Name="PickerPeso" Title="Selecciona tu peso" TextColor="Black">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}" >
+                                <x:String>30 Kg</x:String>
+                                <x:String>30.5 Kg</x:String>
+                                <x:String>31 Kg</x:String>
+                                <x:String>31.5 Kg</x:String>
+                                <x:String>32 Kg</x:String>
+                                <x:String>32.5 Kg</x:String>
+                                <x:String>33 Kg</x:String>
+                                <x:String>33.5 Kg</x:String>
+                                <x:String>34 Kg</x:String>
+                                <x:String>34.5 Kg</x:String>
+                                <x:String>35 Kg</x:String>
+                                <x:String>35.5 Kg</x:String>
+                                <x:String>36 Kg</x:String>
+                                <x:String>36.5 Kg</x:String>
+                                <x:String>37 Kg</x:String>
+                                <x:String>37.5 Kg</x:String>
+                                <x:String>38 Kg</x:String>
+                                <x:String>38.5 Kg</x:String>
+                                <x:String>39 Kg</x:String>
+                                <x:String>39.5 Kg</x:String>
+                                <x:String>40 Kg</x:String>
+                                <x:String>40.5 Kg</x:String>
+                                <x:String>41 Kg</x:String>
+                                <x:String>41.5 Kg</x:String>
+                                <x:String>42 Kg</x:String>
+                                <x:String>42.5 Kg</x:String>
+                                <x:String>43 Kg</x:String>
+                                <x:String>43.5 Kg</x:String>
+                                <x:String>44 Kg</x:String>
+                                <x:String>44.5 Kg</x:String>
+                                <x:String>45 Kg</x:String>
+                                <x:String>45.5 Kg</x:String>
+                                <x:String>46 Kg</x:String>
+                                <x:String>46.5 Kg</x:String>
+                                <x:String>47 Kg</x:String>
+                                <x:String>47.5 Kg</x:String>
+                                <x:String>48 Kg</x:String>
+                                <x:String>48.5 Kg</x:String>
+                                <x:String>49 Kg</x:String>
+                                <x:String>49.5 Kg</x:String>
+                                <x:String>50 Kg</x:String>
+                                <x:String>50.5 Kg</x:String>
+                                <x:String>51 Kg</x:String>
+                                <x:String>51.5 Kg</x:String>
+                                <x:String>52 Kg</x:String>
+                                <x:String>52.5 Kg</x:String>
+                                <x:String>53 Kg</x:String>
+                                <x:String>53.5 Kg</x:String>
+                                <x:String>54 Kg</x:String>
+                                <x:String>54.5 Kg</x:String>
+                                <x:String>55 Kg</x:String>
+                                <x:String>55.5 Kg</x:String>
+                                <x:String>56 Kg</x:String>
+                                <x:String>56.5 Kg</x:String>
+                                <x:String>57 Kg</x:String>
+                                <x:String>57.5 Kg</x:String>
+                                <x:String>58 Kg</x:String>
+                                <x:String>58.5 Kg</x:String>
+                                <x:String>59 Kg</x:String>
+                                <x:String>59.5 Kg</x:String>
+                                <x:String>60 Kg</x:String>
+                                <x:String>60.5 Kg</x:String>
+                                <x:String>61 Kg</x:String>
+                                <x:String>61.5 Kg</x:String>
+                                <x:String>62 Kg</x:String>
+                                <x:String>62.5 Kg</x:String>
+                                <x:String>63 Kg</x:String>
+                                <x:String>63.5 Kg</x:String>
+                                <x:String>64 Kg</x:String>
+                                <x:String>64.5 Kg</x:String>
+                                <x:String>65 Kg</x:String>
+                                <x:String>65.5 Kg</x:String>
+                                <x:String>66 Kg</x:String>
+                                <x:String>66.5 Kg</x:String>
+                                <x:String>67 Kg</x:String>
+                                <x:String>67.5 Kg</x:String>
+                                <x:String>68 Kg</x:String>
+                                <x:String>68.5 Kg</x:String>
+                                <x:String>69 Kg</x:String>
+                                <x:String>69.5 Kg</x:String>
+                                <x:String>70 Kg</x:String>
+                                <x:String>70.5 Kg</x:String>
+                                <x:String>71 Kg</x:String>
+                                <x:String>71.5 Kg</x:String>
+                                <x:String>72 Kg</x:String>
+                                <x:String>72.5 Kg</x:String>
+                                <x:String>73 Kg</x:String>
+                                <x:String>73.5 Kg</x:String>
+                                <x:String>74 Kg</x:String>
+                                <x:String>74.5 Kg</x:String>
+                                <x:String>75 Kg</x:String>
+                                <x:String>75.5 Kg</x:String>
+                                <x:String>76 Kg</x:String>
+                                <x:String>76.5 Kg</x:String>
+                                <x:String>77 Kg</x:String>
+                                <x:String>77.5 Kg</x:String>
+                                <x:String>78 Kg</x:String>
+                                <x:String>78.5 Kg</x:String>
+                                <x:String>79 Kg</x:String>
+                                <x:String>79.5 Kg</x:String>
+                                <x:String>80 Kg</x:String>
+                                <x:String>80.5 Kg</x:String>
+                                <x:String>81 Kg</x:String>
+                                <x:String>81.5 Kg</x:String>
+                                <x:String>82 Kg</x:String>
+                                <x:String>82.5 Kg</x:String>
+                                <x:String>83 Kg</x:String>
+                                <x:String>83.5 Kg</x:String>
+                                <x:String>84 Kg</x:String>
+                                <x:String>84.5 Kg</x:String>
+                                <x:String>85 Kg</x:String>
+                                <x:String>85.5 Kg</x:String>
+                                <x:String>86 Kg</x:String>
+                                <x:String>86.5 Kg</x:String>
+                                <x:String>87 Kg</x:String>
+                                <x:String>87.5 Kg</x:String>
+                                <x:String>88 Kg</x:String>
+                                <x:String>88.5 Kg</x:String>
+                                <x:String>89 Kg</x:String>
+                                <x:String>89.5 Kg</x:String>
+                                <x:String>90 Kg</x:String>
+                                <x:String>90.5 Kg</x:String>
+                                <x:String>91 Kg</x:String>
+                                <x:String>91.5 Kg</x:String>
+                                <x:String>92 Kg</x:String>
+                                <x:String>92.5 Kg</x:String>
+                                <x:String>93 Kg</x:String>
+                                <x:String>93.5 Kg</x:String>
+                                <x:String>94 Kg</x:String>
+                                <x:String>94.5 Kg</x:String>
+                                <x:String>95 Kg</x:String>
+                                <x:String>95.5 Kg</x:String>
+                                <x:String>96 Kg</x:String>
+                                <x:String>96.5 Kg</x:String>
+                                <x:String>97 Kg</x:String>
+                                <x:String>97.5 Kg</x:String>
+                                <x:String>98 Kg</x:String>
+                                <x:String>98.5 Kg</x:String>
+                                <x:String>99 Kg</x:String>
+                                <x:String>99.5 Kg</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
                 <Label Text="¿Cual es tu sexo?" FontSize="Large" TextColor="Black"/>
                 <StackLayout Margin="10, 10, 10, 10">
                     <Picker x:Name="PickerSexo" Title="Selecciona tu sexo" TextColor="Black" SelectedIndexChanged="PickerSexo_SelectedIndexChanged">

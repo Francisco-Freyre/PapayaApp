@@ -24,21 +24,25 @@
             <Grid Grid.Row="1" Margin="10, 10 , 10, 10" HorizontalOptions="Center" RowSpacing="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
                     <RowDefinition Height="60"></RowDefinition>
                     <RowDefinition Height="50"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="175"></ColumnDefinition>
-                    <ColumnDefinition Width="175"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Text="Peso Objetivo" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
-                <Entry Text="" TextColor="Black" x:Name="entryPesoObjetivo" Keyboard="Numeric" WidthRequest="100" Grid.Row="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="End" FontSize="Medium" />
-                <Label Text="Kg" TextColor="Black" VerticalTextAlignment="End" FontSize="Medium" HorizontalTextAlignment="Start" Grid.Column="1" Grid.Row="1" />
-                <Label Text="" TextColor="Black" x:Name="lblIMC" Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Start" FontSize="Medium" />
-                <Button Text="Continuar" Grid.ColumnSpan="2" TextColor="White" BackgroundColor="#FCB322" WidthRequest="350" HorizontalOptions="Center" CornerRadius="25" Grid.Row="3" x:Name="btnSiguiente" Clicked="btnSiguiente_Clicked" />
+                <Label Text="Peso Objetivo" Grid.Row="0" Grid.ColumnSpan="4" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
+                <ImageButton Source="flechaarriba.png" Grid.Column="0" Grid.Row="1" BackgroundColor="White" x:Name="btnSubir" Clicked="btnSubir_Clicked"/>
+                <ImageButton Source="flechaabajo.png" Grid.Column="1" Grid.Row="1" BackgroundColor="White" x:Name="btnBajar" Clicked="btnBajar_Clicked"/>
+                <Entry Text="" TextColor="Black" x:Name="entryPesoObjetivo" Keyboard="Numeric" WidthRequest="100" Grid.Row="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="End" FontSize="Medium" />
+                <Label Text="Kg" TextColor="Black" VerticalTextAlignment="End" FontSize="Medium" HorizontalTextAlignment="Start" Grid.Column="3" Grid.Row="1" />
+                <Label Text="" TextColor="Black" x:Name="lblIMC" Grid.Row="2" Grid.ColumnSpan="4" HorizontalOptions="Start" FontSize="Medium" />
+                <Button Text="Continuar" Grid.ColumnSpan="4" TextColor="White" BackgroundColor="#FCB322" WidthRequest="350" HorizontalOptions="Center" CornerRadius="25" Grid.Row="3" x:Name="btnSiguiente" Clicked="btnSiguiente_Clicked" />
             </Grid>
         </Grid>
     </ContentPage.Content>

@@ -43,7 +43,7 @@ namespace Papaya
             Meta meta = new Meta
             {
                 idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
-                peso = Convert.ToDecimal(EntryPeso.Text),
+                peso = Convert.ToDecimal(Convert.ToString(PickerPeso.SelectedItem).Replace(" Kg", "")),
                 estatura = Convert.ToDecimal(Convert.ToString(PickerEstatura.SelectedItem).Replace(" Mts", "")),
                 edad = DateTime.Today.AddTicks(-fechaNacimiento.Date.Ticks).Year - 1,
                 sexo = Convert.ToString(PickerSexo.SelectedItem)
