@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              x:Class="Papaya.Platillos"
              BackgroundColor="White"
              Title="Platillos saludables" >
@@ -11,21 +12,26 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                    <RowDefinition Height="*"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.RowSpan="2" Source="{Binding img}" 
-                                       Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
-                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding nombre}" VerticalOptions="End" TextColor="Black" FontSize="Medium" />
-                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding energia}" VerticalOptions="End" />
-                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding id}" VerticalOptions="End" IsVisible="false" />
-                            </Grid>
+                            <material:MaterialCard Grid.Row="1" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <ffimageloading:CachedImage Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center"
+			                        Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
+			                        DownsampleToViewSize="true"
+			                        Source="{Binding img}" >
+                                    </ffimageloading:CachedImage>
+                                    <Label Grid.Column="1" Grid.Row="0" Text="{Binding nombre}" VerticalOptions="End" TextColor="Black" FontSize="Medium" />
+                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding energia}" VerticalOptions="End" />
+                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding id}" VerticalOptions="End" IsVisible="false" />
+                                </Grid>
+                            </material:MaterialCard>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

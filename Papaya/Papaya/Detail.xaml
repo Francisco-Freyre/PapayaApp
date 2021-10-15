@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              x:Class="Papaya.Detail"
              Title="Mi dieta"
              BackgroundColor="White">
@@ -15,7 +15,7 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" RowSpacing="5">
+                <Grid Grid.Row="0" RowSpacing="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
@@ -25,126 +25,136 @@
                         <ImageButton BackgroundColor="White" Source="flechaderecha.png" WidthRequest="40" HeightRequest="40" HorizontalOptions="End" x:Name="btnDiaSiguiente" Clicked="btnDiaSiguiente_Clicked"/>
                     </StackLayout>
                 </Grid>
-                <Grid Grid.Row="1" RowSpacing="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" HorizontalOptions="Center" Text="Desayuno" TextColor="Black" FontSize="Title" />
-                    <Grid Grid.Row="1">
+                <material:MaterialCard Grid.Row="1" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand" IsClickable="True" Clicked="cardDes_Clicked" x:Name="cardDes">
+                    <Grid RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.RowSpan="2" x:Name="imgDesayuno"
-                           Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
-                        <Label x:Name="lblTitleDes" Grid.Column="1" Grid.Row="0" VerticalOptions="End" 
+                        <Label Grid.Row="0" HorizontalOptions="Center" Text="Desayuno" TextColor="Black" FontSize="Title" />
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ffimageloading:CachedImage Grid.RowSpan="2" x:Name="imgDesayuno"
+                                    Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
+			                        DownsampleToViewSize="true">
+                            </ffimageloading:CachedImage>
+                            <Label x:Name="lblTitleDes" Grid.Column="1" Grid.Row="0" VerticalOptions="End" 
                            TextColor="Black" FontSize="Medium" />
-                        <Label Grid.Column="1" Grid.Row="1" VerticalOptions="End" x:Name="kcalDesayuno" />
-                        <Button Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="White" x:Name="btnDesayuno" Clicked="btnDesayuno_Clicked" WidthRequest="200" CornerRadius="20" HorizontalOptions="Center" Text="Ver mas"  />
+                            <Label Grid.Column="1" Grid.Row="1" VerticalOptions="End" x:Name="kcalDesayuno" />
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid Grid.Row="2" RowSpacing="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" HorizontalOptions="Center" Text="Colacion" TextColor="Black" FontSize="Title" />
-                    <Grid Grid.Row="1">
+                </material:MaterialCard>
+                <material:MaterialCard Grid.Row="2" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand" x:Name="cardCol" IsClickable="True" Clicked="cardCol_Clicked">
+                    <Grid RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.RowSpan="2" x:Name="imgColacion"
-                           Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
-                        <Label Grid.Column="1" Grid.Row="0" x:Name="lblColcacion" VerticalOptions="End" 
+                        <Label Grid.Row="0" HorizontalOptions="Center" Text="Colacion" TextColor="Black" FontSize="Title" />
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ffimageloading:CachedImage Grid.RowSpan="2" x:Name="imgColacion"
+                                    Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
+			                        DownsampleToViewSize="true">
+                            </ffimageloading:CachedImage>
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblColcacion" VerticalOptions="End" 
                            TextColor="Black" FontSize="Medium" />
-                        <Label Grid.Column="1" Grid.Row="1" x:Name="kcalColacion" VerticalOptions="End" />
-                        <Button Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="White" x:Name="btnColacion" Clicked="btnColacion_Clicked" WidthRequest="200" CornerRadius="20" HorizontalOptions="Center" Text="Ver mas"  />
+                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalColacion" VerticalOptions="End" />
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid Grid.Row="3" RowSpacing="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" HorizontalOptions="Center" Text="Comida" TextColor="Black" FontSize="Title" />
-                    <Grid Grid.Row="1">
+                </material:MaterialCard>
+                <material:MaterialCard Grid.Row="3" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand" x:Name="cardCom" IsClickable="True" Clicked="cardCom_Clicked">
+                    <Grid RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.RowSpan="2" x:Name="imgComida"
-                           Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
-                        <Label Grid.Column="1" Grid.Row="0" x:Name="lblComida" VerticalOptions="End" 
+                        <Label Grid.Row="0" HorizontalOptions="Center" Text="Comida" TextColor="Black" FontSize="Title" />
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ffimageloading:CachedImage Grid.RowSpan="2" x:Name="imgComida"
+                                    Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
+			                        DownsampleToViewSize="true">
+                            </ffimageloading:CachedImage>
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblComida" VerticalOptions="End" 
                            TextColor="Black" FontSize="Medium" />
-                        <Label Grid.Column="1" Grid.Row="1" x:Name="kcalComida" VerticalOptions="End" />
-                        <Button Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="White" x:Name="btnComida" Clicked="btnComida_Clicked" WidthRequest="200" CornerRadius="20" HorizontalOptions="Center" Text="Ver mas"  />
+                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalComida" VerticalOptions="End" />
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid Grid.Row="4" RowSpacing="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" HorizontalOptions="Center" Text="Colacion" TextColor="Black" FontSize="Title" />
-                    <Grid Grid.Row="1">
+                </material:MaterialCard>
+                <material:MaterialCard Grid.Row="4" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand" x:Name="cardCol2" IsClickable="True" Clicked="cardCol2_Clicked">
+                    <Grid RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.RowSpan="2" x:Name="imgColacion2"
-                           Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
-                        <Label Grid.Column="1" Grid.Row="0" x:Name="lblColacion2" VerticalOptions="End" 
+                        <Label Grid.Row="0" HorizontalOptions="Center" Text="Colacion" TextColor="Black" FontSize="Title" />
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ffimageloading:CachedImage Grid.RowSpan="2" x:Name="imgColacion2"
+                                    Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
+			                        DownsampleToViewSize="true">
+                            </ffimageloading:CachedImage>
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblColacion2" VerticalOptions="End" 
                            TextColor="Black" FontSize="Medium" />
-                        <Label Grid.Column="1" Grid.Row="1" x:Name="kcalColacion2" VerticalOptions="End" />
-                        <Button Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="White" x:Name="btnColacion2" Clicked="btnColacion2_Clicked" WidthRequest="200" CornerRadius="20" HorizontalOptions="Center" Text="Ver mas"  />
+                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalColacion2" VerticalOptions="End" />
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid Grid.Row="5" RowSpacing="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" HorizontalOptions="Center" Text="Cena" TextColor="Black" FontSize="Title" />
-                    <Grid Grid.Row="1">
+                </material:MaterialCard>
+                <material:MaterialCard Grid.Row="5" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand" x:Name="cardCen" IsClickable="True" Clicked="cardCen_Clicked">
+                    <Grid RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.RowSpan="2" x:Name="imgCena"
-                           Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
-                        <Label Grid.Column="1" Grid.Row="0" x:Name="lblCena" VerticalOptions="End" 
+                        <Label Grid.Row="0" HorizontalOptions="Center" Text="Cena" TextColor="Black" FontSize="Title" />
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ffimageloading:CachedImage Grid.RowSpan="2" x:Name="imgCena"
+                                    Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
+			                        DownsampleToViewSize="true">
+                            </ffimageloading:CachedImage>
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblCena" VerticalOptions="End" 
                            TextColor="Black" FontSize="Medium" />
-                        <Label Grid.Column="1" Grid.Row="1" x:Name="kcalCena" VerticalOptions="End" />
-                        <Button Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="White" x:Name="btnCena" Clicked="btnCena_Clicked" WidthRequest="200" CornerRadius="20" HorizontalOptions="Center" Text="Ver mas"  />
+                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalCena" VerticalOptions="End" />
+                        </Grid>
                     </Grid>
-                </Grid>
+                </material:MaterialCard>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

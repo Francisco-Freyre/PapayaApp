@@ -188,32 +188,34 @@ namespace Papaya
             await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(idDesayuno));
         }
 
-        private void btnAlmuerzo_Clicked(object sender, EventArgs e)
+        private async void cardDes_Clicked(object sender, EventArgs e)
         {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(idDesayuno));
         }
 
-        private async void btnComida_Clicked(object sender, EventArgs e)
+        private async void cardCol_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(idColacion));
+        }
+
+        private async void cardCom_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
             await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(idComida));
         }
 
-        private async void btnCena_Clicked(object sender, EventArgs e)
-        {
-            App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(idCena));
-        }
-
-        private async void btnColacion2_Clicked(object sender, EventArgs e)
+        private async void cardCol2_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
             await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(idColacion2));
         }
 
-        private async void btnColacion_Clicked(object sender, EventArgs e)
+        private async void cardCen_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(idColacion));
+            await App.MasterDet.Detail.Navigation.PushAsync(new Platillo(idCena));
         }
 
         private void btnDiaAnterior_Clicked(object sender, EventArgs e)

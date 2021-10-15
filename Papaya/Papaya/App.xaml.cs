@@ -11,6 +11,7 @@ namespace Papaya
         public App()
         {
             InitializeComponent();
+            XF.Material.Forms.Material.Init(this);
             Application.Current.UserAppTheme = OSAppTheme.Light;
             if (Preferences.ContainsKey("token") && Preferences.ContainsKey("userid"))
             {

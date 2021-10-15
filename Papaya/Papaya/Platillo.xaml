@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              x:Class="Papaya.Platillo">
     <ContentPage.Content>
         <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="White">
@@ -9,8 +9,12 @@
                     <RowDefinition Height="250"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                
-                <Image Grid.Row="0" x:Name="Etiquetaimg" Aspect="AspectFill" />
+
+                <ffimageloading:CachedImage Grid.Row="0" 
+                                    x:Name="Etiquetaimg" 
+                                    Aspect="AspectFill"
+			                        DownsampleToViewSize="true">
+                </ffimageloading:CachedImage>
 
                 <Grid Grid.Row="1" RowSpacing="10">
                     <Grid.RowDefinitions>
@@ -21,21 +25,29 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" x:Name="lblNombre" TextColor="Black" FontSize="Title" HorizontalOptions="Center" />
-                    <StackLayout x:Name="stackIngredientes" Grid.Row="1">
-                        <Label TextColor="Black" Text="Ingredientes" FontSize="Large" HorizontalOptions="Center" />
-                    </StackLayout>
-                    <StackLayout Grid.Row="2" Margin="15">
-                        <Label TextColor="Black" Text="Procedimiento" FontSize="Large" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Margin="15" x:Name="lblProcedimiento" FontSize="Medium" HorizontalOptions="Start" />
-                    </StackLayout>
-                    <Label Grid.Row="3" Margin="10" x:Name="lblTiempo" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" />
-                    <StackLayout Grid.Row="4" Margin="15">
-                        <Label TextColor="Black" Text="Aporte Nutricional" FontSize="Large" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Margin="15" x:Name="lblEnergia" FontSize="Medium" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Margin="15" x:Name="lblProteinas" FontSize="Medium" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Margin="15" x:Name="lblCarbo" FontSize="Medium" HorizontalOptions="Start" />
-                        <Label TextColor="Black" Margin="15" x:Name="lblGrasas" FontSize="Medium" HorizontalOptions="Start" />
-                    </StackLayout>
+                    <material:MaterialCard Grid.Row="1" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                        <StackLayout x:Name="stackIngredientes">
+                            <Label TextColor="Black" Text="Ingredientes" FontSize="Large" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </material:MaterialCard>
+                    <material:MaterialCard Grid.Row="2" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                        <StackLayout>
+                            <Label TextColor="Black" Text="Procedimiento" FontSize="Large" HorizontalOptions="Start" />
+                            <Label TextColor="Black" Margin="15" x:Name="lblProcedimiento" FontSize="Medium" HorizontalOptions="Start" />
+                        </StackLayout>
+                    </material:MaterialCard>
+                    <material:MaterialCard Grid.Row="3" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                        <Label x:Name="lblTiempo" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" />
+                    </material:MaterialCard>
+                    <material:MaterialCard Grid.Row="4" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                        <StackLayout>
+                            <Label TextColor="Black" Text="Aporte Nutricional" FontSize="Large" HorizontalOptions="Start" />
+                            <Label TextColor="Black" Margin="15" x:Name="lblEnergia" FontSize="Medium" HorizontalOptions="Start" />
+                            <Label TextColor="Black" Margin="15" x:Name="lblProteinas" FontSize="Medium" HorizontalOptions="Start" />
+                            <Label TextColor="Black" Margin="15" x:Name="lblCarbo" FontSize="Medium" HorizontalOptions="Start" />
+                            <Label TextColor="Black" Margin="15" x:Name="lblGrasas" FontSize="Medium" HorizontalOptions="Start" />
+                        </StackLayout>
+                    </material:MaterialCard>
                 </Grid>
             </Grid>
         </ScrollView>
