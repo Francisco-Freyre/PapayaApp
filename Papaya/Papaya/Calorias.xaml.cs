@@ -156,7 +156,7 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new Empezar());
+                    await Navigation.PushAsync(new Opciones());
                 }
                 else
                 {

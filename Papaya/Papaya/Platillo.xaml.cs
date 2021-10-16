@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XF.Material.Forms.UI.Dialogs;
 
 namespace Papaya
 {
@@ -37,49 +38,52 @@ namespace Papaya
 
         public async void obtenerPlatillo(int id)
         {
-            var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/platillo.php?idPlatillo=" + id);
-            request.Method = HttpMethod.Get;
-            request.Headers.Add("Accept", "application/json");
-            var client = new HttpClient();
-            HttpResponseMessage response = await client.SendAsync(request);
-
-            if (response.StatusCode == HttpStatusCode.OK)
+            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Something is running"))
             {
-                string content = await response.Content.ReadAsStringAsync();
-                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-                if (resultado.resultado)
+                var request = new HttpRequestMessage();
+                request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/platillo.php?idPlatillo=" + id);
+                request.Method = HttpMethod.Get;
+                request.Headers.Add("Accept", "application/json");
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.SendAsync(request);
+
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    Etiquetaimg.Source = "https://bithives.com/PapayaApp/" + resultado.img;
-                    char del = '-';
-                    string[] desa = resultado.nombre.Split(del);
-                    lblNombre.Text = desa[0];
-                    lblProcedimiento.Text = resultado.procedimiento;
-                    lblTiempo.Text = "Tiempo de elaboracion: " + resultado.tiempo;
-                    lblEnergia.Text = "Energia: " + resultado.energia;
-                    lblProteinas.Text = "Proteinas: " + resultado.proteina;
-                    lblCarbo.Text = "Carbohidratos: " + resultado.carbohidratos;
-                    lblGrasas.Text = "Grasas: " + resultado.grasas;
-                    foreach (string ingrediente in resultado.ingredientes)
+                    string content = await response.Content.ReadAsStringAsync();
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+                    if (resultado.resultado)
                     {
-                        Label lblprueba = new Label
+                        Etiquetaimg.Source = "https://bithives.com/PapayaApp/" + resultado.img;
+                        char del = '-';
+                        string[] desa = resultado.nombre.Split(del);
+                        lblNombre.Text = desa[0];
+                        lblProcedimiento.Text = resultado.procedimiento;
+                        lblTiempo.Text = "Tiempo de elaboracion: " + resultado.tiempo;
+                        lblEnergia.Text = "Energia: " + resultado.energia;
+                        lblProteinas.Text = "Proteinas: " + resultado.proteina;
+                        lblCarbo.Text = "Carbohidratos: " + resultado.carbohidratos;
+                        lblGrasas.Text = "Grasas: " + resultado.grasas;
+                        foreach (string ingrediente in resultado.ingredientes)
                         {
-                            Text = ingrediente,
-                            FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                            HorizontalOptions = LayoutOptions.Center,
-                            TextColor = Color.Black
-                        };
-                        stackIngredientes.Children.Add(lblprueba);
+                            Label lblprueba = new Label
+                            {
+                                Text = ingrediente,
+                                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                                HorizontalOptions = LayoutOptions.Center,
+                                TextColor = Color.Black
+                            };
+                            stackIngredientes.Children.Add(lblprueba);
+                        }
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", "Algo fallo, recargue la pagina", "OK");
                     }
                 }
                 else
                 {
-                    await DisplayAlert("Mensaje", "Algo fallo, recargue la pagina", "OK");
+                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
                 }
-            }
-            else
-            {
-                await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
             }
         }
     }

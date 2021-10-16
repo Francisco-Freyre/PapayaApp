@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Papaya.Objetivo"
-             Title="Objetivo">
+             Title="Objetivo"
+             BackgroundColor="White">
     <ContentPage.Content>
-        <Grid BackgroundColor="WhiteSmoke">
+        <Grid BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80" />
                 <RowDefinition Height="Auto" />

@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -114,7 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Papaya\Papaya.csproj">
-      <Project>{8FC05D20-ACD6-41E5-8331-A9F5D2EFB841}</Project>
+      <Project>{F74393C5-9644-438E-A52A-CE49FC587993}</Project>
       <Name>Papaya</Name>
     </ProjectReference>
   </ItemGroup>

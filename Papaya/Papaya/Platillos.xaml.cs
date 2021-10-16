@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XF.Material.Forms.UI.Dialogs;
 
 namespace Papaya
 {
@@ -35,26 +36,29 @@ namespace Papaya
 
         public async void obtenerPlatillos()
         {
-            var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/platillo.php?platillos=0");
-            request.Method = HttpMethod.Get;
-            request.Headers.Add("Accept", "application/json");
-            var client = new HttpClient();
-            HttpResponseMessage response = await client.SendAsync(request);
-
-            if (response.StatusCode == HttpStatusCode.OK)
+            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Something is running"))
             {
-                string content = await response.Content.ReadAsStringAsync();
+                var request = new HttpRequestMessage();
+                request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/platillo.php?platillos=0");
+                request.Method = HttpMethod.Get;
+                request.Headers.Add("Accept", "application/json");
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.SendAsync(request);
 
-                var resultado = JsonConvert.DeserializeObject<List<Respuesta>>(content);
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
 
-                respuestas = resultado;
+                    var resultado = JsonConvert.DeserializeObject<List<Respuesta>>(content);
 
-                listaPlatillos.ItemsSource = resultado;
-            }
-            else
-            {
-                await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    respuestas = resultado;
+
+                    listaPlatillos.ItemsSource = resultado;
+                }
+                else
+                {
+                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                }
             }
         }
 

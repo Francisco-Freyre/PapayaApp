@@ -11,6 +11,7 @@ using System.Net;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Papaya.Models;
+using XF.Material.Forms.UI.Dialogs;
 
 namespace Papaya
 {
@@ -81,99 +82,102 @@ namespace Papaya
 
         public async void dieta()
         {
-            var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?kcal=0&idCliente=" + Preferences.Get("userid", ""));
-            request.Method = HttpMethod.Get;
-            request.Headers.Add("Accept", "application/json");
-            var client = new HttpClient();
-            HttpResponseMessage response = await client.SendAsync(request);
-
-            if (response.StatusCode == HttpStatusCode.OK)
+            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Obteniendo datos"))
             {
-                string content = await response.Content.ReadAsStringAsync();
+                var request = new HttpRequestMessage();
+                request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?kcal=0&idCliente=" + Preferences.Get("userid", ""));
+                request.Method = HttpMethod.Get;
+                request.Headers.Add("Accept", "application/json");
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.SendAsync(request);
 
-                var resultado = JsonConvert.DeserializeObject<Dieta>(content);
-
-                if (resultado.resultado)
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    this.diet = resultado;
-                    switch (numDia)
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Dieta>(content);
+
+                    if (resultado.resultado)
                     {
-                        case 0:
-                            lblTitleDes.Text = resultado.d_domingo;
-                            lblColcacion.Text = resultado.c_domingo;
-                            lblColacion2.Text = resultado.c2_domingo;
-                            lblComida.Text = resultado.co_domingo;
-                            lblCena.Text = resultado.ce_domingo;
-                            break;
+                        this.diet = resultado;
+                        switch (numDia)
+                        {
+                            case 0:
+                                lblTitleDes.Text = resultado.d_domingo;
+                                lblColcacion.Text = resultado.c_domingo;
+                                lblColacion2.Text = resultado.c2_domingo;
+                                lblComida.Text = resultado.co_domingo;
+                                lblCena.Text = resultado.ce_domingo;
+                                break;
 
-                        case 1:
-                            var coms = comidas(resultado.d_lunes, resultado.c_lunes, resultado.c2_lunes, resultado.co_lunes, resultado.ce_lunes);
-                            var cos0 = individual(coms[0], coms[1], coms[2], coms[3], coms[4]);
-                            platillo(cos0[0], cos0[1], cos0[2], cos0[3], cos0[4], cos0[5], cos0[6], cos0[7], cos0[8], cos0[9]);
-                            lblTitleDes.Text = cos0[10];
-                            lblColcacion.Text = cos0[11];
-                            lblColacion2.Text = cos0[12];
-                            lblComida.Text = cos0[13];
-                            lblCena.Text = cos0[14];
-                            break;
+                            case 1:
+                                var coms = comidas(resultado.d_lunes, resultado.c_lunes, resultado.c2_lunes, resultado.co_lunes, resultado.ce_lunes);
+                                var cos0 = individual(coms[0], coms[1], coms[2], coms[3], coms[4]);
+                                platillo(cos0[0], cos0[1], cos0[2], cos0[3], cos0[4], cos0[5], cos0[6], cos0[7], cos0[8], cos0[9]);
+                                lblTitleDes.Text = cos0[10];
+                                lblColcacion.Text = cos0[11];
+                                lblColacion2.Text = cos0[12];
+                                lblComida.Text = cos0[13];
+                                lblCena.Text = cos0[14];
+                                break;
 
-                        case 2:
-                            var coms2 = comidas(resultado.d_martes, resultado.c_martes, resultado.c2_martes, resultado.co_martes, resultado.ce_martes);
-                            var cos = individual(coms2[0], coms2[1], coms2[2], coms2[3], coms2[4]);
-                            platillo(cos[0], cos[1], cos[2], cos[3], cos[4], cos[5], cos[6], cos[7], cos[8], cos[9]);
-                            lblTitleDes.Text = cos[10];
-                            lblColcacion.Text = cos[11];
-                            lblColacion2.Text = cos[12];
-                            lblComida.Text = cos[13];
-                            lblCena.Text = cos[14];
-                            break;
+                            case 2:
+                                var coms2 = comidas(resultado.d_martes, resultado.c_martes, resultado.c2_martes, resultado.co_martes, resultado.ce_martes);
+                                var cos = individual(coms2[0], coms2[1], coms2[2], coms2[3], coms2[4]);
+                                platillo(cos[0], cos[1], cos[2], cos[3], cos[4], cos[5], cos[6], cos[7], cos[8], cos[9]);
+                                lblTitleDes.Text = cos[10];
+                                lblColcacion.Text = cos[11];
+                                lblColacion2.Text = cos[12];
+                                lblComida.Text = cos[13];
+                                lblCena.Text = cos[14];
+                                break;
 
-                        case 3:
-                            var coms3 = comidas(resultado.d_miercoles, resultado.c_miercoles, resultado.c2_miercoles, resultado.co_miercoles, resultado.ce_miercoles);
-                            var cos2 = individual(coms3[0], coms3[1], coms3[2], coms3[3], coms3[4]);
-                            platillo(cos2[0], cos2[1], cos2[2], cos2[3], cos2[4], cos2[5], cos2[6], cos2[7], cos2[8], cos2[9]);
-                            lblTitleDes.Text = cos2[10];
-                            lblColcacion.Text = cos2[11];
-                            lblColacion2.Text = cos2[12];
-                            lblComida.Text = cos2[13];
-                            lblCena.Text = cos2[14];
-                            break;
+                            case 3:
+                                var coms3 = comidas(resultado.d_miercoles, resultado.c_miercoles, resultado.c2_miercoles, resultado.co_miercoles, resultado.ce_miercoles);
+                                var cos2 = individual(coms3[0], coms3[1], coms3[2], coms3[3], coms3[4]);
+                                platillo(cos2[0], cos2[1], cos2[2], cos2[3], cos2[4], cos2[5], cos2[6], cos2[7], cos2[8], cos2[9]);
+                                lblTitleDes.Text = cos2[10];
+                                lblColcacion.Text = cos2[11];
+                                lblColacion2.Text = cos2[12];
+                                lblComida.Text = cos2[13];
+                                lblCena.Text = cos2[14];
+                                break;
 
-                        case 4:
-                            var coms4 = comidas(resultado.d_jueves, resultado.c_jueves, resultado.c2_jueves, resultado.co_jueves, resultado.ce_jueves);
-                            var cos3 = individual(coms4[0], coms4[1], coms4[2], coms4[3], coms4[4]);
-                            platillo(cos3[0], cos3[1], cos3[2], cos3[3], cos3[4], cos3[5], cos3[6], cos3[7], cos3[8], cos3[9]);
-                            lblTitleDes.Text = cos3[10];
-                            lblColcacion.Text = cos3[11];
-                            lblColacion2.Text = cos3[12];
-                            lblComida.Text = cos3[13];
-                            lblCena.Text = cos3[14];
-                            break;
+                            case 4:
+                                var coms4 = comidas(resultado.d_jueves, resultado.c_jueves, resultado.c2_jueves, resultado.co_jueves, resultado.ce_jueves);
+                                var cos3 = individual(coms4[0], coms4[1], coms4[2], coms4[3], coms4[4]);
+                                platillo(cos3[0], cos3[1], cos3[2], cos3[3], cos3[4], cos3[5], cos3[6], cos3[7], cos3[8], cos3[9]);
+                                lblTitleDes.Text = cos3[10];
+                                lblColcacion.Text = cos3[11];
+                                lblColacion2.Text = cos3[12];
+                                lblComida.Text = cos3[13];
+                                lblCena.Text = cos3[14];
+                                break;
 
-                        case 5:
-                            var coms5 = comidas(resultado.d_viernes, resultado.c_viernes, resultado.c2_viernes, resultado.co_viernes, resultado.ce_viernes);
-                            var cos4 = individual(coms5[0], coms5[1], coms5[2], coms5[3], coms5[4]);
-                            platillo(cos4[0], cos4[1], cos4[2], cos4[3], cos4[4], cos4[5], cos4[6], cos4[7], cos4[8], cos4[9]);
-                            lblTitleDes.Text = cos4[10];
-                            lblColcacion.Text = cos4[11];
-                            lblColacion2.Text = cos4[12];
-                            lblComida.Text = cos4[13];
-                            lblCena.Text = cos4[14];
-                            break;
+                            case 5:
+                                var coms5 = comidas(resultado.d_viernes, resultado.c_viernes, resultado.c2_viernes, resultado.co_viernes, resultado.ce_viernes);
+                                var cos4 = individual(coms5[0], coms5[1], coms5[2], coms5[3], coms5[4]);
+                                platillo(cos4[0], cos4[1], cos4[2], cos4[3], cos4[4], cos4[5], cos4[6], cos4[7], cos4[8], cos4[9]);
+                                lblTitleDes.Text = cos4[10];
+                                lblColcacion.Text = cos4[11];
+                                lblColacion2.Text = cos4[12];
+                                lblComida.Text = cos4[13];
+                                lblCena.Text = cos4[14];
+                                break;
 
-                        case 6:
-                            var coms6 = comidas(resultado.d_sabado, resultado.c_sabado, resultado.c2_sabado, resultado.co_sabado, resultado.ce_sabado);
-                            var cos5 = individual(coms6[0], coms6[1], coms6[2], coms6[3], coms6[4]);
-                            platillo(cos5[0], cos5[1], cos5[2], cos5[3], cos5[4], cos5[5], cos5[6], cos5[7], cos5[8], cos5[9]);
-                            lblTitleDes.Text = cos5[10];
-                            lblColcacion.Text = cos5[11];
-                            lblColacion2.Text = cos5[12];
-                            lblComida.Text = cos5[13];
-                            lblCena.Text = cos5[14];
-                            break;
+                            case 6:
+                                var coms6 = comidas(resultado.d_sabado, resultado.c_sabado, resultado.c2_sabado, resultado.co_sabado, resultado.ce_sabado);
+                                var cos5 = individual(coms6[0], coms6[1], coms6[2], coms6[3], coms6[4]);
+                                platillo(cos5[0], cos5[1], cos5[2], cos5[3], cos5[4], cos5[5], cos5[6], cos5[7], cos5[8], cos5[9]);
+                                lblTitleDes.Text = cos5[10];
+                                lblColcacion.Text = cos5[11];
+                                lblColacion2.Text = cos5[12];
+                                lblComida.Text = cos5[13];
+                                lblCena.Text = cos5[14];
+                                break;
+                        }
+                        //await DisplayAlert("Mensaje", resultado.kcal + resultado.categoria + resultado.descripcion, "OK");
                     }
-                    await DisplayAlert("Mensaje", resultado.kcal + resultado.categoria + resultado.descripcion, "OK");
                 }
             }
         }

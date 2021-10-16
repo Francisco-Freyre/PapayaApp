@@ -5,7 +5,7 @@
              Title="Datos"
              BackgroundColor="White">
     <ContentPage.Content>
-        <Grid BackgroundColor="White">
+        <Grid BackgroundColor="White" VerticalOptions="Center">
             <StackLayout Margin="20, 20, 20, 20">
                 <Label Text="Estatura" TextColor="Black" FontSize="Large" />
                 <StackLayout Margin="10, 10, 10, 10">
@@ -240,7 +240,7 @@
                 </StackLayout>
                 <Label Text="Fecha de nacimiento" TextColor="Black" FontSize="Large" />
                 <DatePicker Date="01/01/2000" TextColor="Black" x:Name="fechaNacimiento"/>
-                <Button Text="Continuar" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" BackgroundColor="#FCB322" CornerRadius="15" TextColor="White" HeightRequest="60" />
+                <Button Text="Continuar" Margin="10, 70, 10, 10" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" BackgroundColor="#FCB322" CornerRadius="15" TextColor="White" HeightRequest="60" />
             </StackLayout>
         </Grid>
     </ContentPage.Content>
