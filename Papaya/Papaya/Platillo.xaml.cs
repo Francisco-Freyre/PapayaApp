@@ -38,7 +38,7 @@ namespace Papaya
 
         public async void obtenerPlatillo(int id)
         {
-            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Something is running"))
+            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Cargando datos del platillo"))
             {
                 var request = new HttpRequestMessage();
                 request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/platillo.php?idPlatillo=" + id);
