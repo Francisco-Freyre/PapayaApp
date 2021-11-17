@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Papaya.MainPage">
+             x:Class="Papaya.MainPage"
+             xmlns:imagenes="clr-namespace:Papaya.Constantes">
 
     <ContentPage.Content>
         <Grid>
-            <Image Source="login.jpg"  Aspect="AspectFill"/>
+            <Image Source="{imagenes:Images Source=Papaya.Imagenes.login.jpg}"  Aspect="AspectFill"/>
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -14,17 +15,33 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Image Grid.Row="0" Source="logo.png" WidthRequest="120" HeightRequest="180" Margin="0, 50, 0, 50" />
+                <Image Grid.Row="0" Source="{imagenes:Images Source=Papaya.Imagenes.logo.png}" WidthRequest="120" HeightRequest="180" Margin="0, 50, 0, 50" />
 
                 <StackLayout Grid.Row="1" Padding="30,20">
-                    <Entry Keyboard="Email" Placeholder="Correo" PlaceholderColor="White" TextColor="White" x:Name="txtCorreo" />
-                    <Entry Placeholder="Contraseña" PlaceholderColor="White" TextColor="White" x:Name="txtPassword" IsPassword="True" />
-                    <Button Text="Iniciar sesion" x:Name="btnLogin" BackgroundColor="#4ecdc4" CornerRadius="10" TextColor="White" Clicked="btnLogin_Clicked"/>
-                    <Button Text="Registrarse" x:Name="btnRegistro" BackgroundColor="#4ecdc4" CornerRadius="10" TextColor="White" Clicked="btnRegistro_Clicked" />
+                    <Frame BackgroundColor="Transparent" BorderColor="Gray" CornerRadius="5" HasShadow="True">
+                        <StackLayout>
+                            <Entry Margin="0,10,0,10" BackgroundColor="Transparent" Keyboard="Email" Placeholder="Correo" PlaceholderColor="White" TextColor="White" x:Name="txtCorreo"/>
+                            <Entry Margin="0,10,0,10" BackgroundColor="Transparent" Placeholder="Contraseña" PlaceholderColor="White" TextColor="White" x:Name="txtPassword" IsPassword="True" />
+                            <Button Margin="0,10,0,10" HorizontalOptions="FillAndExpand" Text="Iniciar sesion" x:Name="btnLogin" BackgroundColor="#4ecdc4" CornerRadius="10" TextColor="White" Clicked="btnLogin_Clicked">
+                                <Button.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness">
+                                        <On Platform="iOS" Value="10"/>
+                                    </OnPlatform>
+                                </Button.Padding>
+                            </Button>
+                            <Button Margin="0,10,0,10" HorizontalOptions="FillAndExpand" Text="Registrarse" x:Name="btnRegistro" BackgroundColor="#4ecdc4" CornerRadius="10" TextColor="White" Clicked="btnRegistro_Clicked" >
+                                <Button.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness">
+                                        <On Platform="iOS" Value="10"/>
+                                    </OnPlatform>
+                                </Button.Padding>
+                            </Button>
+                        </StackLayout>
+                    </Frame>
                 </StackLayout>
             </Grid>
         </Grid>
-        
+
     </ContentPage.Content>
-    
+
 </ContentPage>

@@ -18,10 +18,39 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
     <PackageReference Include="XF.Material" Version="1.7.8" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2244" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.14" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Imagenes\login.jpg">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\logo.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <IncludeInPackage>false</IncludeInPackage>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\flechaabajo.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\flechaarriba.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\flechaderecha.jpg">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\flechaizquierda.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="ActividadFisica.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -80,5 +109,21 @@
     <EmbeddedResource Update="Registro.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Xamarin.Forms.Visual.Material" />
+    <None Remove="Imagenes\" />
+    <None Remove="Constantes\" />
+    <None Remove="Imagenes\login.jpg" />
+    <None Remove="Imagenes\logo.png" />
+    <None Remove="Rg.Plugins.Popup" />
+    <None Remove="Imagenes\flechaabajo.png" />
+    <None Remove="Imagenes\flechaarriba.png" />
+    <None Remove="Imagenes\flechaderecha.jpg" />
+    <None Remove="Imagenes\flechaizquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagenes\" />
+    <Folder Include="Constantes\" />
   </ItemGroup>
 </Project>

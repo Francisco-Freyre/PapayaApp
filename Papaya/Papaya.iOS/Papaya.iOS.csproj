@@ -144,15 +144,18 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
     <PackageReference Include="XF.Material">
       <Version>1.7.8</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Visual.Material">
+      <Version>5.0.0.2244</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Papaya\Papaya.csproj">
-      <Project>{8FC05D20-ACD6-41E5-8331-A9F5D2EFB841}</Project>
+      <Project>{F74393C5-9644-438E-A52A-CE49FC587993}</Project>
       <Name>Papaya</Name>
     </ProjectReference>
   </ItemGroup>

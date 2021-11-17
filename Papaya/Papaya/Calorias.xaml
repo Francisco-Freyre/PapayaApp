@@ -12,7 +12,13 @@
                 <RowDefinition Height="80"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Text="" x:Name="lblCalorias" TextColor="Black" FontSize="Large" HorizontalTextAlignment="Center" />
+            <Label Grid.Row="0" Text="" x:Name="lblCalorias" TextColor="Black" FontSize="Large" HorizontalTextAlignment="Center" VerticalOptions="Center">
+                <Label.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="0, 30, 0, 0"/>
+                    </OnPlatform>
+                </Label.Margin>
+            </Label>
 
             <Image Grid.Row="1" Source="banner.png" WidthRequest="200" HeightRequest="250" Margin="0, 50, 0, 25" />
 

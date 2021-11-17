@@ -80,5 +80,30 @@ namespace Papaya
                 }
             }
         }
+
+        void txtNombre_Completed(System.Object sender, System.EventArgs e)
+        {
+            txtApellido.Focus();
+        }
+
+        void txtApellido_Completed(System.Object sender, System.EventArgs e)
+        {
+            PickerEstado.Focus();
+        }
+
+        void PickerEstado_SelectedIndexChanged(System.Object sender, System.EventArgs e)
+        {
+            txtCorreo.Focus();
+        }
+
+        void txtCorreo_Completed(System.Object sender, System.EventArgs e)
+        {
+            txtPassword.Focus();
+        }
+
+        void txtPassword_Completed(System.Object sender, System.EventArgs e)
+        {
+            
+        }
     }
 }

@@ -22,7 +22,11 @@ namespace Papaya.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Rg.Plugins.Popup.Popup.Init();
+            XF.Material.iOS.Material.Init();
             global::Xamarin.Forms.Forms.Init();
+            global::Xamarin.Forms.FormsMaterial.Init();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

@@ -93,6 +93,7 @@ namespace Papaya
 
                         lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(Decimal.Round(tmb)) + " kcal";
                         kcalorias = Convert.ToInt32(Decimal.Round(tmb));
+                        Preferences.Set("kcal", Convert.ToString(kcalorias));
                     }
                     else
                     {
@@ -117,6 +118,7 @@ namespace Papaya
 
                         lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(Decimal.Round(tmb)) + " kcal";
                         kcalorias = Convert.ToInt32(Decimal.Round(tmb));
+                        Preferences.Set("kcal", Convert.ToString(kcalorias));
                     }
                 }
                 else

@@ -34,15 +34,14 @@ namespace Papaya
         public class Datos
         {
             public string desayuno { get; set; }
-            public string kcaldes { get; set; }
+
             public string colacion { get; set; }
-            public string kcalcol { get; set; }
+
             public string colacion2 { get; set; }
-            public string kcalcol2 { get; set; }
+
             public string comida { get; set; }
-            public string kcalcom { get; set; }
+
             public string cena { get; set; }
-            public string kcalcen { get; set; }
         }
 
         public class Respuesta
@@ -439,15 +438,10 @@ namespace Papaya
             Datos dato = new Datos
             {
                 desayuno = desayuno.Trim(),
-                kcaldes = deskcal.Trim(),
                 colacion = colacion.Trim(),
-                kcalcol = colkcal.Trim(),
                 colacion2 = colacion2.Trim(),
-                kcalcol2 = col2kcal.Trim(),
                 comida = comida.Trim(),
-                kcalcom = comkcal.Trim(),
                 cena = cena.Trim(),
-                kcalcen = cenkcal.Trim()
             };
 
             Uri RequestUri = new Uri("https://www.bithives.com/PapayaApp/api/platillo.php");

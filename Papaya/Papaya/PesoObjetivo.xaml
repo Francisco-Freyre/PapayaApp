@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:imagenes="clr-namespace:Papaya.Constantes"
              x:Class="Papaya.PesoObjetivo"
              Title="Peso Objetivo"
              BackgroundColor="White">
@@ -37,8 +38,8 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Peso Objetivo" Grid.Row="0" Grid.ColumnSpan="4" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
-                <ImageButton Source="flechaarriba.png" Grid.Column="0" Grid.Row="1" BackgroundColor="White" x:Name="btnSubir" Clicked="btnSubir_Clicked"/>
-                <ImageButton Source="flechaabajo.png" Grid.Column="1" Grid.Row="1" BackgroundColor="White" x:Name="btnBajar" Clicked="btnBajar_Clicked"/>
+                <ImageButton Source="{imagenes:Images Source=Papaya.Imagenes.flechaarriba.png}" Grid.Column="0" Grid.Row="1" BackgroundColor="White" x:Name="btnSubir" Clicked="btnSubir_Clicked"/>
+                <ImageButton Source="{imagenes:Images Source=Papaya.Imagenes.flechaabajo.png}" Grid.Column="1" Grid.Row="1" BackgroundColor="White" x:Name="btnBajar" Clicked="btnBajar_Clicked"/>
                 <Entry Text="" TextColor="Black" x:Name="entryPesoObjetivo" Keyboard="Numeric" WidthRequest="100" Grid.Row="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="End" FontSize="Medium" />
                 <Label Text="Kg" TextColor="Black" VerticalTextAlignment="End" FontSize="Medium" HorizontalTextAlignment="Start" Grid.Column="3" Grid.Row="1" />
                 <Label Text="" TextColor="Black" x:Name="lblIMC" Grid.Row="2" Grid.ColumnSpan="4" HorizontalOptions="Start" FontSize="Medium" />

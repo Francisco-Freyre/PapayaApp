@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XF.Material.Forms.UI.Dialogs;
 
 namespace Papaya
 {
@@ -39,6 +40,7 @@ namespace Papaya
 
         public async void IMC()
         {
+            await MaterialDialog.Instance.SnackbarAsync(message: "Puedes aumentar o reducir el peso objetivo!!", msDuration: MaterialSnackbar.DurationLong);
             var request = new HttpRequestMessage();
             request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?meta=0&idCliente=" + Preferences.Get("userid", ""));
             request.Method = HttpMethod.Get;
@@ -60,7 +62,7 @@ namespace Papaya
                     decimal rangoAlto = alturaCuadrada * Convert.ToDecimal(24.9);
                     decimal rangoBajo = alturaCuadrada * Convert.ToDecimal(18.5);
                     lblIMC.Text = "Segun la escala del IMC, tu peso debe estar entre " + Convert.ToString(Decimal.Round(rangoBajo)) + "Kg - " + Convert.ToString(Decimal.Round(rangoAlto)) + " Kg";
-                    entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoAlto));
+                    entryPesoObjetivo.Text = Convert.ToString(Decimal.Round((rangoAlto + rangoBajo) / 2));
                 }
                 else
                 {

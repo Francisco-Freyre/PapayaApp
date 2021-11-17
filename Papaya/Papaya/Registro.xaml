@@ -6,7 +6,6 @@
     <ContentPage.Content>
         <Grid>
             <Image Source="login.jpg"  Aspect="AspectFill"/>
-
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -16,10 +15,13 @@
                 <Image Grid.Row="0" Source="logo.png" WidthRequest="100" HeightRequest="130" Margin="0, 50, 0, 50" />
 
                 <StackLayout Grid.Row="1" Padding="30,20">
-                    <Entry Placeholder="Nombre" PlaceholderColor="White" TextColor="White" x:Name="txtNombre" Keyboard="Text"/>
-                    <Entry Placeholder="Apellido" PlaceholderColor="White" TextColor="White" x:Name="txtApellido" />
-                    <StackLayout Margin="10, 10, 10, 10">
-                        <Picker x:Name="PickerEstado" Title="Selecciona el estado en el que vives" TitleColor="White" TextColor="White">
+                    <Entry Placeholder="Nombre" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White"
+                           x:Name="txtNombre" Keyboard="Chat" Completed="txtNombre_Completed"/>
+                    <Entry Placeholder="Apellido" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White"
+                           x:Name="txtApellido" Completed="txtApellido_Completed" />
+                    <StackLayout Margin="10, 10, 10, 10" HorizontalOptions="FillAndExpand">
+                        <Picker x:Name="PickerEstado" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"
+                                Title="Selecciona el estado en el que vives" TitleColor="White" TextColor="White" SelectedIndexChanged="PickerEstado_SelectedIndexChanged">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}" >
                                     <x:String>Aguascalientes</x:String>
@@ -58,12 +60,11 @@
                             </Picker.ItemsSource>
                         </Picker>
                     </StackLayout>
-                    <Entry Placeholder="Correo" PlaceholderColor="White" TextColor="White" x:Name="txtCorreo" />
-                    <Entry Placeholder="Contraseña" PlaceholderColor="White" TextColor="White" x:Name="txtPassword" IsPassword="True" />
+                    <Entry Placeholder="Correo" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White" x:Name="txtCorreo" Completed="txtCorreo_Completed"/>
+                    <Entry Placeholder="Contraseña" PlaceholderColor="White" TextColor="White" BackgroundColor="Transparent" x:Name="txtPassword" IsPassword="True" Completed="txtPassword_Completed"/>
                     <Button Text="Crear usuario" BackgroundColor="#4ecdc4" CornerRadius="10" TextColor="White" x:Name="btnCrear" Clicked="btnCrear_Clicked" />
                 </StackLayout>
             </Grid>
         </Grid>
-
     </ContentPage.Content>
 </ContentPage>
