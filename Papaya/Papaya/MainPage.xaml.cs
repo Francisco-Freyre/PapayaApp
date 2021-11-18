@@ -85,5 +85,10 @@ namespace Papaya
         {
             await Navigation.PushAsync(new Registro());
         }
+
+        void txtCorreo_Completed(System.Object sender, System.EventArgs e)
+        {
+            txtPassword.Focus();
+        }
     }
 }

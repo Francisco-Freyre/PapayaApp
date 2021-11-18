@@ -36,47 +36,55 @@ namespace Papaya
             }
             else
             {
-                Regi registro = new Regi
+                if (txtPassword.Text == txtPasswordConfirm.Text)
                 {
-                    nombre = txtNombre.Text,
-                    apellido = txtApellido.Text,
-                    estado = Convert.ToString(PickerEstado.SelectedItem),
-                    email = txtCorreo.Text,
-                    password = txtPassword.Text
-                };
-
-                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/registro.php");
-
-                var client = new HttpClient();
-
-                var json = JsonConvert.SerializeObject(registro);
-
-                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-                var response = await client.PostAsync(RequestUri, contentJson);
-
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    string content = await response.Content.ReadAsStringAsync();
-
-                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                    if (resultado.resultado == "exito")
+                    Regi registro = new Regi
                     {
-                        txtNombre.Text = "";
-                        txtApellido.Text = "";
-                        txtCorreo.Text = "";
-                        txtPassword.Text = "";
-                        await DisplayAlert("Mensaje", resultado.msg, "OK");
+                        nombre = txtNombre.Text,
+                        apellido = txtApellido.Text,
+                        estado = Convert.ToString(PickerEstado.SelectedItem),
+                        email = txtCorreo.Text,
+                        password = txtPassword.Text
+                    };
+
+                    Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/registro.php");
+
+                    var client = new HttpClient();
+
+                    var json = JsonConvert.SerializeObject(registro);
+
+                    var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    var response = await client.PostAsync(RequestUri, contentJson);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        string content = await response.Content.ReadAsStringAsync();
+
+                        var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                        if (resultado.resultado == "exito")
+                        {
+                            txtNombre.Text = "";
+                            txtApellido.Text = "";
+                            txtCorreo.Text = "";
+                            txtPassword.Text = "";
+                            txtPasswordConfirm.Text = "";
+                            await DisplayAlert("Mensaje", resultado.msg, "OK");
+                        }
+                        else
+                        {
+                            await DisplayAlert("Mensaje", resultado.msg, "OK");
+                        }
                     }
                     else
                     {
-                        await DisplayAlert("Mensaje", resultado.msg, "OK");
+                        await DisplayAlert("Mensaje", "La conexion con el servidor fallo, intenta de nuevo", "OK");
                     }
                 }
                 else
                 {
-                    await DisplayAlert("Mensaje", "La conexion con el servidor fallo, intenta de nuevo", "OK");
+                    await DisplayAlert("Mensaje", "La contraseña no coincide en la confirmacion", "OK");
                 }
             }
         }
@@ -103,7 +111,26 @@ namespace Papaya
 
         void txtPassword_Completed(System.Object sender, System.EventArgs e)
         {
-            
+            txtPasswordConfirm.Focus();
+        }
+
+        void txtPasswordConfirm_Completed(System.Object sender, System.EventArgs e)
+        {
+
+        }
+
+        void txtPasswordConfirm_TextChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            if (txtPassword.Text != txtPasswordConfirm.Text)
+            {
+                lbladvertencia.IsVisible = true;
+                btnCrear.IsEnabled = false;
+            }
+            else
+            {
+                lbladvertencia.IsVisible = false;
+                btnCrear.IsEnabled = true;
+            }
         }
     }
 }

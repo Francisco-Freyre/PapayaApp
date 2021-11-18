@@ -40,7 +40,7 @@ namespace Papaya
 
         public async void IMC()
         {
-            await MaterialDialog.Instance.SnackbarAsync(message: "Puedes aumentar o reducir el peso objetivo!!", msDuration: MaterialSnackbar.DurationLong);
+            await MaterialDialog.Instance.SnackbarAsync(message: "Puedes aumentar o reducir el peso objetivo!!", msDuration: 5000);
             var request = new HttpRequestMessage();
             request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?meta=0&idCliente=" + Preferences.Get("userid", ""));
             request.Method = HttpMethod.Get;

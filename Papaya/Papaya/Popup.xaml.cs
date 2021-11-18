@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using Newtonsoft.Json;
 using Papaya.Models;
+using Rg.Plugins.Popup.Extensions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using XF.Material.Forms.UI.Dialogs;
@@ -256,19 +257,19 @@ namespace Papaya
                 {
                     idDesayuno = resultado.id_des;
                     imgDesayuno.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_des;
-                    kcalDesayuno.Text = resultado.kcal_des;
+                    kcalDesayuno.Text = resultado.kcal_des + "Kcal";
                     idColacion = resultado.id_col;
                     imgColacion.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_col;
-                    kcalColacion.Text = resultado.kcal_col;
+                    kcalColacion.Text = resultado.kcal_col + "Kcal";
                     idColacion2 = resultado.id_col2;
                     imgColacion2.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_col2;
-                    kcalColacion2.Text = resultado.kcal_col2;
+                    kcalColacion2.Text = resultado.kcal_col2 + "Kcal";
                     idComida = resultado.id_com;
                     imgComida.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_com;
-                    kcalComida.Text = resultado.kcal_com;
+                    kcalComida.Text = resultado.kcal_com + "Kcal";
                     idCena = resultado.id_cen;
                     imgCena.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_cen;
-                    kcalCena.Text = resultado.kcal_cen;
+                    kcalCena.Text = resultado.kcal_cen + "Kcal";
                 }
                 else
                 {
@@ -482,6 +483,8 @@ namespace Papaya
                 if (resultado.resultado)
                 {
                     await Navigation.PushAsync(new Empezar());
+                    // Close the last PopupPage int the PopupStack
+                    await Navigation.PopPopupAsync();
                 }
                 else
                 {

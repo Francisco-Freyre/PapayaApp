@@ -62,6 +62,8 @@
                     </StackLayout>
                     <Entry Placeholder="Correo" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White" x:Name="txtCorreo" Completed="txtCorreo_Completed"/>
                     <Entry Placeholder="Contraseña" PlaceholderColor="White" TextColor="White" BackgroundColor="Transparent" x:Name="txtPassword" IsPassword="True" Completed="txtPassword_Completed"/>
+                    <Entry Placeholder="Confirmar contraseña" PlaceholderColor="White" TextColor="White" BackgroundColor="Transparent" x:Name="txtPasswordConfirm" IsPassword="True" TextChanged="txtPasswordConfirm_TextChanged" Completed="txtPasswordConfirm_Completed"/>
+                    <Label Text="No coincide la contraseña" TextColor="Red" FontSize="Small" IsVisible="false" x:Name="lbladvertencia" />
                     <Button Text="Crear usuario" BackgroundColor="#4ecdc4" CornerRadius="10" TextColor="White" x:Name="btnCrear" Clicked="btnCrear_Clicked" />
                 </StackLayout>
             </Grid>
