@@ -27,6 +27,7 @@ namespace Papaya
         public class Respuesta
         {
             public int id { get; set; }
+
             public string nombre { get; set; }
 
             public string energia { get; set; }

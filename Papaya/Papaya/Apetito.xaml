@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Papaya.Apetito"
+    Title="Apetito"
+    BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <Grid VerticalOptions="Center" HorizontalOptions="Center" Margin="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center">
+                <Label Text="¿Como consideras tu apetito?" TextColor="Black" FontSize="Title"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Grid.Column="0">
+                <Button Text="Como bastante" TextColor="Black" BackgroundColor="White" BorderColor="DarkBlue" BorderWidth="1"
+                        CornerRadius="10" HeightRequest="60"
+                        x:Name="btnBastante" Clicked="btnBastante_Clicked"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="1">
+                <Button Text="Estoy satisfecho con poca comida" TextColor="Black" BackgroundColor="White" BorderColor="DarkBlue" BorderWidth="1"
+                        CornerRadius="10" HeightRequest="60"
+                        x:Name="btnPoca" Clicked="btnPoca_Clicked"/>
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="0,30,0,0">
+                <Label Text="¿Como deseas tu perdida de peso?" TextColor="Black" FontSize="Title" IsVisible="false" x:Name="lblPerdida"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Grid.Column="0">
+                <Button Text="Suave" TextColor="Black" BackgroundColor="White" BorderColor="DarkBlue" BorderWidth="1"
+                        CornerRadius="10" HeightRequest="60" IsVisible="false"
+                        x:Name="btnSuave" Clicked="btnSuave_Clicked"/>
+            </StackLayout>
+            <StackLayout Grid.Row="3" Grid.Column="1">
+                <Button Text="Rapido" TextColor="Black" BackgroundColor="White" BorderColor="DarkBlue" BorderWidth="1"
+                        CornerRadius="10" HeightRequest="60" IsVisible="false"
+                        x:Name="btnRapido" Clicked="btnRapido_Clicked"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

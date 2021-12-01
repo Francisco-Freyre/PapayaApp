@@ -115,7 +115,7 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new ActividadFisica());
+                    await Navigation.PushAsync(new Apetito());
                 }
                 else
                 {

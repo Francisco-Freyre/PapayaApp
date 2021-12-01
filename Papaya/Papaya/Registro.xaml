@@ -21,7 +21,7 @@
                            x:Name="txtApellido" Completed="txtApellido_Completed" />
                     <StackLayout Margin="10, 10, 10, 10" HorizontalOptions="FillAndExpand">
                         <Picker x:Name="PickerEstado" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"
-                                Title="Selecciona el estado en el que vives" TitleColor="White" TextColor="White" SelectedIndexChanged="PickerEstado_SelectedIndexChanged">
+                                Title="Estado" TitleColor="White" TextColor="White" SelectedIndexChanged="PickerEstado_SelectedIndexChanged">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}" >
                                     <x:String>Aguascalientes</x:String>

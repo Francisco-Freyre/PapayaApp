@@ -50,6 +50,8 @@ namespace Papaya
             public string edad { get; set; }
 
             public string sexo { get; set; }
+
+            public string apetito { get; set; }
         }
 
         public async void kcal()
@@ -72,7 +74,7 @@ namespace Papaya
                     decimal altura = Convert.ToDecimal(resultado.altura) * 100;
                     if (resultado.sexo == "Hombre")
                     {
-                        decimal tmb = Convert.ToDecimal(66.5) + (Convert.ToDecimal(13.75) * Convert.ToDecimal(resultado.pesoMeta)) + (Convert.ToDecimal(5) * Convert.ToDecimal(altura)) - (Convert.ToDecimal(6.78) * Convert.ToDecimal(resultado.edad));
+                        decimal tmb = Convert.ToDecimal(66.5) + (Convert.ToDecimal(13.75) * Convert.ToDecimal(resultado.peso)) + (Convert.ToDecimal(5) * Convert.ToDecimal(altura)) - (Convert.ToDecimal(6.78) * Convert.ToDecimal(resultado.edad));
 
                         if (resultado.actividad == "Sedentario")
                         {
@@ -91,13 +93,13 @@ namespace Papaya
                             tmb = tmb * Convert.ToDecimal(1.4);
                         }
 
-                        lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(Decimal.Round(tmb)) + " kcal";
-                        kcalorias = Convert.ToInt32(Decimal.Round(tmb));
+                        lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(Decimal.Round(tmb - (tmb * Convert.ToDecimal(resultado.apetito)))) + " kcal";
+                        kcalorias = Convert.ToInt32(Decimal.Round(tmb - (tmb * Convert.ToDecimal(resultado.apetito))));
                         Preferences.Set("kcal", Convert.ToString(kcalorias));
                     }
                     else
                     {
-                        decimal tmb = Convert.ToDecimal(655) + (Convert.ToDecimal(9.56) * Convert.ToDecimal(resultado.pesoMeta)) + (Convert.ToDecimal(1.85) * Convert.ToDecimal(altura)) - (Convert.ToDecimal(4.68) * Convert.ToDecimal(resultado.edad));
+                        decimal tmb = Convert.ToDecimal(655) + (Convert.ToDecimal(9.56) * Convert.ToDecimal(resultado.peso)) + (Convert.ToDecimal(1.85) * Convert.ToDecimal(altura)) - (Convert.ToDecimal(4.68) * Convert.ToDecimal(resultado.edad));
 
                         if (resultado.actividad == "Sedentario")
                         {
@@ -116,8 +118,8 @@ namespace Papaya
                             tmb = tmb * Convert.ToDecimal(1.4);
                         }
 
-                        lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(Decimal.Round(tmb)) + " kcal";
-                        kcalorias = Convert.ToInt32(Decimal.Round(tmb));
+                        lblCalorias.Text = "Tus calorias a consumir son " + Convert.ToString(Decimal.Round(tmb - (tmb * Convert.ToDecimal(resultado.apetito)))) + " kcal";
+                        kcalorias = Convert.ToInt32(Decimal.Round(tmb - (tmb * Convert.ToDecimal(resultado.apetito))));
                         Preferences.Set("kcal", Convert.ToString(kcalorias));
                     }
                 }
