@@ -35,6 +35,7 @@ namespace Papaya
             btnSuave.IsVisible = true;
             btnRapido.IsVisible = true;
             btnBastante.BackgroundColor = Color.DarkGray;
+            btnPoca.BackgroundColor = Color.White;
             suave = 0.05;
             rapido = 0.10;
         }
@@ -45,6 +46,7 @@ namespace Papaya
             btnSuave.IsVisible = true;
             btnRapido.IsVisible = true;
             btnPoca.BackgroundColor = Color.DarkGray;
+            btnBastante.BackgroundColor = Color.White;
             suave = 0.10;
             rapido = 0.15;
         }

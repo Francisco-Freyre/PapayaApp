@@ -1,50 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:imagenes="clr-namespace:Papaya.Constantes"
+             xmlns:imagenes="clr-namespace:Papaya.Constantes" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material" xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="Papaya.PesoObjetivo"
              Title="Peso Objetivo"
-             BackgroundColor="White">
+             BackgroundColor="WhiteSmoke">
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80"></RowDefinition>
-                <RowDefinition Height="250"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <Grid Grid.Row="0" Margin="10, 10 , 10, 10" HorizontalOptions="Center" RowSpacing="10">
+        <ScrollView>
+            <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Label Text="Peso actual" Grid.Row="0" HorizontalOptions="Center" FontSize="Large" TextColor="Black"/>
-                <Label Text="0 Kg" x:Name="lblPesoInicial" Grid.Row="1" HorizontalOptions="Center" FontSize="Large"  TextColor="Red"/>
+                <material:MaterialCard Grid.Row="0" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Label x:Name="lbldeimc" FontSize="Title" Text="Tu Indice de Masa Corporal es " TextColor="#5B5B5B" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                        <Label x:Name="lblvalor" FontSize="Title" TextColor="Black" HorizontalOptions="Center"  HorizontalTextAlignment="Center"/>
+                        <forms:ChartView x:Name="grafico" HeightRequest="200" WidthRequest="200"></forms:ChartView>
+                    </StackLayout>
+                </material:MaterialCard >
+
+                <material:MaterialCard Grid.Row="1" Margin="10,0,10,10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                    <Grid  Margin="10, 10 , 10, 10" HorizontalOptions="Center" RowSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="lblTitulo" Grid.Row="0" Grid.ColumnSpan="4" HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center" FontSize="Title" />
+                        <Label Text="" TextColor="Black" x:Name="lblIMC" Grid.Row="1" Grid.ColumnSpan="4"
+                               HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Medium" />
+                        <ImageButton Source="{imagenes:Images Source=Papaya.Imagenes.flechaarriba.png}" Grid.Column="0"
+                                     Grid.Row="2" BackgroundColor="White" x:Name="btnSubir" Clicked="btnSubir_Clicked"/>
+                        <ImageButton Source="{imagenes:Images Source=Papaya.Imagenes.flechaabajo.png}" Grid.Column="1"
+                                     Grid.Row="2" BackgroundColor="White" x:Name="btnBajar" Clicked="btnBajar_Clicked"/>
+                        <Entry Text="" TextColor="Black" x:Name="entryPesoObjetivo" Keyboard="Numeric" WidthRequest="150"
+                               Grid.Row="2" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="End" FontSize="Medium" />
+                        <Label Text="Kg" TextColor="Black" VerticalTextAlignment="End" FontSize="Medium"
+                               HorizontalTextAlignment="Start" Grid.Column="3" Grid.Row="2" />
+                    </Grid>
+                </material:MaterialCard>
+
+                <material:MaterialButton Text="Continuar" TextColor="White" Elevation="8" BackgroundColor="#FCB322"
+                                         WidthRequest="350" HorizontalOptions="Center" CornerRadius="25" Grid.Row="2"
+                                         x:Name="btnSiguiente" Clicked="btnSiguiente_Clicked">
+                </material:MaterialButton>
             </Grid>
-
-            <Grid Grid.Row="1" Margin="10, 10 , 10, 10" HorizontalOptions="Center" RowSpacing="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="40"></RowDefinition>
-                    <RowDefinition Height="60"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40"></ColumnDefinition>
-                    <ColumnDefinition Width="40"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                <Label Text="Peso Objetivo" Grid.Row="0" Grid.ColumnSpan="4" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
-                <ImageButton Source="{imagenes:Images Source=Papaya.Imagenes.flechaarriba.png}" Grid.Column="0" Grid.Row="1" BackgroundColor="White" x:Name="btnSubir" Clicked="btnSubir_Clicked"/>
-                <ImageButton Source="{imagenes:Images Source=Papaya.Imagenes.flechaabajo.png}" Grid.Column="1" Grid.Row="1" BackgroundColor="White" x:Name="btnBajar" Clicked="btnBajar_Clicked"/>
-                <Entry Text="" TextColor="Black" x:Name="entryPesoObjetivo" Keyboard="Numeric" WidthRequest="100" Grid.Row="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="End" FontSize="Medium" />
-                <Label Text="Kg" TextColor="Black" VerticalTextAlignment="End" FontSize="Medium" HorizontalTextAlignment="Start" Grid.Column="3" Grid.Row="1" />
-                <Label Text="" TextColor="Black" x:Name="lblIMC" Grid.Row="2" Grid.ColumnSpan="4" HorizontalOptions="Start" FontSize="Medium" />
-                <Button Text="Continuar" Grid.ColumnSpan="4" TextColor="White" BackgroundColor="#FCB322" WidthRequest="350" HorizontalOptions="Center" CornerRadius="25" Grid.Row="3" x:Name="btnSiguiente" Clicked="btnSiguiente_Clicked" />
-            </Grid>
-        </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

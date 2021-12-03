@@ -50,6 +50,66 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\platanos.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\fresa.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\manzana.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\blackberry.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\pina.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\papaya.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\mandarina.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\naranja.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\kiwi.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\mango.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\sandia.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\pera.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\melocoton.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\uva.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\granada.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="ActividadFisica.xaml">
@@ -121,6 +181,21 @@
     <None Remove="Imagenes\flechaarriba.png" />
     <None Remove="Imagenes\flechaderecha.jpg" />
     <None Remove="Imagenes\flechaizquierda.png" />
+    <None Remove="Imagenes\platanos.png" />
+    <None Remove="Imagenes\fresa.png" />
+    <None Remove="Imagenes\manzana.png" />
+    <None Remove="Imagenes\blackberry.png" />
+    <None Remove="Imagenes\pina.png" />
+    <None Remove="Imagenes\papaya.png" />
+    <None Remove="Imagenes\mandarina.png" />
+    <None Remove="Imagenes\naranja.png" />
+    <None Remove="Imagenes\kiwi.png" />
+    <None Remove="Imagenes\mango.png" />
+    <None Remove="Imagenes\sandia.png" />
+    <None Remove="Imagenes\pera.png" />
+    <None Remove="Imagenes\melocoton.png" />
+    <None Remove="Imagenes\uva.png" />
+    <None Remove="Imagenes\granada.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imagenes\" />
