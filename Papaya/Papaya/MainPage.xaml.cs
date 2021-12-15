@@ -39,7 +39,6 @@ namespace Papaya
         {
             using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Iniciando sesiòn"))
             {
-
                 Login log = new Login
                 {
                     correo = txtCorreo.Text,

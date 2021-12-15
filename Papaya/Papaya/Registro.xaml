@@ -19,7 +19,7 @@
                            x:Name="txtNombre" Keyboard="Chat" Completed="txtNombre_Completed"/>
                     <Entry Placeholder="Apellido" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White"
                            x:Name="txtApellido" Completed="txtApellido_Completed" />
-                    <StackLayout Margin="10, 10, 10, 10" HorizontalOptions="FillAndExpand">
+                    <StackLayout Margin="0, 0, 0, 0" HorizontalOptions="FillAndExpand">
                         <Picker x:Name="PickerEstado" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"
                                 Title="Estado" TitleColor="White" TextColor="White" SelectedIndexChanged="PickerEstado_SelectedIndexChanged">
                             <Picker.ItemsSource>
@@ -64,7 +64,8 @@
                     <Entry Placeholder="Contraseña" PlaceholderColor="White" TextColor="White" BackgroundColor="Transparent" x:Name="txtPassword" IsPassword="True" Completed="txtPassword_Completed"/>
                     <Entry Placeholder="Confirmar contraseña" PlaceholderColor="White" TextColor="White" BackgroundColor="Transparent" x:Name="txtPasswordConfirm" IsPassword="True" TextChanged="txtPasswordConfirm_TextChanged" Completed="txtPasswordConfirm_Completed"/>
                     <Label Text="No coincide la contraseña" TextColor="Red" FontSize="Small" IsVisible="false" x:Name="lbladvertencia" />
-                    <Button Text="Crear usuario" BackgroundColor="#4ecdc4" CornerRadius="10" TextColor="White" x:Name="btnCrear" Clicked="btnCrear_Clicked" />
+                    <Button Margin="10" Text="Crear usuario" BackgroundColor="#4ecdc4" CornerRadius="10"
+                            TextColor="White" x:Name="btnCrear" Clicked="btnCrear_Clicked" />
                 </StackLayout>
             </Grid>
         </Grid>

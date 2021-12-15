@@ -23,7 +23,7 @@
                                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding kcal}" VerticalOptions="End" />
+                                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding kcal}" VerticalOptions="End" TextColor="Black" />
                                         <Label Grid.Column="1" Grid.Row="1" Text="{Binding id}" VerticalOptions="End" IsVisible="false" />
                                     </Grid>
                                 </material:MaterialCard>

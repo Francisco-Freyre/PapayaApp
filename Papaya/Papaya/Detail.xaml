@@ -51,7 +51,7 @@
                             </ffimageloading:CachedImage>
                             <Label x:Name="lblTitleDes" Grid.Column="1" Grid.Row="0" VerticalOptions="End" 
                            TextColor="Black" FontSize="Medium" />
-                            <Label Grid.Column="1" Grid.Row="1" VerticalOptions="End" x:Name="kcalDesayuno" />
+                            <Label Grid.Column="1" Grid.Row="1" VerticalOptions="End" x:Name="kcalDesayuno" TextColor="Black" />
                         </Grid>
                     </Grid>
                 </material:MaterialCard>
@@ -77,7 +77,7 @@
                             </ffimageloading:CachedImage>
                             <Label Grid.Column="1" Grid.Row="0" x:Name="lblColcacion" VerticalOptions="End" 
                            TextColor="Black" FontSize="Medium" />
-                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalColacion" VerticalOptions="End" />
+                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalColacion" VerticalOptions="End" TextColor="Black" />
                         </Grid>
                     </Grid>
                 </material:MaterialCard>
@@ -103,7 +103,7 @@
                             </ffimageloading:CachedImage>
                             <Label Grid.Column="1" Grid.Row="0" x:Name="lblComida" VerticalOptions="End" 
                            TextColor="Black" FontSize="Medium" />
-                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalComida" VerticalOptions="End" />
+                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalComida" VerticalOptions="End" TextColor="Black" />
                         </Grid>
                     </Grid>
                 </material:MaterialCard>
@@ -129,7 +129,7 @@
                             </ffimageloading:CachedImage>
                             <Label Grid.Column="1" Grid.Row="0" x:Name="lblColacion2" VerticalOptions="End" 
                            TextColor="Black" FontSize="Medium" />
-                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalColacion2" VerticalOptions="End" />
+                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalColacion2" VerticalOptions="End" TextColor="Black" />
                         </Grid>
                     </Grid>
                 </material:MaterialCard>
@@ -155,7 +155,7 @@
                             </ffimageloading:CachedImage>
                             <Label Grid.Column="1" Grid.Row="0" x:Name="lblCena" VerticalOptions="End" 
                            TextColor="Black" FontSize="Medium" />
-                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalCena" VerticalOptions="End" />
+                            <Label Grid.Column="1" Grid.Row="1" x:Name="kcalCena" VerticalOptions="End" TextColor="Black" />
                         </Grid>
                     </Grid>
                 </material:MaterialCard>

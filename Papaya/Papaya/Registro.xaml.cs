@@ -106,7 +106,10 @@ namespace Papaya
 
         void txtCorreo_Completed(System.Object sender, System.EventArgs e)
         {
-            txtPassword.Focus();
+            if (IsValidEmail(txtCorreo.Text))
+            {
+                txtPassword.Focus();
+            }
         }
 
         void txtPassword_Completed(System.Object sender, System.EventArgs e)
@@ -130,6 +133,19 @@ namespace Papaya
             {
                 lbladvertencia.IsVisible = false;
                 btnCrear.IsEnabled = true;
+            }
+        }
+
+        static bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

@@ -78,6 +78,7 @@ namespace Papaya
         {
             gridBebidas.IsVisible = true;
             frec = (string)PickerFrecuencia.ItemsSource[PickerFrecuencia.SelectedIndex];
+            gridBebidas.IsVisible = true;
         }
 
         private async void btnNo_Clicked(object sender, EventArgs e)

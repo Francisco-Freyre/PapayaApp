@@ -58,11 +58,11 @@ namespace Papaya
                         string[] desa = resultado.nombre.Split(del);
                         lblNombre.Text = desa[0];
                         lblProcedimiento.Text = resultado.procedimiento;
-                        lblTiempo.Text = "Tiempo de elaboracion: " + resultado.tiempo + " Min";
-                        lblEnergia.Text = "Energia: " + resultado.energia + " Kcal";
-                        lblProteinas.Text = "Proteinas: " + resultado.proteina + " Gr";
-                        lblCarbo.Text = "Carbohidratos: " + resultado.carbohidratos + " Gr";
-                        lblGrasas.Text = "Grasas: " + resultado.grasas + " Gr";
+                        lblTiempo.Text = "Tiempo de elaboracion: " + resultado.tiempo + " minutos";
+                        lblEnergia.Text = "Energia: " + resultado.energia + " kcal";
+                        lblProteinas.Text = "Proteinas: " + resultado.proteina + " grs";
+                        lblCarbo.Text = "Carbohidratos: " + resultado.carbohidratos + " grs";
+                        lblGrasas.Text = "Grasas: " + resultado.grasas + " grs";
                         foreach (string ingrediente in resultado.ingredientes)
                         {
                             Label lblprueba = new Label
