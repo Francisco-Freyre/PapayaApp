@@ -43,9 +43,6 @@ namespace Papaya
 
         public async void IMC()
         {
-            await MaterialDialog.Instance.SnackbarAsync(message: "Puedes aumentar o reducir el peso objetivo!!",
-                                                                                    actionButtonText: "Entendido!",
-                                                                                    msDuration: 5000);
             var request = new HttpRequestMessage();
             request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?meta=0&idCliente=" + Preferences.Get("userid", ""));
             request.Method = HttpMethod.Get;
@@ -151,6 +148,10 @@ namespace Papaya
             {
                 await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
             }
+
+            await MaterialDialog.Instance.SnackbarAsync(message: "Puedes aumentar o reducir el peso objetivo!!",
+                                                                                    actionButtonText: "Entendido!",
+                                                                                    msDuration: 5000);
         }
 
         private void btnContinuar_Clicked(object sender, EventArgs e)

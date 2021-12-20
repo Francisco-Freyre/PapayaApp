@@ -18,7 +18,9 @@ namespace Papaya
         public bool platano, fresa, manzana, blackberry, pina, papaya, mandarina, naranja, kiwi, mango, sandia, pera, durazno, uva, granada, calabazita, zana,
                     jiacama, pepino, espinaca, pimiento, cebolla, tomate, brocoli, coliflor, lechuga, apio, champiñon, betabel, esparrago, frijol, garbanzo, lenteja,
                     haba, chicharo, alubias, soya, humus, harina, pollo, carne, pescado, atun, huevo, pavo, cerdo, jamon, tofu, leche, yogur, queso, bebida, aguacate,
-                    cacahuate, almendra, pecana, india, nueces, aceituna, chia, aceite, gelatina, chocolate, caramelo, ate, chicle, miel, catsup, aderezo, mayonesa, mermelada;
+                    cacahuate, almendra, pecana, india, nueces, aceituna, chia, aceite, gelatina, chocolate, caramelo, ate, chicle, miel, catsup, aderezo, mayonesa, mermelada,
+                    pistache, mantequilla, avellana, margarina, quesocrema, vinagreta, cremaacida, quesopanela, quesocot, quesoasadero, quesomoz, lechecoco,
+                    lechealmendra, lechesoya, sardina, mariscos, nopal, chayote, acelga, ejote, porto, guayaba, higo, melon, toronja, tamarindo, tuna;
         List<string> alimentos = new List<string>();
         public Alimentos()
         {
@@ -1204,6 +1206,438 @@ namespace Papaya
                 btnGranada.BorderColor = Color.Gold;
                 granada = true;
                 alimentos.Add("Granadilla");
+            }
+        }
+
+        void btnPistache_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (pistache)
+            {
+                btnPistache.BorderColor = Color.White;
+                pistache = false;
+                alimentos.Remove("Pistache");
+            }
+            else
+            {
+                btnPistache.BorderColor = Color.Gold;
+                pistache = true;
+                alimentos.Add("Pistache");
+            }
+        }
+
+        void btnMantequilla_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (mantequilla)
+            {
+                btnMantequilla.BorderColor = Color.White;
+                mantequilla = false;
+                alimentos.Remove("Mantequilla");
+            }
+            else
+            {
+                btnMantequilla.BorderColor = Color.Gold;
+                mantequilla = true;
+                alimentos.Add("Mantequilla");
+            }
+        }
+
+        void btnAvellana_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (avellana)
+            {
+                btnAvellana.BorderColor = Color.White;
+                avellana = false;
+                alimentos.Remove("Avellana");
+            }
+            else
+            {
+                btnAvellana.BorderColor = Color.Gold;
+                avellana = true;
+                alimentos.Add("Avellana");
+            }
+        }
+
+        void btnMargarina_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (margarina)
+            {
+                btnMargarina.BorderColor = Color.White;
+                margarina = false;
+                alimentos.Remove("Margarina");
+            }
+            else
+            {
+                btnMargarina.BorderColor = Color.Gold;
+                margarina = true;
+                alimentos.Add("Margarina");
+            }
+        }
+
+        void btnQuesoCrema_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (quesocrema)
+            {
+                btnQuesoCrema.BorderColor = Color.White;
+                quesocrema = false;
+                alimentos.Remove("Queso crema");
+            }
+            else
+            {
+                btnQuesoCrema.BorderColor = Color.Gold;
+                quesocrema = true;
+                alimentos.Add("Queso crema");
+            }
+        }
+
+        void btnVinagreta_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (vinagreta)
+            {
+                btnVinagreta.BorderColor = Color.White;
+                vinagreta = false;
+                alimentos.Remove("Vinagreta");
+            }
+            else
+            {
+                btnVinagreta.BorderColor = Color.Gold;
+                vinagreta = true;
+                alimentos.Add("Vinagreta");
+            }
+        }
+
+        void btnCremaAcida_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (cremaacida)
+            {
+                btnCremaAcida.BorderColor = Color.White;
+                cremaacida = false;
+                alimentos.Remove("Crema acida");
+            }
+            else
+            {
+                btnCremaAcida.BorderColor = Color.Gold;
+                cremaacida = true;
+                alimentos.Add("Crema acida");
+            }
+        }
+
+        void btnQuesoPanela_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (quesopanela)
+            {
+                btnQuesoPanela.BorderColor = Color.White;
+                quesopanela = false;
+                alimentos.Remove("Queso panela");
+            }
+            else
+            {
+                btnQuesoPanela.BorderColor = Color.Gold;
+                quesopanela = true;
+                alimentos.Add("Queso panela");
+            }
+        }
+
+        void btnQuesoCot_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (quesocot)
+            {
+                btnQuesoCot.BorderColor = Color.White;
+                quesocot = false;
+                alimentos.Remove("Queso cottage");
+            }
+            else
+            {
+                btnQuesoCot.BorderColor = Color.Gold;
+                quesocot = true;
+                alimentos.Add("Queso cottage");
+            }
+        }
+
+        void btnQuesoAsadero_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (quesoasadero)
+            {
+                btnQuesoAsadero.BorderColor = Color.White;
+                quesoasadero = false;
+                alimentos.Remove("Queso asadero");
+            }
+            else
+            {
+                btnQuesoAsadero.BorderColor = Color.Gold;
+                quesoasadero = true;
+                alimentos.Add("Queso asadero");
+            }
+        }
+
+        void btnQuesoMoz_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (quesomoz)
+            {
+                btnQuesoMoz.BorderColor = Color.White;
+                quesomoz = false;
+                alimentos.Remove("Queso mozzarella");
+            }
+            else
+            {
+                btnQuesoMoz.BorderColor = Color.Gold;
+                quesomoz = true;
+                alimentos.Add("Queso mozzarella");
+            }
+        }
+
+        void btnLecheCoco_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (lechecoco)
+            {
+                btnLecheCoco.BorderColor = Color.White;
+                lechecoco = false;
+                alimentos.Remove("Leche de coco");
+            }
+            else
+            {
+                btnLecheCoco.BorderColor = Color.Gold;
+                lechecoco = true;
+                alimentos.Add("Leche de coco");
+            }
+        }
+
+        void btnLecheAlmendra_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (lechealmendra)
+            {
+                btnLecheAlmendra.BorderColor = Color.White;
+                lechealmendra = false;
+                alimentos.Remove("Leche de almendra");
+            }
+            else
+            {
+                btnLecheAlmendra.BorderColor = Color.Gold;
+                lechealmendra = true;
+                alimentos.Add("Leche de almendra");
+            }
+        }
+
+        void btnLecheSoya_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (lechesoya)
+            {
+                btnLecheSoya.BorderColor = Color.White;
+                lechesoya = false;
+                alimentos.Remove("Leche de soya");
+            }
+            else
+            {
+                btnLecheSoya.BorderColor = Color.Gold;
+                lechesoya = true;
+                alimentos.Add("Leche de soya");
+            }
+        }
+
+        void btnSardina_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (sardina)
+            {
+                btnSardina.BorderColor = Color.White;
+                sardina = false;
+                alimentos.Remove("Sardina");
+            }
+            else
+            {
+                btnSardina.BorderColor = Color.Gold;
+                sardina = true;
+                alimentos.Add("Sardina");
+            }
+        }
+
+        void btnMariscos_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (mariscos)
+            {
+                btnMariscos.BorderColor = Color.White;
+                mariscos = false;
+                alimentos.Remove("Mariscos");
+            }
+            else
+            {
+                btnMariscos.BorderColor = Color.Gold;
+                mariscos = true;
+                alimentos.Add("Mariscos");
+            }
+        }
+
+        void btnNopal_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (nopal)
+            {
+                btnNopal.BorderColor = Color.White;
+                nopal = false;
+                alimentos.Remove("Nopal");
+            }
+            else
+            {
+                btnNopal.BorderColor = Color.Gold;
+                nopal = true;
+                alimentos.Add("Nopal");
+            }
+        }
+
+        void btnChayote_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (chayote)
+            {
+                btnChayote.BorderColor = Color.White;
+                chayote = false;
+                alimentos.Remove("Chayote");
+            }
+            else
+            {
+                btnChayote.BorderColor = Color.Gold;
+                chayote = true;
+                alimentos.Add("Chayote");
+            }
+        }
+
+        void btnAcelga_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (acelga)
+            {
+                btnAcelga.BorderColor = Color.White;
+                acelga = false;
+                alimentos.Remove("Acelga");
+            }
+            else
+            {
+                btnAcelga.BorderColor = Color.Gold;
+                acelga = true;
+                alimentos.Add("Acelga");
+            }
+        }
+
+        void btnEjote_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (ejote)
+            {
+                btnEjote.BorderColor = Color.White;
+                ejote = false;
+                alimentos.Remove("Ejote");
+            }
+            else
+            {
+                btnEjote.BorderColor = Color.Gold;
+                ejote = true;
+                alimentos.Add("Ejote");
+            }
+        }
+
+        void btnPorto_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (porto)
+            {
+                btnPorto.BorderColor = Color.White;
+                porto = false;
+                alimentos.Remove("Portobello");
+            }
+            else
+            {
+                btnPorto.BorderColor = Color.Gold;
+                porto = true;
+                alimentos.Add("Portobello");
+            }
+        }
+
+        void btnGuayaba_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (guayaba)
+            {
+                btnGuayaba.BorderColor = Color.White;
+                guayaba = false;
+                alimentos.Remove("Guayaba");
+            }
+            else
+            {
+                btnGuayaba.BorderColor = Color.Gold;
+                guayaba = true;
+                alimentos.Add("Guayaba");
+            }
+        }
+
+        void btnHigo_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (higo)
+            {
+                btnHigo.BorderColor = Color.White;
+                higo = false;
+                alimentos.Remove("Higo");
+            }
+            else
+            {
+                btnHigo.BorderColor = Color.Gold;
+                higo = true;
+                alimentos.Add("Higo");
+            }
+        }
+
+        void btnMelon_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (melon)
+            {
+                btnMelon.BorderColor = Color.White;
+                melon = false;
+                alimentos.Remove("Melon");
+            }
+            else
+            {
+                btnMelon.BorderColor = Color.Gold;
+                melon = true;
+                alimentos.Add("Melon");
+            }
+        }
+
+        void btnToronja_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (toronja)
+            {
+                btnToronja.BorderColor = Color.White;
+                toronja = false;
+                alimentos.Remove("Toronja");
+            }
+            else
+            {
+                btnToronja.BorderColor = Color.Gold;
+                toronja = true;
+                alimentos.Add("Toronja");
+            }
+        }
+
+        void btnTamarindo_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (tamarindo)
+            {
+                btnTamarindo.BorderColor = Color.White;
+                tamarindo = false;
+                alimentos.Remove("Tamarindo");
+            }
+            else
+            {
+                btnTamarindo.BorderColor = Color.Gold;
+                tamarindo = true;
+                alimentos.Add("Tamarindo");
+            }
+        }
+
+        void Tunas_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (tuna)
+            {
+                Tunas.BorderColor = Color.White;
+                tuna = false;
+                alimentos.Remove("Tunas");
+            }
+            else
+            {
+                Tunas.BorderColor = Color.Gold;
+                tuna = true;
+                alimentos.Add("Tunas");
             }
         }
     }

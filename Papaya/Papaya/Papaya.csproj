@@ -110,6 +110,186 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\calabaza.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\zanahoria.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\nabo.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\pepino.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\espinacas.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\pimiento.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\brocoli.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\coliflor.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\lechuga.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\apio.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\seta.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\remolacha.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\esparragos.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\cebolla.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\tomate.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\frijol.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\garbanzos.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\lentils.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\habadesoja.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\chicharos.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\sopadefrijolesrojos.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\hummus.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\harina.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\piernadepollo.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\carne.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\pez.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\atun.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\huevo.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\pavo.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\chuletadecerdo.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\jamon.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\tofu.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\leche.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\yogur.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\queso.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\soymilk.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\aguacate.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\mani.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\almendra.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\nuez2.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\nuez.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\nuez1.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\aceituna.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\chia.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\botella.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="ActividadFisica.xaml">
@@ -196,6 +376,51 @@
     <None Remove="Imagenes\melocoton.png" />
     <None Remove="Imagenes\uva.png" />
     <None Remove="Imagenes\granada.png" />
+    <None Remove="Imagenes\calabaza.png" />
+    <None Remove="Imagenes\zanahoria.png" />
+    <None Remove="Imagenes\nabo.png" />
+    <None Remove="Imagenes\pepino.png" />
+    <None Remove="Imagenes\espinacas.png" />
+    <None Remove="Imagenes\pimiento.png" />
+    <None Remove="Imagenes\cebolla.png" />
+    <None Remove="Imagenes\tomate.png" />
+    <None Remove="Imagenes\brocoli.png" />
+    <None Remove="Imagenes\coliflor.png" />
+    <None Remove="Imagenes\lechuga.png" />
+    <None Remove="Imagenes\apio.png" />
+    <None Remove="Imagenes\seta.png" />
+    <None Remove="Imagenes\remolacha.png" />
+    <None Remove="Imagenes\esparragos.png" />
+    <None Remove="Imagenes\frijol.png" />
+    <None Remove="Imagenes\garbanzos.png" />
+    <None Remove="Imagenes\lentils.png" />
+    <None Remove="Imagenes\habadesoja.png" />
+    <None Remove="Imagenes\chicharos.png" />
+    <None Remove="Imagenes\sopadefrijolesrojos.png" />
+    <None Remove="Imagenes\hummus.png" />
+    <None Remove="Imagenes\harina.png" />
+    <None Remove="Imagenes\piernadepollo.png" />
+    <None Remove="Imagenes\carne.png" />
+    <None Remove="Imagenes\pez.png" />
+    <None Remove="Imagenes\atun.png" />
+    <None Remove="Imagenes\huevo.png" />
+    <None Remove="Imagenes\pavo.png" />
+    <None Remove="Imagenes\chuletadecerdo.png" />
+    <None Remove="Imagenes\jamon.png" />
+    <None Remove="Imagenes\tofu.png" />
+    <None Remove="Imagenes\leche.png" />
+    <None Remove="Imagenes\yogur.png" />
+    <None Remove="Imagenes\queso.png" />
+    <None Remove="Imagenes\soymilk.png" />
+    <None Remove="Imagenes\aguacate.png" />
+    <None Remove="Imagenes\mani.png" />
+    <None Remove="Imagenes\almendra.png" />
+    <None Remove="Imagenes\nuez2.png" />
+    <None Remove="Imagenes\nuez.png" />
+    <None Remove="Imagenes\nuez1.png" />
+    <None Remove="Imagenes\aceituna.png" />
+    <None Remove="Imagenes\chia.png" />
+    <None Remove="Imagenes\botella.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imagenes\" />

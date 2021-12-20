@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Papaya.Models;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,7 +26,11 @@ namespace Papaya
         {
             public string resultado { get; set; }
 
-            public string msg { get; set; }
+            public string token { get; set; }
+
+            public string nombre { get; set; }
+
+            public string userid { get; set; }
         } 
 
         private async void btnCrear_Clicked(object sender, EventArgs e)
@@ -70,11 +75,14 @@ namespace Papaya
                             txtCorreo.Text = "";
                             txtPassword.Text = "";
                             txtPasswordConfirm.Text = "";
-                            await DisplayAlert("Mensaje", resultado.msg, "OK");
+                            Preferences.Set("token", resultado.token);
+                            Preferences.Set("nombre", resultado.nombre);
+                            Preferences.Set("userid", resultado.userid);
+                            await Navigation.PushAsync(new IniDiag());
                         }
                         else
                         {
-                            await DisplayAlert("Mensaje", resultado.msg, "OK");
+                            await DisplayAlert("Mensaje", "Fallo el registro, intente de nuevo", "OK");
                         }
                     }
                     else

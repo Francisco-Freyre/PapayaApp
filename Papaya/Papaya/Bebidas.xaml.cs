@@ -76,8 +76,8 @@ namespace Papaya
 
         private void PickerFrecuencia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            gridBebidas.IsVisible = true;
             frec = (string)PickerFrecuencia.ItemsSource[PickerFrecuencia.SelectedIndex];
+            gridBebidas.IsVisible = true;
             gridBebidas.IsVisible = true;
         }
 
