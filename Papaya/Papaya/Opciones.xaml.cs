@@ -18,7 +18,6 @@ namespace Papaya
         Dieta diet = new Dieta();
         DateTime fecha = DateTime.Today;
         DateTime dias = DateTime.Today;
-        int numDia, idDesayuno = 0, idColacion = 0, idColacion2 = 0, idComida = 0, idCena = 0;
         string dat;
         public Opciones()
         {

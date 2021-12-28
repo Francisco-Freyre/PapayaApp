@@ -40,41 +40,68 @@ namespace Papaya
 
         private async void btnContinuar_Clicked(object sender, EventArgs e)
         {
-            Meta meta = new Meta
+            if (String.IsNullOrWhiteSpace(Convert.ToString(PickerEstatura.SelectedItem)))
             {
-                idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
-                peso = Convert.ToDecimal(Convert.ToString(PickerPeso.SelectedItem).Replace(" Kg", "")),
-                estatura = Convert.ToDecimal(Convert.ToString(PickerEstatura.SelectedItem).Replace(" Mts", "")),
-                edad = DateTime.Today.AddTicks(-fechaNacimiento.Date.Ticks).Year - 1,
-                sexo = Convert.ToString(PickerSexo.SelectedItem)
-            };
-
-            Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php");
-
-            var client = new HttpClient();
-
-            var json = JsonConvert.SerializeObject(meta);
-
-            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(RequestUri, contentJson);
-
-            if (response.StatusCode == HttpStatusCode.OK)
+                await DisplayAlert("Advertencia", "No se ha seleccionado ninguna estatura", "OK");
+            }
+            else
             {
-                string content = await response.Content.ReadAsStringAsync();
-
-                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                if (resultado.resultado)
+                if (String.IsNullOrWhiteSpace(Convert.ToString(PickerPeso.SelectedItem)))
                 {
-                    await Navigation.PushAsync(new PesoObjetivo());
+                    await DisplayAlert("Advertencia", "No se ha seleccionado ningun peso", "OK");
                 }
                 else
                 {
-                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    if (String.IsNullOrWhiteSpace(Convert.ToString(PickerSexo.SelectedItem)))
+                    {
+                        await DisplayAlert("Advertencia", "No se ha seleccionado ningun sexo", "OK");
+                    }
+                    else
+                    {
+                        if (String.IsNullOrWhiteSpace(Convert.ToString(fechaNacimiento.Date)))
+                        {
+                            await DisplayAlert("Advertencia", "No se ha seleccionado ninguna fecha", "OK");
+                        }
+                        else
+                        {
+                            Meta meta = new Meta
+                            {
+                                idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                                peso = Convert.ToDecimal(Convert.ToString(PickerPeso.SelectedItem).Replace(" Kg", "")),
+                                estatura = Convert.ToDecimal(Convert.ToString(PickerEstatura.SelectedItem).Replace(" Mts", "")),
+                                edad = DateTime.Today.AddTicks(-fechaNacimiento.Date.Ticks).Year - 1,
+                                sexo = Convert.ToString(PickerSexo.SelectedItem)
+                            };
+
+                            Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php");
+
+                            var client = new HttpClient();
+
+                            var json = JsonConvert.SerializeObject(meta);
+
+                            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                            var response = await client.PostAsync(RequestUri, contentJson);
+
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                string content = await response.Content.ReadAsStringAsync();
+
+                                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                                if (resultado.resultado)
+                                {
+                                    await Navigation.PushAsync(new PesoObjetivo());
+                                }
+                                else
+                                {
+                                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            
         }
 
         private void PickerSexo_SelectedIndexChanged(object sender, EventArgs e)

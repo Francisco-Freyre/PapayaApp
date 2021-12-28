@@ -37,47 +37,62 @@ namespace Papaya
 
         private async void btnLogin_Clicked(object sender, EventArgs e)
         {
-            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Iniciando sesiòn"))
+            if (String.IsNullOrWhiteSpace(txtCorreo.Text))
             {
-                Login log = new Login
+                await DisplayAlert("Advertencia", "El campo correo esta vacio", "OK");
+            }
+            else
+            {
+                if (String.IsNullOrWhiteSpace(txtPassword.Text))
                 {
-                    correo = txtCorreo.Text,
-                    password = txtPassword.Text
-                };
-
-                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/login.php");
-
-                var client = new HttpClient();
-
-                var json = JsonConvert.SerializeObject(log);
-
-                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-                var response = await client.PostAsync(RequestUri, contentJson);
-
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    string content = await response.Content.ReadAsStringAsync();
-
-                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                    if (resultado.resultado == "exito")
-                    {
-                        Preferences.Set("token", resultado.token);
-                        Preferences.Set("nombre", resultado.nombre);
-                        Preferences.Set("userid", resultado.userid);
-                        await Navigation.PushAsync(new IniDiag());
-                    }
-                    else if (resultado.resultado == "fallo")
-                    {
-                        await DisplayAlert("Mensaje", resultado.msg, "OK");
-                    }
+                    await DisplayAlert("Advertencia", "El campo contraseña esta vacio", "OK");
                 }
                 else
                 {
-                    await DisplayAlert("Mensaje", "Datos invalidos", "OK");
+                    using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Iniciando sesiòn"))
+                    {
+                        Login log = new Login
+                        {
+                            correo = txtCorreo.Text,
+                            password = txtPassword.Text
+                        };
+
+                        Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/login.php");
+
+                        var client = new HttpClient();
+
+                        var json = JsonConvert.SerializeObject(log);
+
+                        var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                        var response = await client.PostAsync(RequestUri, contentJson);
+
+                        if (response.StatusCode == HttpStatusCode.OK)
+                        {
+                            string content = await response.Content.ReadAsStringAsync();
+
+                            var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                            if (resultado.resultado == "exito")
+                            {
+                                Preferences.Set("token", resultado.token);
+                                Preferences.Set("nombre", resultado.nombre);
+                                Preferences.Set("userid", resultado.userid);
+                                await Navigation.PushAsync(new IniDiag());
+                            }
+                            else if (resultado.resultado == "fallo")
+                            {
+                                await DisplayAlert("Mensaje", resultado.msg, "OK");
+                            }
+                        }
+                        else
+                        {
+                            await DisplayAlert("Mensaje", "Datos invalidos", "OK");
+                        }
+                    }
                 }
             }
+            
         }
 
         private async void btnRegistro_Clicked(object sender, EventArgs e)
@@ -88,6 +103,19 @@ namespace Papaya
         void txtCorreo_Completed(System.Object sender, System.EventArgs e)
         {
             txtPassword.Focus();
+        }
+
+        void btnVerPass_Clicked(System.Object sender, System.EventArgs e)
+        {
+            txtPassword.IsPassword = !txtPassword.IsPassword;
+            if (txtPassword.IsPassword)
+            {
+                btnVerPass.Source = "eye.png";
+            }
+            else
+            {
+                btnVerPass.Source = "noteye.png";
+            }
         }
     }
 }

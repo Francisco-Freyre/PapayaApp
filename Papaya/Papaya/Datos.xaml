@@ -8,7 +8,7 @@
         <Grid BackgroundColor="White" VerticalOptions="Center">
             <StackLayout Margin="20, 20, 20, 20">
                 <Label Text="Estatura" TextColor="Black" FontSize="Large" />
-                <StackLayout Margin="10, 10, 10, 10">
+                <StackLayout>
                     <Picker x:Name="PickerEstatura" Title="Selecciona tu estatura" TextColor="Black">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -118,7 +118,7 @@
                     </Picker>
                 </StackLayout>
                 <Label Text="Peso actual" TextColor="Black" FontSize="Large" />
-                <StackLayout Margin="10, 10, 10, 10">
+                <StackLayout>
                     <Picker x:Name="PickerPeso" Title="Selecciona tu peso" TextColor="Black">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}" >
@@ -468,7 +468,7 @@
                     </Picker>
                 </StackLayout>
                 <Label Text="¿Cual es tu sexo?" FontSize="Large" TextColor="Black"/>
-                <StackLayout Margin="10, 10, 10, 10">
+                <StackLayout >
                     <Picker x:Name="PickerSexo" Title="Selecciona tu sexo" TextColor="Black" SelectedIndexChanged="PickerSexo_SelectedIndexChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}" >

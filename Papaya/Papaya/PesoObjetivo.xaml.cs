@@ -171,37 +171,43 @@ namespace Papaya
 
         private async void btnSiguiente_Clicked(object sender, EventArgs e)
         {
-            Meta meta = new Meta
+            if (String.IsNullOrWhiteSpace(Convert.ToString(entryPesoObjetivo.Text)))
             {
-                idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
-                pesoMeta = entryPesoObjetivo.Text
-            };
-            Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php");
-
-            var client = new HttpClient();
-
-            var json = JsonConvert.SerializeObject(meta);
-
-            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(RequestUri, contentJson);
-
-            if (response.StatusCode == HttpStatusCode.OK)
+                await DisplayAlert("Advertencia", "Indique un peso al que desea llegar", "OK");
+            }
+            else
             {
-                string content = await response.Content.ReadAsStringAsync();
-
-                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                if (resultado.resultado)
+                Meta meta = new Meta
                 {
-                    await Navigation.PushAsync(new Apetito());
-                }
-                else
+                    idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    pesoMeta = entryPesoObjetivo.Text
+                };
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(meta);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado)
+                    {
+                        await Navigation.PushAsync(new Apetito());
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
                 }
             }
-                    
         }
 
         private void btnSubir_Clicked(object sender, EventArgs e)
