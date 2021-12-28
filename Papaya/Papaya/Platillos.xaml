@@ -7,13 +7,13 @@
              Title="Platillos saludables" >
     <ContentPage.Content>
         <StackLayout Margin="20,20,20,20">
-            <Entry Keyboard="Default" x:Name="entryBuscar" TextColor="Black" PlaceholderColor="Black" Placeholder="Buscar platillo" TextChanged="entryBuscar_TextChanged" />
+            <SearchBar Keyboard="Default" x:Name="entryBuscar" TextColor="Black" PlaceholderColor="Black" Placeholder="Buscar platillo" TextChanged="entryBuscar_TextChanged" />
             <ListView x:Name="listaPlatillos" HasUnevenRows="True" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <material:MaterialCard Grid.Row="1" Margin="30" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
-                                <Grid Padding="10">
+                            <material:MaterialCard Grid.Row="1" Margin="5" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                                <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"></RowDefinition>
                                         <RowDefinition Height="*"></RowDefinition>

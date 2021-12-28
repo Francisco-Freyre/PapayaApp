@@ -70,6 +70,7 @@ namespace Papaya
                                 Text = ingrediente,
                                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
                                 HorizontalOptions = LayoutOptions.Center,
+                                HorizontalTextAlignment = TextAlignment.Center,
                                 TextColor = Color.Black
                             };
                             stackIngredientes.Children.Add(lblprueba);

@@ -31,20 +31,20 @@
                 <Label Text="Frutas" Margin="10" Padding="10" FontSize="Medium"
                        Grid.Row="1"
                        HorizontalOptions="Center" HorizontalTextAlignment="Center" />
-                <Grid Grid.Row="2" Margin="10, 10, 10, 10" HorizontalOptions="Center" RowSpacing="10" ColumnSpacing="10">
+                <Grid Grid.Row="2" Margin="0, 0, 0, 0" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="80" />
-                        <RowDefinition Height="80" />
-                        <RowDefinition Height="80" />
-                        <RowDefinition Height="80" />
-                        <RowDefinition Height="80" />
-                        <RowDefinition Height="80" />
-                        <RowDefinition Height="80" />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
                     </Grid.RowDefinitions>
 
                     <Button Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Platano"
@@ -154,20 +154,20 @@
                 </Grid>
 
                 <Label Grid.Row="3" Text="Verduras" Margin="10, 10, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
-                <Grid Grid.Row="4" Margin="10, 10, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
+                <Grid Grid.Row="4" Margin="0, 0, 0, 0" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Button Text="Calabacita" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.calabaza.png}"
@@ -272,16 +272,16 @@
                 </Grid>
 
                 <Label Grid.Row="5" Text="Leguminosas" Margin="10, 10, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
-                <Grid Grid.Row="6" Margin="10, 10, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
+                <Grid Grid.Row="6" Margin="0, 0, 0, 0" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Button Text="Frijol" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
@@ -331,17 +331,17 @@
                 </Grid>
 
                 <Label Grid.Row="7" Text="Proteinas" Margin="10, 10, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
-                <Grid Grid.Row="8" Margin="10, 10, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
+                <Grid Grid.Row="8" Margin="0, 0, 0, 0" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Button Text="Pollo" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
@@ -401,17 +401,17 @@
                 </Grid>
 
                 <Label Grid.Row="9" Text="Lacteos" Margin="10, 10, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
-                <Grid Grid.Row="10" Margin="10, 10, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
+                <Grid Grid.Row="10" Margin="0, 0, 0, 0" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Button Text="Leche" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
@@ -459,17 +459,17 @@
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.soymilk.png}" x:Name="btnQuesoMoz" Clicked="btnQuesoMoz_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Leche de coco" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Leche de coco" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.soymilk.png}" x:Name="btnLecheCoco" Clicked="btnLecheCoco_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Leche de almendra" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Leche de almendra" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.soymilk.png}" x:Name="btnLecheAlmendra" Clicked="btnLecheAlmendra_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Leche de soya" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Leche de soya" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.soymilk.png}" x:Name="btnLecheSoya" Clicked="btnLecheSoya_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
@@ -477,18 +477,18 @@
                 </Grid>
 
                 <Label Grid.Row="11" Text="Grasas" Margin="10, 10, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
-                <Grid Grid.Row="12" Margin="10, 10, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
+                <Grid Grid.Row="12" Margin="0, 0, 0, 0" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Button Text="Aguacate" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
@@ -511,7 +511,7 @@
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.nuez2.png}" x:Name="btnPecana" Clicked="btnPecana_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Nuez de la india" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Nuez de la india" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.nuez.png}" x:Name="btnNuezIndia" Clicked="btnNuezIndia_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
@@ -568,17 +568,17 @@
                 </Grid>
 
                 <Label Grid.Row="13" Text="Azucares" Margin="10, 10, 10, 10" Padding="10" FontSize="Medium" HorizontalOptions="Center" />
-                <Grid Grid.Row="14" Margin="10, 10, 10, 10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
+                <Grid Grid.Row="14" Margin="0, 0, 0, 0" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition ></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Button Text="Gelatina" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
