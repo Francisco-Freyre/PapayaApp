@@ -27,7 +27,10 @@
 			                        DownsampleToViewSize="true"
 			                        Source="{Binding img}" >
                                     </ffimageloading:CachedImage>
-                                    <Label Grid.Column="1" Grid.Row="0" Text="{Binding nombre}" VerticalOptions="End" TextColor="Black" FontSize="Medium" />
+                                    <Label Grid.Column="1" Grid.Row="0" Text="{Binding nombre}" VerticalOptions="StartAndExpand"
+                                           HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Start"
+                                           WidthRequest="1" MaxLines="3" LineBreakMode="WordWrap"
+                                           TextColor="Black" FontSize="Medium" />
                                     <Label Grid.Column="1" Grid.Row="1" Text="{Binding energia}" VerticalOptions="End" />
                                     <Label Grid.Column="1" Grid.Row="1" Text="{Binding id}" VerticalOptions="End" IsVisible="false" />
                                 </Grid>

@@ -49,8 +49,10 @@
                                     Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
 			                        DownsampleToViewSize="true">
                             </ffimageloading:CachedImage>
-                            <Label x:Name="lblTitleDes" Grid.Column="1" Grid.Row="0" VerticalOptions="End" 
-                           TextColor="Black" FontSize="Medium" />
+                            <Label x:Name="lblTitleDes" Grid.Column="1" Grid.Row="0" VerticalOptions="StartAndExpand" 
+                                   TextColor="Black" FontSize="Medium" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Start"
+                                   WidthRequest="1"
+                                   LineBreakMode="WordWrap" MaxLines="3" />
                             <Label Grid.Column="1" Grid.Row="1" VerticalOptions="End" x:Name="kcalDesayuno" TextColor="Black" />
                         </Grid>
                     </Grid>
@@ -75,8 +77,11 @@
                                     Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
 			                        DownsampleToViewSize="true">
                             </ffimageloading:CachedImage>
-                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblColcacion" VerticalOptions="End" 
-                           TextColor="Black" FontSize="Medium" />
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblColcacion" VerticalOptions="StartAndExpand"
+                                   HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Start"
+                                   WidthRequest="1" MaxLines="3"
+                                   TextColor="Black" FontSize="Medium"
+                                   LineBreakMode="WordWrap"/>
                             <Label Grid.Column="1" Grid.Row="1" x:Name="kcalColacion" VerticalOptions="End" TextColor="Black" />
                         </Grid>
                     </Grid>
@@ -101,8 +106,11 @@
                                     Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
 			                        DownsampleToViewSize="true">
                             </ffimageloading:CachedImage>
-                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblComida" VerticalOptions="End" 
-                           TextColor="Black" FontSize="Medium" />
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblComida" VerticalOptions="StartAndExpand"
+                                   HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Start"
+                                   WidthRequest="1" MaxLines="3"
+                                   TextColor="Black" FontSize="Medium"
+                                   LineBreakMode="WordWrap" />
                             <Label Grid.Column="1" Grid.Row="1" x:Name="kcalComida" VerticalOptions="End" TextColor="Black" />
                         </Grid>
                     </Grid>
@@ -127,8 +135,11 @@
                                     Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
 			                        DownsampleToViewSize="true">
                             </ffimageloading:CachedImage>
-                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblColacion2" VerticalOptions="End" 
-                           TextColor="Black" FontSize="Medium" />
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblColacion2" VerticalOptions="StartAndExpand"
+                                   HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Start"
+                                   WidthRequest="1" MaxLines="3"
+                                   TextColor="Black" FontSize="Medium"
+                                   LineBreakMode="WordWrap"/>
                             <Label Grid.Column="1" Grid.Row="1" x:Name="kcalColacion2" VerticalOptions="End" TextColor="Black" />
                         </Grid>
                     </Grid>
@@ -153,8 +164,10 @@
                                     Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
 			                        DownsampleToViewSize="true">
                             </ffimageloading:CachedImage>
-                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblCena" VerticalOptions="End" 
-                           TextColor="Black" FontSize="Medium" />
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblCena" VerticalOptions="StartAndExpand"
+                                   HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Start"
+                                   WidthRequest="1" MaxLines="3"
+                                   TextColor="Black" FontSize="Medium" LineBreakMode="WordWrap" />
                             <Label Grid.Column="1" Grid.Row="1" x:Name="kcalCena" VerticalOptions="End" TextColor="Black" />
                         </Grid>
                     </Grid>

@@ -154,21 +154,6 @@ namespace Papaya
                                                                                     msDuration: 5000);
         }
 
-        private void btnContinuar_Clicked(object sender, EventArgs e)
-        {
-            
-        }
-
-        private  void btnContinuar_Clicked_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private  void btnContinuar1_Clicked(object sender, EventArgs e)
-        {
-            
-        }
-
         private async void btnSiguiente_Clicked(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(Convert.ToString(entryPesoObjetivo.Text)))

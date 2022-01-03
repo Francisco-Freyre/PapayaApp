@@ -11,7 +11,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <material:MaterialCard Grid.Row="0" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
@@ -53,6 +53,7 @@
                 </material:MaterialCard>
 
                 <material:MaterialButton Text="Continuar" TextColor="White" Elevation="8" BackgroundColor="#FCB322"
+                                         IsVisible="True"
                                          WidthRequest="350" HorizontalOptions="Center" CornerRadius="25" Grid.Row="2"
                                          x:Name="btnSiguiente" Clicked="btnSiguiente_Clicked">
                 </material:MaterialButton>

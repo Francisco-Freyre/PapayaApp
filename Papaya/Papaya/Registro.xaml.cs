@@ -66,58 +66,67 @@ namespace Papaya
                             }
                             else
                             {
-                                if (txtPassword.Text == txtPasswordConfirm.Text)
+                                bool isEmail = Regex.IsMatch(txtCorreo.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+                                if (!isEmail)
                                 {
-                                    Regi registro = new Regi
+                                    await DisplayAlert("Advertencia", "El formato del correo electrónico es incorrecto, revíselo e intente de nuevo.", "OK");
+                                    txtCorreo.Focus();
+                                }
+                                else
+                                {
+                                    if (txtPassword.Text == txtPasswordConfirm.Text)
                                     {
-                                        nombre = txtNombre.Text,
-                                        apellido = txtApellido.Text,
-                                        estado = Convert.ToString(PickerEstado.SelectedItem),
-                                        email = txtCorreo.Text,
-                                        password = txtPassword.Text
-                                    };
-
-                                    Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/registro.php");
-
-                                    var client = new HttpClient();
-
-                                    var json = JsonConvert.SerializeObject(registro);
-
-                                    var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-                                    var response = await client.PostAsync(RequestUri, contentJson);
-
-                                    if (response.StatusCode == HttpStatusCode.OK)
-                                    {
-                                        string content = await response.Content.ReadAsStringAsync();
-
-                                        var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                                        if (resultado.resultado == "exito")
+                                        Regi registro = new Regi
                                         {
-                                            txtNombre.Text = "";
-                                            txtApellido.Text = "";
-                                            txtCorreo.Text = "";
-                                            txtPassword.Text = "";
-                                            txtPasswordConfirm.Text = "";
-                                            Preferences.Set("token", resultado.token);
-                                            Preferences.Set("nombre", resultado.nombre);
-                                            Preferences.Set("userid", resultado.userid);
-                                            await Navigation.PushAsync(new IniDiag());
+                                            nombre = txtNombre.Text,
+                                            apellido = txtApellido.Text,
+                                            estado = Convert.ToString(PickerEstado.SelectedItem),
+                                            email = txtCorreo.Text,
+                                            password = txtPassword.Text
+                                        };
+
+                                        Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/registro.php");
+
+                                        var client = new HttpClient();
+
+                                        var json = JsonConvert.SerializeObject(registro);
+
+                                        var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                                        var response = await client.PostAsync(RequestUri, contentJson);
+
+                                        if (response.StatusCode == HttpStatusCode.OK)
+                                        {
+                                            string content = await response.Content.ReadAsStringAsync();
+
+                                            var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                                            if (resultado.resultado == "exito")
+                                            {
+                                                txtNombre.Text = "";
+                                                txtApellido.Text = "";
+                                                txtCorreo.Text = "";
+                                                txtPassword.Text = "";
+                                                txtPasswordConfirm.Text = "";
+                                                Preferences.Set("token", resultado.token);
+                                                Preferences.Set("nombre", resultado.nombre);
+                                                Preferences.Set("userid", resultado.userid);
+                                                await Navigation.PushAsync(new IniDiag());
+                                            }
+                                            else
+                                            {
+                                                await DisplayAlert("Mensaje", "Fallo el registro, intente de nuevo", "OK");
+                                            }
                                         }
                                         else
                                         {
-                                            await DisplayAlert("Mensaje", "Fallo el registro, intente de nuevo", "OK");
+                                            await DisplayAlert("Mensaje", "La conexion con el servidor fallo, intenta de nuevo", "OK");
                                         }
                                     }
                                     else
                                     {
-                                        await DisplayAlert("Mensaje", "La conexion con el servidor fallo, intenta de nuevo", "OK");
+                                        await DisplayAlert("Mensaje", "La contraseña no coincide en la confirmacion", "OK");
                                     }
-                                }
-                                else
-                                {
-                                    await DisplayAlert("Mensaje", "La contraseña no coincide en la confirmacion", "OK");
                                 }
                             }
                         }
@@ -147,6 +156,7 @@ namespace Papaya
             if (!isEmail)
             {
                 DisplayAlert("Advertencia", "El formato del correo electrónico es incorrecto, revíselo e intente de nuevo.", "OK");
+                txtCorreo.Focus();
             }
             else
             {

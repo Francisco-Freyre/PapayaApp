@@ -24,6 +24,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Label Text="Selecciona los alimentos que no desees en tu menu (alérgicos, intolerantes o no apetecibles)"
                        Grid.Row="0"
@@ -38,116 +39,116 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
+                        <RowDefinition Height="75" />
+                        <RowDefinition Height="75" />
+                        <RowDefinition Height="75" />
+                        <RowDefinition Height="75" />
+                        <RowDefinition Height="75" />
+                        <RowDefinition Height="75" />
+                        <RowDefinition Height="75" />
                     </Grid.RowDefinitions>
 
                     <Button Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Platano"
                             TextColor="Black" ImageSource="{imagenes:Images Source=Papaya.Imagenes.platanos.png}"
-                            BackgroundColor="White" BorderWidth="3" BorderColor="White" FontSize="Small" x:Name="btnPlatano"
+                            BackgroundColor="White" BorderWidth="3" BorderColor="White" FontSize="10" x:Name="btnPlatano"
                             ContentLayout="Bottom, 0" Clicked="btnPlatano_Clicked"/>
 
-                    <Button Text="Fresa" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.fresa.png}"
+                    <Button Text="Fresa" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.fresa.png}"
                             Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnFresa" Clicked="btnFresa_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Manzana" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.manzana.png}"
+                    <Button Text="Manzana" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.manzana.png}"
                             Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnManzana" Clicked="btnManzana_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Mora azul" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.blackberry.png}"
+                    <Button Text="Mora azul" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.blackberry.png}"
                             Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnBlackberry" Clicked="btnBlackberry_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Piña" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.pina.png}"
+                    <Button Text="Piña" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.pina.png}"
                             Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnPina" Clicked="btnPina_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Papaya" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.papaya.png}"
+                    <Button Text="Papaya" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.papaya.png}"
                             Grid.Row="1" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnPapaya" Clicked="btnPapaya_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Mandarina" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.mandarina.png}"
+                    <Button Text="Mandarina" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.mandarina.png}"
                             Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnMandarina" Clicked="btnMandarina_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Naranja" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.naranja.png}"
+                    <Button Text="Naranja" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.naranja.png}"
                             Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnNaranja" Clicked="btnNaranja_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Kiwi" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.kiwi.png}"
+                    <Button Text="Kiwi" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.kiwi.png}"
                             Grid.Row="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnKiwi" Clicked="btnKiwi_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Mango" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.mango.png}"
+                    <Button Text="Mango" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.mango.png}"
                             Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnMango" Clicked="btnMango_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Sandia" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.sandia.png}"
+                    <Button Text="Sandia" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.sandia.png}"
                             Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnSandia" Clicked="btnSandia_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Pera" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.pera.png}"
+                    <Button Text="Pera" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.pera.png}"
                             Grid.Row="3" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnPera" Clicked="btnPera_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Durazno" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.melocoton.png}"
+                    <Button Text="Durazno" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.melocoton.png}"
                             Grid.Row="4" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnDurazno" Clicked="btnDurazno_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Uva" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.uva.png}"
+                    <Button Text="Uva" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.uva.png}"
                             Grid.Row="4" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnUva" Clicked="btnUva_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Limon" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.granada.png}"
+                    <Button Text="Limon" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.granada.png}"
                             Grid.Row="4" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnGranada" Clicked="btnGranada_Clicked" 
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Guayaba" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.melocoton.png}"
+                    <Button Text="Guayaba" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.melocoton.png}"
                             Grid.Row="5" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnGuayaba" Clicked="btnGuayaba_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Higo" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.uva.png}"
+                    <Button Text="Higo" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.uva.png}"
                             Grid.Row="5" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnHigo" Clicked="btnHigo_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Melon" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.granada.png}"
+                    <Button Text="Melon" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.granada.png}"
                             Grid.Row="5" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnMelon" Clicked="btnMelon_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Toronja" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.melocoton.png}"
+                    <Button Text="Toronja" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.melocoton.png}"
                             Grid.Row="6" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnToronja" Clicked="btnToronja_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Tamarindo" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.uva.png}"
+                    <Button Text="Tamarindo" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.uva.png}"
                             Grid.Row="6" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnTamarindo" Clicked="btnTamarindo_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Tunas" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.granada.png}"
+                    <Button Text="Tunas" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.granada.png}"
                             Grid.Row="6" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="Tunas" Clicked="Tunas_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
@@ -161,111 +162,111 @@
                         <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Button Text="Calabacita" TextColor="Black" FontSize="Small" ImageSource="{imagenes:Images Source=Papaya.Imagenes.calabaza.png}"
+                    <Button Text="Calabacita" TextColor="Black" FontSize="10" ImageSource="{imagenes:Images Source=Papaya.Imagenes.calabaza.png}"
                             Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ContentLayout="Bottom, 0" x:Name="btnCalabacita" Clicked="btnCalabacita_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Zanahoria" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Zanahoria" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.zanahoria.png}" x:Name="btnZanahoria" Clicked="btnZanahoria_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Jicama" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Jicama" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.nabo.png}" x:Name="btnJicama" Clicked="btnJicama_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Pepino" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Pepino" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.pepino.png}" x:Name="btnPepino" Clicked="btnPepino_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Espinaca" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Espinaca" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.espinacas.png}" x:Name="btnEspinaca" Clicked="btnEspinaca_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Pimiento" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Pimiento" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.pimiento.png}" x:Name="btnPimiento" Clicked="btnPimiento_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Cebolla" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Cebolla" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.cebolla.png}" x:Name="btnCebolla" Clicked="btnCebolla_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Tomate" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Tomate" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.tomate.png}" x:Name="btnTomate" Clicked="btnTomate_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Brocoli" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Brocoli" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.brocoli.png}" x:Name="btnBrocoli" Clicked="btnBrocoli_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Coliflor" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Coliflor" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.coliflor.png}" x:Name="btnColiflor" Clicked="btnColiflor_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Lechuga" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Lechuga" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.lechuga.png}" x:Name="btnLechuga" Clicked="btnLechuga_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Apio" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Apio" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.apio.png}" x:Name="btnApio" Clicked="btnApio_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Champiñones" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Champiñones" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="4" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.seta.png}" x:Name="btnChampi" Clicked="btnChampi_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Betabel" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Betabel" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="4" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.apio.png}" x:Name="btnBetabel" Clicked="btnBetabel_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Esparrago" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Esparrago" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="4" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.esparragos.png}" x:Name="btnEsparragos" Clicked="btnEsparragos_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Nopal" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Nopal" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="5" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.esparragos.png}" x:Name="btnNopal" Clicked="btnNopal_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Chayote" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Chayote" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="5" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.esparragos.png}" x:Name="btnChayote" Clicked="btnChayote_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Acelga" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Acelga" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="5" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.esparragos.png}" x:Name="btnAcelga" Clicked="btnAcelga_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Ejote" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Ejote" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="6" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.esparragos.png}" x:Name="btnEjote" Clicked="btnEjote_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Portobello" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Portobello" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="6" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.esparragos.png}" x:Name="btnPorto" Clicked="btnPorto_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
@@ -279,52 +280,52 @@
                         <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Button Text="Frijol" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Frijol" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.frijol.png}" x:Name="btnFrijol" Clicked="btnFrijol_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Garbanzo" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Garbanzo" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.garbanzos.png}" x:Name="btnGarbanzo" Clicked="btnGarbanzo_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White" />
 
-                    <Button Text="Lenteja" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Lenteja" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.lentils.png}" x:Name="btnLenteja" Clicked="btnLenteja_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Haba" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Haba" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.habadesoja.png}" x:Name="btnHaba" Clicked="btnHaba_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Chicharo" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Chicharo" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.chicharos.png}" x:Name="btnChicharo" Clicked="btnChicharo_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Alubias" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Alubias" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.sopadefrijolesrojos.png}" x:Name="btnAlubias" Clicked="btnAlubias_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Soya" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Soya" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.habadesoja.png}" x:Name="btnSoya" Clicked="btnSoya_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Hummus" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Hummus" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.hummus.png}" x:Name="btnHumus" Clicked="btnHumus_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Harina" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Harina" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.harina.png}" x:Name="btnHarina" Clicked="btnHarina_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
@@ -338,63 +339,63 @@
                         <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Button Text="Pollo" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Pollo" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.piernadepollo.png}" x:Name="btnPollo" Clicked="btnPollo_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Carne" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Carne" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.carne.png}" x:Name="btnCarne" Clicked="btnCarne_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Pescado" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Pescado" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.pez.png}" x:Name="btnPescado" Clicked="btnPescado_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Atun" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Atun" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.atun.png}" x:Name="btnAtun" Clicked="btnAtun_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Huevo" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Huevo" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.huevo.png}" x:Name="btnHuevo" Clicked="btnHuevo_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Pavo" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Pavo" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.pavo.png}" x:Name="btnPavo" Clicked="btnPavo_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Cerdo" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Cerdo" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.chuletadecerdo.png}" x:Name="btnCerdo" Clicked="btnCerdo_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Jamon" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Jamon" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.jamon.png}" x:Name="btnJamon" Clicked="btnJamon_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Salmon" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Salmon" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.tofu.png}" x:Name="btnTofu" Clicked="btnTofu_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Sardina" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Sardina" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.tofu.png}" x:Name="btnSardina" Clicked="btnSardina_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Mariscos" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Mariscos" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.tofu.png}" x:Name="btnMariscos" Clicked="btnMariscos_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
@@ -408,53 +409,53 @@
                         <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Button Text="Leche" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Leche" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.leche.png}" x:Name="btnLeche" Clicked="btnLeche_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Yogurt" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Yogurt" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.yogur.png}" x:Name="btnYogur" Clicked="btnYogur_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Requeson" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Requeson" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.queso.png}" x:Name="btnQueso" Clicked="btnQueso_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Jocoque" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Jocoque" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.soymilk.png}" x:Name="btnBebida" Clicked="btnBebida_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Crema acida" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Crema acida" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.soymilk.png}" x:Name="btnCremaAcida" Clicked="btnCremaAcida_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Queso panela" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Queso panela" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.soymilk.png}" x:Name="btnQuesoPanela" Clicked="btnQuesoPanela_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Queso cottage" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Queso cottage" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.soymilk.png}" x:Name="btnQuesoCot" Clicked="btnQuesoCot_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Queso asadero" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Queso asadero" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.soymilk.png}" x:Name="btnQuesoAsadero" Clicked="btnQuesoAsadero_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Queso mozzarella" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Queso mozzarella" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.soymilk.png}" x:Name="btnQuesoMoz" Clicked="btnQuesoMoz_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
@@ -484,29 +485,29 @@
                         <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Button Text="Aguacate" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Aguacate" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aguacate.png}" x:Name="btnAguacate" Clicked="btnAguacate_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Cacahuate" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Cacahuate" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.mani.png}" x:Name="btnCacahuate" Clicked="btnCacahuate_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Almendras" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Almendras" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.almendra.png}" x:Name="btnAlmendras" Clicked="btnAlmendras_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Nuez pecana" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Nuez pecana" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.nuez2.png}" x:Name="btnPecana" Clicked="btnPecana_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
@@ -516,52 +517,52 @@
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.nuez.png}" x:Name="btnNuezIndia" Clicked="btnNuezIndia_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Nueces" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Nueces" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.nuez1.png}" x:Name="btnNuez" Clicked="btnNuez_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Aceituna" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Aceituna" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnAceituna" Clicked="btnAceituna_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Mayonesa" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Mayonesa" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.chia.png}" x:Name="btnChia" Clicked="btnChia_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Aderezo" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Aderezo" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.botella.png}" x:Name="btnAceite" Clicked="btnAceite_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Pistache" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Pistache" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnPistache" Clicked="btnPistache_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Avellana" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Avellana" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnMantequilla" Clicked="btnMantequilla_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Mantequilla" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Mantequilla" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnAvellana" Clicked="btnAvellana_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                     <Button Text="Margarina" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                     <Button Text="Margarina" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="4" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnMargarina" Clicked="btnMargarina_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Queso crema" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Queso crema" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="4" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnQuesoCrema" Clicked="btnQuesoCrema_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Vinagreta" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Vinagreta" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="4" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnVinagreta" Clicked="btnVinagreta_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
@@ -575,64 +576,66 @@
                         <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
-                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
+                        <RowDefinition Height="75" ></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Button Text="Gelatina" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Gelatina" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnGelatina" Clicked="btnGelatina_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Chocolate" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Chocolate" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnChocolate" Clicked="btnChocolate_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Caramelo" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Caramelo" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnCaramelo" Clicked="btnCaramelo_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Ate" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Ate" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnAte" Clicked="btnAte_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Azucar de mesa" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Azucar de mesa" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnChicle" Clicked="btnChicle_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Miel" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Miel" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="1" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnMiel" Clicked="btnMiel_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Catsup" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Catsup" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnCatsup" Clicked="btnCatsup_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Flan" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Flan" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnAderezo" Clicked="btnAderezo_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Jugo de fruta" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Jugo de fruta" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnMayonesa" Clicked="btnMayonesa_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
 
-                    <Button Text="Mermelada" TextColor="Black" FontSize="Small" ContentLayout="Bottom, 0"
+                    <Button Text="Mermelada" TextColor="Black" FontSize="10" ContentLayout="Bottom, 0"
                             Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             ImageSource="{imagenes:Images Source=Papaya.Imagenes.aceituna.png}" x:Name="btnMermelada" Clicked="btnMermelada_Clicked"
                             BackgroundColor="White" BorderWidth="3" BorderColor="White"/>
                 </Grid>
 
-                <Button Grid.Row="15" Text="Continuar" TextColor="White" Margin="15, 10, 10, 10" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" CornerRadius="25" BackgroundColor="#FCB322" />
+                <Button Grid.Row="15" Text="Continuar" TextColor="White"
+                        Margin="15, 10, 10, 10" x:Name="btnContinuar" Clicked="btnContinuar_Clicked"
+                        CornerRadius="25" BackgroundColor="#FCB322" IsVisible="True" />
             </Grid>
         </ScrollView>
     </ContentPage.Content>

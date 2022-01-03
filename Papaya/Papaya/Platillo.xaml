@@ -7,7 +7,7 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="250"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="1700"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <ffimageloading:CachedImage Grid.Row="0" 
@@ -36,10 +36,12 @@
                             <Label TextColor="Black" Margin="15" x:Name="lblProcedimiento" FontSize="Medium" HorizontalOptions="Start" />
                         </StackLayout>
                     </material:MaterialCard>
-                    <material:MaterialCard Grid.Row="3" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                    <material:MaterialCard Grid.Row="3" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand"
+                                           IsVisible="True" >
                         <Label x:Name="lblTiempo" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" />
                     </material:MaterialCard>
-                    <material:MaterialCard Grid.Row="4" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                    <material:MaterialCard Grid.Row="4" Margin="10" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand"
+                                           IsVisible="True">
                         <StackLayout>
                             <Label TextColor="Black" Text="Aporte Nutricional" FontSize="Large" HorizontalOptions="Start" />
                             <Label TextColor="Black" Margin="15" x:Name="lblEnergia" FontSize="Medium" HorizontalOptions="Start" />
