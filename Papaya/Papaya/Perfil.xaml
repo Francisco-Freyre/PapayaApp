@@ -10,9 +10,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Image Grid.Row="0" Source="userpic.png" WidthRequest="120" HeightRequest="180" Margin="0, 50, 0, 50" />
+            <Image Grid.Row="0" Source="userpic.png" WidthRequest="120" HeightRequest="180" Margin="0, 50, 0, 50"
+                   x:Name="LblImg"/>
 
             <StackLayout Grid.Row="1" Padding="30,20">
+                <Button x:Name="btnImage" Text="Selecciona tu foto" TextColor="Black" BackgroundColor="White"
+                        Clicked="btnImage_Clicked"/>
                 <Label TextColor="Black" Text="Nombre" FontSize="Medium" HorizontalOptions="Center" />
                 <Label TextColor="Black" Text="Correo electronico" FontSize="Medium" HorizontalOptions="Center" />
                 <Label TextColor="Black" Text="Edad" FontSize="Medium" HorizontalOptions="Center" />
