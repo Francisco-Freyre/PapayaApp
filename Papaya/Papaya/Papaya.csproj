@@ -290,6 +290,45 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Imagenes\limon.png" />
+    <EmbeddedResource Include="Imagenes\guayaba.png" />
+    <EmbeddedResource Include="Imagenes\higo.png" />
+    <EmbeddedResource Include="Imagenes\melon.png" />
+    <EmbeddedResource Include="Imagenes\toronja.png" />
+    <EmbeddedResource Include="Imagenes\tamarindo.png" />
+    <EmbeddedResource Include="Imagenes\acelga.png" />
+    <EmbeddedResource Include="Imagenes\betabel.png" />
+    <EmbeddedResource Include="Imagenes\chayote.png" />
+    <EmbeddedResource Include="Imagenes\tuna.png" />
+    <EmbeddedResource Include="Imagenes\avellana.png" />
+    <EmbeddedResource Include="Imagenes\mantequilla.png" />
+    <EmbeddedResource Include="Imagenes\margarina.png" />
+    <EmbeddedResource Include="Imagenes\mariscos.png" />
+    <EmbeddedResource Include="Imagenes\mayonesa.png" />
+    <EmbeddedResource Include="Imagenes\pistache.png" />
+    <EmbeddedResource Include="Imagenes\quesocrema.png" />
+    <EmbeddedResource Include="Imagenes\salmon.png" />
+    <EmbeddedResource Include="Imagenes\sardina.png" />
+    <EmbeddedResource Include="Imagenes\vinagreta.png" />
+    <EmbeddedResource Include="Imagenes\azucar.png" />
+    <EmbeddedResource Include="Imagenes\caramelo.png" />
+    <EmbeddedResource Include="Imagenes\catsup.png" />
+    <EmbeddedResource Include="Imagenes\chocolate.png" />
+    <EmbeddedResource Include="Imagenes\cremaacida.png" />
+    <EmbeddedResource Include="Imagenes\flan.png" />
+    <EmbeddedResource Include="Imagenes\gelatina.png" />
+    <EmbeddedResource Include="Imagenes\jocoque.png" />
+    <EmbeddedResource Include="Imagenes\jugofruta.png" />
+    <EmbeddedResource Include="Imagenes\mermelada.png" />
+    <EmbeddedResource Include="Imagenes\miel.png" />
+    <EmbeddedResource Include="Imagenes\mozzarela.png" />
+    <EmbeddedResource Include="Imagenes\quesocottage.png" />
+    <EmbeddedResource Include="Imagenes\quesopanela.png" />
+    <EmbeddedResource Include="Imagenes\requeson.png" />
+    <EmbeddedResource Include="Imagenes\soja.png" />
+    <EmbeddedResource Include="Imagenes\nopal.png" />
+    <EmbeddedResource Include="Imagenes\ejote.png" />
+    <EmbeddedResource Include="Imagenes\portobello.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="ActividadFisica.xaml">
@@ -421,6 +460,44 @@
     <None Remove="Imagenes\aceituna.png" />
     <None Remove="Imagenes\chia.png" />
     <None Remove="Imagenes\botella.png" />
+    <None Remove="Imagenes\limon.png" />
+    <None Remove="Imagenes\guayaba.png" />
+    <None Remove="Imagenes\higo.png" />
+    <None Remove="Imagenes\melon.png" />
+    <None Remove="Imagenes\toronja.png" />
+    <None Remove="Imagenes\tamarindo.png" />
+    <None Remove="Imagenes\acelga.png" />
+    <None Remove="Imagenes\betabel.png" />
+    <None Remove="Imagenes\chayote.png" />
+    <None Remove="Imagenes\avellana.png" />
+    <None Remove="Imagenes\mantequilla.png" />
+    <None Remove="Imagenes\margarina.png" />
+    <None Remove="Imagenes\mariscos.png" />
+    <None Remove="Imagenes\mayonesa.png" />
+    <None Remove="Imagenes\pistache.png" />
+    <None Remove="Imagenes\quesocrema.png" />
+    <None Remove="Imagenes\salmon.png" />
+    <None Remove="Imagenes\sardina.png" />
+    <None Remove="Imagenes\vinagreta.png" />
+    <None Remove="Imagenes\azucar.png" />
+    <None Remove="Imagenes\caramelo.png" />
+    <None Remove="Imagenes\catsup.png" />
+    <None Remove="Imagenes\chocolate.png" />
+    <None Remove="Imagenes\cremaacida.png" />
+    <None Remove="Imagenes\flan.png" />
+    <None Remove="Imagenes\gelatina.png" />
+    <None Remove="Imagenes\jocoque.png" />
+    <None Remove="Imagenes\jugofruta.png" />
+    <None Remove="Imagenes\mermelada.png" />
+    <None Remove="Imagenes\miel.png" />
+    <None Remove="Imagenes\mozzarela.png" />
+    <None Remove="Imagenes\quesocottage.png" />
+    <None Remove="Imagenes\quesopanela.png" />
+    <None Remove="Imagenes\requeson.png" />
+    <None Remove="Imagenes\soja.png" />
+    <None Remove="Imagenes\nopal.png" />
+    <None Remove="Imagenes\ejote.png" />
+    <None Remove="Imagenes\portobello.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imagenes\" />

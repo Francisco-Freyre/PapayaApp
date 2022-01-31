@@ -72,7 +72,7 @@ namespace Papaya
 
         private void entryBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            listaPlatillos.ItemsSource = respuestas.Where(r => r.nombre.Contains(entryBuscar.Text));
+            listaPlatillos.ItemsSource = respuestas.Where(r => r.nombre.ToLower().Contains(entryBuscar.Text.ToLower()));
         }
     }
 }

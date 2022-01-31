@@ -64,7 +64,7 @@ namespace Papaya
                     decimal rangoBajo = alturaCuadrada * Convert.ToDecimal(18.5);
                     double valor = Convert.ToDouble(Convert.ToDecimal(resultado.peso) / alturaCuadrada);
                     lblvalor.TextType = TextType.Html;
-                    lblvalor.Text = Decimal.Round(Convert.ToDecimal(valor), 2) + " Kg/mts<sup><small>2</small></sup>";
+                    lblvalor.Text = Decimal.Round(Convert.ToDecimal(valor), 1) + " Kg/mts<sup><small>2</small></sup>";
                     lblvalor.HorizontalOptions = LayoutOptions.Center;
                     lblvalor.HorizontalTextAlignment = TextAlignment.Center;
                     lblvalor.TextColor = Color.Black;
