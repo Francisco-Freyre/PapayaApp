@@ -22,7 +22,7 @@ namespace Papaya
         public Popup(int idplatillo)
         {
             InitializeComponent();
-            lblFecha.Text = fecha.ToLongDateString();
+            lblFecha.Text = fecha.ToString("dddd").ToUpper();
             numDia = (int)fecha.DayOfWeek;
             this.idPlatillo = idplatillo;
             dieta();
@@ -113,11 +113,12 @@ namespace Papaya
                         switch (numDia)
                         {
                             case 0:
-                                lblTitleDes.Text = resultado.dieta.d_domingo;
-                                lblColcacion.Text = resultado.dieta.c_domingo;
-                                lblColacion2.Text = resultado.dieta.c2_domingo;
-                                lblComida.Text = resultado.dieta.co_domingo;
-                                lblCena.Text = resultado.dieta.ce_domingo;
+                                cardDes.IsVisible = false;
+                                cardCol.IsVisible = false;
+                                cardCom.IsVisible = false;
+                                cardCol2.IsVisible = false;
+                                cardCena.IsVisible = false;
+                                cardDomingo.IsVisible = true;
                                 break;
 
                             case 1:
@@ -186,7 +187,6 @@ namespace Papaya
                                 lblCena.Text = cos5[14];
                                 break;
                         }
-                        //await DisplayAlert("Mensaje", resultado.kcal + resultado.categoria + resultado.descripcion, "OK");
                     }
                 }
             }
@@ -285,17 +285,18 @@ namespace Papaya
             switch (numerodias)
             {
                 case 0:
-                    lblFecha.Text = dias.ToLongDateString();
-                    lblTitleDes.Text = diet.d_domingo;
-                    lblColcacion.Text = diet.c_domingo;
-                    lblColacion2.Text = diet.c2_domingo;
-                    lblComida.Text = diet.co_domingo;
-                    lblCena.Text = diet.ce_domingo;
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
+                    cardDes.IsVisible = false;
+                    cardCol.IsVisible = false;
+                    cardCom.IsVisible = false;
+                    cardCol2.IsVisible = false;
+                    cardCena.IsVisible = false;
+                    cardDomingo.IsVisible = true;
                     break;
 
                 case 1:
                     var coms = comidas(diet.d_lunes, diet.c_lunes, diet.c2_lunes, diet.co_lunes, diet.ce_lunes);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos0 = individual(coms[0], coms[1], coms[2], coms[3], coms[4]);
                     platillo(cos0[0], cos0[2], cos0[4], cos0[6], cos0[8]);
                     lblTitleDes.Text = cos0[10];
@@ -303,11 +304,17 @@ namespace Papaya
                     lblColacion2.Text = cos0[12];
                     lblComida.Text = cos0[13];
                     lblCena.Text = cos0[14];
+                    cardDes.IsVisible = true;
+                    cardCol.IsVisible = true;
+                    cardCom.IsVisible = true;
+                    cardCol2.IsVisible = true;
+                    cardCena.IsVisible = true;
+                    cardDomingo.IsVisible = false;
                     break;
 
                 case 2:
                     var coms2 = comidas(diet.d_martes, diet.c_martes, diet.c2_martes, diet.co_martes, diet.ce_martes);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos = individual(coms2[0], coms2[1], coms2[2], coms2[3], coms2[4]);
                     platillo(cos[0], cos[2], cos[4], cos[6], cos[8]);
                     lblTitleDes.Text = cos[10];
@@ -319,7 +326,7 @@ namespace Papaya
 
                 case 3:
                     var coms3 = comidas(diet.d_miercoles, diet.c_miercoles, diet.c2_miercoles, diet.co_miercoles, diet.ce_miercoles);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos2 = individual(coms3[0], coms3[1], coms3[2], coms3[3], coms3[4]);
                     platillo(cos2[0], cos2[2], cos2[4], cos2[6], cos2[8]);
                     lblTitleDes.Text = cos2[10];
@@ -331,7 +338,7 @@ namespace Papaya
 
                 case 4:
                     var coms4 = comidas(diet.d_jueves, diet.c_jueves, diet.c2_jueves, diet.co_jueves, diet.ce_jueves);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos3 = individual(coms4[0], coms4[1], coms4[2], coms4[3], coms4[4]);
                     platillo(cos3[0], cos3[2], cos3[4], cos3[6], cos3[8]);
                     lblTitleDes.Text = cos3[10];
@@ -343,7 +350,7 @@ namespace Papaya
 
                 case 5:
                     var coms5 = comidas(diet.d_viernes, diet.c_viernes, diet.c2_viernes, diet.co_viernes, diet.ce_viernes);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos4 = individual(coms5[0], coms5[1], coms5[2], coms5[3], coms5[4]);
                     platillo(cos4[0], cos4[2], cos4[4], cos4[6], cos4[8]);
                     lblTitleDes.Text = cos4[10];
@@ -355,7 +362,7 @@ namespace Papaya
 
                 case 6:
                     var coms6 = comidas(diet.d_sabado, diet.c_sabado, diet.c2_sabado, diet.co_sabado, diet.ce_sabado);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos5 = individual(coms6[0], coms6[1], coms6[2], coms6[3], coms6[4]);
                     platillo(cos5[0], cos5[2], cos5[4], cos5[6], cos5[8]);
                     lblTitleDes.Text = cos5[10];
@@ -363,6 +370,12 @@ namespace Papaya
                     lblColacion2.Text = cos5[12];
                     lblComida.Text = cos5[13];
                     lblCena.Text = cos5[14];
+                    cardDes.IsVisible = true;
+                    cardCol.IsVisible = true;
+                    cardCom.IsVisible = true;
+                    cardCol2.IsVisible = true;
+                    cardCena.IsVisible = true;
+                    cardDomingo.IsVisible = false;
                     break;
             }
         }
@@ -374,17 +387,18 @@ namespace Papaya
             switch (numerodias)
             {
                 case 0:
-                    lblFecha.Text = dias.ToLongDateString();
-                    lblTitleDes.Text = diet.d_domingo;
-                    lblColcacion.Text = diet.c_domingo;
-                    lblColacion2.Text = diet.c2_domingo;
-                    lblComida.Text = diet.co_domingo;
-                    lblCena.Text = diet.ce_domingo;
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
+                    cardDes.IsVisible = false;
+                    cardCol.IsVisible = false;
+                    cardCom.IsVisible = false;
+                    cardCol2.IsVisible = false;
+                    cardCena.IsVisible = false;
+                    cardDomingo.IsVisible = true;
                     break;
 
                 case 1:
                     var coms = comidas(diet.d_lunes, diet.c_lunes, diet.c2_lunes, diet.co_lunes, diet.ce_lunes);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos0 = individual(coms[0], coms[1], coms[2], coms[3], coms[4]);
                     platillo(cos0[0], cos0[2], cos0[4], cos0[6], cos0[8]);
                     lblTitleDes.Text = cos0[10];
@@ -392,11 +406,17 @@ namespace Papaya
                     lblColacion2.Text = cos0[12];
                     lblComida.Text = cos0[13];
                     lblCena.Text = cos0[14];
+                    cardDes.IsVisible = true;
+                    cardCol.IsVisible = true;
+                    cardCom.IsVisible = true;
+                    cardCol2.IsVisible = true;
+                    cardCena.IsVisible = true;
+                    cardDomingo.IsVisible = false;
                     break;
 
                 case 2:
                     var coms2 = comidas(diet.d_martes, diet.c_martes, diet.c2_martes, diet.co_martes, diet.ce_martes);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos = individual(coms2[0], coms2[1], coms2[2], coms2[3], coms2[4]);
                     platillo(cos[0], cos[2], cos[4], cos[6], cos[8]);
                     lblTitleDes.Text = cos[10];
@@ -408,7 +428,7 @@ namespace Papaya
 
                 case 3:
                     var coms3 = comidas(diet.d_miercoles, diet.c_miercoles, diet.c2_miercoles, diet.co_miercoles, diet.ce_miercoles);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos2 = individual(coms3[0], coms3[1], coms3[2], coms3[3], coms3[4]);
                     platillo(cos2[0], cos2[2], cos2[4], cos2[6], cos2[8]);
                     lblTitleDes.Text = cos2[10];
@@ -420,7 +440,7 @@ namespace Papaya
 
                 case 4:
                     var coms4 = comidas(diet.d_jueves, diet.c_jueves, diet.c2_jueves, diet.co_jueves, diet.ce_jueves);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos3 = individual(coms4[0], coms4[1], coms4[2], coms4[3], coms4[4]);
                     platillo(cos3[0], cos3[2], cos3[4], cos3[6], cos3[8]);
                     lblTitleDes.Text = cos3[10];
@@ -432,7 +452,7 @@ namespace Papaya
 
                 case 5:
                     var coms5 = comidas(diet.d_viernes, diet.c_viernes, diet.c2_viernes, diet.co_viernes, diet.ce_viernes);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos4 = individual(coms5[0], coms5[1], coms5[2], coms5[3], coms5[4]);
                     platillo(cos4[0], cos4[2], cos4[4], cos4[6], cos4[8]);
                     lblTitleDes.Text = cos4[10];
@@ -444,7 +464,7 @@ namespace Papaya
 
                 case 6:
                     var coms6 = comidas(diet.d_sabado, diet.c_sabado, diet.c2_sabado, diet.co_sabado, diet.ce_sabado);
-                    lblFecha.Text = dias.ToLongDateString();
+                    lblFecha.Text = dias.ToString("dddd").ToUpper();
                     var cos5 = individual(coms6[0], coms6[1], coms6[2], coms6[3], coms6[4]);
                     platillo(cos5[0], cos5[2], cos5[4], cos5[6], cos5[8]);
                     lblTitleDes.Text = cos5[10];
@@ -452,6 +472,12 @@ namespace Papaya
                     lblColacion2.Text = cos5[12];
                     lblComida.Text = cos5[13];
                     lblCena.Text = cos5[14];
+                    cardDes.IsVisible = true;
+                    cardCol.IsVisible = true;
+                    cardCom.IsVisible = true;
+                    cardCol2.IsVisible = true;
+                    cardCena.IsVisible = true;
+                    cardDomingo.IsVisible = false;
                     break;
             }
         }
@@ -482,15 +508,22 @@ namespace Papaya
 
                 if (resultado.resultado)
                 {
-                    await Navigation.PushAsync(new Empezar());
                     // Close the last PopupPage int the PopupStack
                     await Navigation.PopPopupAsync();
+                    await Navigation.PushAsync(new Home());
+                    Application.Current.MainPage = new Home();
                 }
                 else
                 {
                     await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
                 }
             }
+        }
+
+        void btnCerrar_Clicked(System.Object sender, System.EventArgs e)
+        {
+            // Close the last PopupPage int the PopupStack
+            Navigation.PopPopupAsync();
         }
     }
 }

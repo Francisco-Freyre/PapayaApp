@@ -21,7 +21,7 @@
     </pages:PopupPage.Animation>
     <!--You can use any elements here which are extended from Xamarin.Forms.View-->
     <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="WhiteSmoke">
-        <Frame>
+        <Frame CornerRadius="20">
             <Grid RowSpacing="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
@@ -31,12 +31,16 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <StackLayout Grid.Row="0">
+                <Button Grid.Row="0" HorizontalOptions="End" Text="X" TextColor="Black" BackgroundColor="White" BorderColor="Gray"
+                        BorderWidth="1" WidthRequest="40" HeightRequest="40" CornerRadius="20" x:Name="btnCerrar" Clicked="btnCerrar_Clicked"/>
+                <StackLayout Grid.Row="1">
                     <Button HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="White" Text="¡Seleecionar esta dieta!"
                             BackgroundColor="#FCB322" x:Name="seleccionarDieta" Clicked="seleccionarDieta_Clicked"></Button>
                 </StackLayout>
-                <Grid Grid.Row="1" RowSpacing="10">
+                <Grid Grid.Row="2" RowSpacing="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
@@ -46,7 +50,9 @@
                         <ImageButton BackgroundColor="White" Source="{imagenes:Images Source=Papaya.Imagenes.flechaderecha.jpg}" WidthRequest="40" HeightRequest="40" HorizontalOptions="End" x:Name="btnDiaSiguiente" Clicked="btnDiaSiguiente_Clicked"/>
                     </StackLayout>
                 </Grid>
-                <material:MaterialCard Grid.Row="2" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                <material:MaterialCard Grid.Row="3" CornerRadius="2" Elevation="8"
+                                       HorizontalOptions="FillAndExpand" IsVisible="True"
+                                       x:Name="cardDes">
                     <Grid RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -74,7 +80,9 @@
                         </Grid>
                     </Grid>
                 </material:MaterialCard>
-                <material:MaterialCard Grid.Row="3" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                <material:MaterialCard Grid.Row="4" CornerRadius="2"
+                                       Elevation="8" HorizontalOptions="FillAndExpand"
+                                       IsVisible="True" x:Name="cardCol">
                     <Grid RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -102,7 +110,9 @@
                         </Grid>
                     </Grid>
                 </material:MaterialCard>
-                <material:MaterialCard Grid.Row="4" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                <material:MaterialCard Grid.Row="5" CornerRadius="2"
+                                       Elevation="8" HorizontalOptions="FillAndExpand"
+                                       IsVisible="True" x:Name="cardCom">
                     <Grid RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -130,7 +140,9 @@
                         </Grid>
                     </Grid>
                 </material:MaterialCard>
-                <material:MaterialCard Grid.Row="5" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                <material:MaterialCard Grid.Row="6" CornerRadius="2"
+                                       Elevation="8" HorizontalOptions="FillAndExpand"
+                                       IsVisible="True" x:Name="cardCol2">
                     <Grid RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -158,7 +170,9 @@
                         </Grid>
                     </Grid>
                 </material:MaterialCard>
-                <material:MaterialCard Grid.Row="6" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand">
+                <material:MaterialCard Grid.Row="7" CornerRadius="2"
+                                       Elevation="8" HorizontalOptions="FillAndExpand"
+                                       IsVisible="True" x:Name="cardCena">
                     <Grid RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -184,6 +198,21 @@
                                    TextColor="Black" FontSize="Medium" />
                             <Label Grid.Column="1" Grid.Row="1" x:Name="kcalCena" VerticalOptions="End" />
                         </Grid>
+                    </Grid>
+                </material:MaterialCard>
+                <material:MaterialCard Grid.Row="8" CornerRadius="2" Elevation="8" HorizontalOptions="FillAndExpand" x:Name="cardDomingo"
+                                       IsVisible="False">
+                    <Grid RowSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                               Text="¡DIA LIBRE!" TextColor="Black" FontSize="Title" />
+                        <Label Grid.Row="1" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                               Text="Recuerda seguir con tus horarios de alimentos establecidos" TextColor="Black" FontSize="Medium"/>
+                        <Image Grid.Row="2" Source="{imagenes:Images Source=Papaya.Imagenes.dayoff.png}" WidthRequest="300" HeightRequest="300" />
                     </Grid>
                 </material:MaterialCard>
             </Grid>

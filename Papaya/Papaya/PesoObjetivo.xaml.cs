@@ -73,32 +73,32 @@ namespace Papaya
                         bajo = valor;
                         lblTitulo.Text = "¡Bajo peso!";
                         lblTitulo.TextColor = Color.Red;
-                        lblIMC.Text = "El peso que tienes para tu estatura es bajo, PAPAYA te recomienda un peso no menor a " + Convert.ToString(Decimal.Round(rangoBajo)) + " para lograr mejorar tu salud.";
-                        entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoBajo));
+                        lblIMC.Text = "El peso que tienes para tu estatura es bajo, PAPAYA te recomienda un peso no menor a " + Convert.ToString(Decimal.Round(rangoBajo, 1)) + " para lograr mejorar tu salud.";
+                        entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoBajo, 1));
                     }
                     else if (valor >= 18.5 && valor <= 24.9)
                     {
                         normal = valor;
                         lblTitulo.Text = "¡ESTAS EN TU PESO!";
                         lblTitulo.TextColor = Color.Red;
-                        lblIMC.Text = "Excelente, te encuentras dentro de los parametros de peso saludables. PAPAYA te recomienda mantenerte dentro de " + Convert.ToString(Decimal.Round(rangoBajo)) + " a " + Convert.ToString(Decimal.Round(rangoAlto)) + " kilogramos para seguir mejorando tu salud.";
-                        entryPesoObjetivo.Text = Convert.ToString(Decimal.Round((rangoAlto + rangoBajo) / 2));
+                        lblIMC.Text = "Excelente, te encuentras dentro de los parametros de peso saludables. PAPAYA te recomienda mantenerte dentro de " + Convert.ToString(Decimal.Round(rangoBajo, 1)) + " a " + Convert.ToString(Decimal.Round(rangoAlto, 1)) + " kilogramos para seguir mejorando tu salud.";
+                        entryPesoObjetivo.Text = Convert.ToString(Decimal.Round((rangoAlto + rangoBajo) / 2, 1));
                     }
-                    else if (valor >= 20.5 && valor <= 29.9)
+                    else if (valor >= 25.0 && valor <= 29.9)
                     {
                         sobrepeso = valor;
                         lblTitulo.Text = "¡Tu peso esta por encima de lo recomendado!";
                         lblTitulo.TextColor = Color.Red;
-                        lblIMC.Text = "PAPAYA te recomienda tomar como objetivo el peso de " + Convert.ToString(Decimal.Round(rangoAlto)) + " para mejorar tu salud";
-                        entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoAlto));
+                        lblIMC.Text = "PAPAYA te recomienda tomar como objetivo el peso de " + Convert.ToString(Decimal.Round(rangoAlto, 1)) + " para mejorar tu salud";
+                        entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoAlto, 1));
                     }
                     else if (valor >= 30)
                     {
                         obesidad = valor;
                         lblTitulo.Text = "¡Peso no saludable!";
                         lblTitulo.TextColor = Color.Red;
-                        lblIMC.Text = "El peso que presentas es excedente al peso saludable. PAPAYA te recomienda " + Convert.ToString(Decimal.Round(rangoAlto)) + " como  peso objetivo. ¡COMENCEMOS AHORA!";
-                        entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoAlto));
+                        lblIMC.Text = "El peso que presentas es excedente al peso saludable. PAPAYA te recomienda " + Convert.ToString(Decimal.Round(rangoAlto, 1)) + " como  peso objetivo. ¡COMENCEMOS AHORA!";
+                        entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoAlto, 1));
                     }
                     var entries = new[]
                     {

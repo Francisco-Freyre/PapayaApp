@@ -15,7 +15,8 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Image Grid.Row="0" Source="{imagenes:Images Source=Papaya.Imagenes.logo.png}" WidthRequest="120" HeightRequest="180" Margin="0, 50, 0, 50" />
+                <Image Grid.Row="0" Source="{imagenes:Images Source=Papaya.Imagenes.logo.png}"
+                       WidthRequest="120" HeightRequest="180" Margin="0, 50, 0, 50" />
 
                 <StackLayout Grid.Row="1" Padding="30,20">
                     <Frame BackgroundColor="Transparent" BorderColor="Gray" CornerRadius="5" HasShadow="True">

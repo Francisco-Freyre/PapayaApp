@@ -28,8 +28,9 @@ namespace Papaya
             public string msg { get; set; }
         }
 
-        async void btnImage_Clicked(System.Object sender, System.EventArgs e)
+        void btnImage_Clicked(System.Object sender, System.EventArgs e)
         {
+            /*
             var imagen = await FilePicker.PickAsync(new PickOptions()
             {
                 FileTypes = FilePickerFileType.Images,
@@ -78,7 +79,7 @@ namespace Papaya
                         await DisplayAlert("Mensaje", resultado.msg, "OK");
                     }
                 }
-            }
+            }*/
         }
     }
 }
