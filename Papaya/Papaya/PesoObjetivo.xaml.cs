@@ -72,7 +72,7 @@ namespace Papaya
                     {
                         bajo = valor;
                         lblTitulo.Text = "¡Bajo peso!";
-                        lblTitulo.TextColor = Color.Red;
+                        lblTitulo.TextColor = Color.FromHex("188BFF");
                         lblIMC.Text = "El peso que tienes para tu estatura es bajo, PAPAYA te recomienda un peso no menor a " + Convert.ToString(Decimal.Round(rangoBajo, 1)) + " para lograr mejorar tu salud.";
                         entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoBajo, 1));
                     }
@@ -80,7 +80,7 @@ namespace Papaya
                     {
                         normal = valor;
                         lblTitulo.Text = "¡ESTAS EN TU PESO!";
-                        lblTitulo.TextColor = Color.Red;
+                        lblTitulo.TextColor = Color.FromHex("4DC253");
                         lblIMC.Text = "Excelente, te encuentras dentro de los parametros de peso saludables. PAPAYA te recomienda mantenerte dentro de " + Convert.ToString(Decimal.Round(rangoBajo, 1)) + " a " + Convert.ToString(Decimal.Round(rangoAlto, 1)) + " kilogramos para seguir mejorando tu salud.";
                         entryPesoObjetivo.Text = Convert.ToString(Decimal.Round((rangoAlto + rangoBajo) / 2, 1));
                     }
@@ -88,7 +88,7 @@ namespace Papaya
                     {
                         sobrepeso = valor;
                         lblTitulo.Text = "¡Tu peso esta por encima de lo recomendado!";
-                        lblTitulo.TextColor = Color.Red;
+                        lblTitulo.TextColor = Color.FromHex("FF980C");
                         lblIMC.Text = "PAPAYA te recomienda tomar como objetivo el peso de " + Convert.ToString(Decimal.Round(rangoAlto, 1)) + " para mejorar tu salud";
                         entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoAlto, 1));
                     }
@@ -96,7 +96,7 @@ namespace Papaya
                     {
                         obesidad = valor;
                         lblTitulo.Text = "¡Peso no saludable!";
-                        lblTitulo.TextColor = Color.Red;
+                        lblTitulo.TextColor = Color.FromHex("F12919");
                         lblIMC.Text = "El peso que presentas es excedente al peso saludable. PAPAYA te recomienda " + Convert.ToString(Decimal.Round(rangoAlto, 1)) + " como  peso objetivo. ¡COMENCEMOS AHORA!";
                         entryPesoObjetivo.Text = Convert.ToString(Decimal.Round(rangoAlto, 1));
                     }
@@ -120,8 +120,8 @@ namespace Papaya
                         {
                             Label = "Sobrepeso",
                             ValueLabel = "25.0 - 29.9",
-                            ValueLabelColor = SKColor.Parse("#EBF140"),
-                            Color = SKColor.Parse("#EBF140")
+                            ValueLabelColor = SKColor.Parse("#FF980C"),
+                            Color = SKColor.Parse("#FF980C")
                         },
                         new ChartEntry((float)obesidad)
                         {

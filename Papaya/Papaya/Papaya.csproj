@@ -331,6 +331,16 @@
     <EmbeddedResource Include="Imagenes\ejote.png" />
     <EmbeddedResource Include="Imagenes\portobello.png" />
     <EmbeddedResource Include="Imagenes\dayoff.png" />
+    <EmbeddedResource Include="Imagenes\refresh.png" />
+    <EmbeddedResource Include="Imagenes\arrowiz.png" />
+    <EmbeddedResource Include="Imagenes\arrowde.png" />
+    <EmbeddedResource Include="Imagenes\arrowab.png" />
+    <EmbeddedResource Include="Imagenes\arrowar.png" />
+    <EmbeddedResource Include="Imagenes\user.png" />
+    <EmbeddedResource Include="Imagenes\dieta.png" />
+    <EmbeddedResource Include="Imagenes\ejercicio.png" />
+    <EmbeddedResource Include="Imagenes\cerrar.png" />
+    <EmbeddedResource Include="Imagenes\platillos.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="ActividadFisica.xaml">
@@ -502,6 +512,16 @@
     <None Remove="Imagenes\portobello.png" />
     <None Remove="Plugin.LocalNotification" />
     <None Remove="Imagenes\dayoff.png" />
+    <None Remove="Imagenes\refresh.png" />
+    <None Remove="Imagenes\arrowde.png" />
+    <None Remove="Imagenes\arrowiz.png" />
+    <None Remove="Imagenes\arrowab.png" />
+    <None Remove="Imagenes\arrowar.png" />
+    <None Remove="Imagenes\user.png" />
+    <None Remove="Imagenes\dieta.png" />
+    <None Remove="Imagenes\ejercicio.png" />
+    <None Remove="Imagenes\cerrar.png" />
+    <None Remove="Imagenes\platillos.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imagenes\" />

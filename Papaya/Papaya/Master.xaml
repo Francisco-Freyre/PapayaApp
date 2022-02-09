@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:imagenes="clr-namespace:Papaya.Constantes"
              x:Class="Papaya.Master"
              Title="Menu"
              BackgroundColor="White">
@@ -16,12 +17,23 @@
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Image Grid.Row="0" Source="userpic.png" WidthRequest="120" HeightRequest="120" Margin="0, 30, 0, 30" />
-            <Label Grid.Row="1"  HorizontalOptions="Center" Padding="20" VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="Large" x:Name="LblNombre" HeightRequest="100" />
-            <Button Grid.Row="2" Image="perfil.png" Text="Perfil" BackgroundColor="White" TextColor="Black" x:Name="btnPerfil" Clicked="btnPerfil_Clicked" />
-            <Button Grid.Row="3" Image="restaurante.png" Text="Platillos" BackgroundColor="White" TextColor="Black" x:Name="btnPlatillos" Clicked="btnPlatillos_Clicked" />
-            <Button Grid.Row="4" Image="cubiertos.png" Text="Mi dieta" BackgroundColor="White" TextColor="Black" x:Name="btnDieta" Clicked="btnDieta_Clicked" />
-            <Button Grid.Row="5" Image="ejercicio.png" Text="Ejercicios" BackgroundColor="White" TextColor="Black" x:Name="btnEjer" Clicked="btnEjer_Clicked" />
-            <Button Grid.Row="6" Image="sesion.png" Text="Cerrar sesion" BackgroundColor="White" TextColor="Black" x:Name="btnCerrar" Clicked="btnCerrar_Clicked" />
+            <Label Grid.Row="1"  HorizontalOptions="Center" Padding="20" VerticalOptions="CenterAndExpand"
+                   TextColor="Black" FontSize="Large" x:Name="LblNombre" HeightRequest="100" />
+            <Button Grid.Row="2" ImageSource="{imagenes:Images Source=Papaya.Imagenes.user.png}" Text="Perfil" BackgroundColor="White"
+                    TextColor="Black" x:Name="btnPerfil" Clicked="btnPerfil_Clicked"
+                    ContentLayout="Left, 10"/>
+            <Button Grid.Row="3" ImageSource="{imagenes:Images Source=Papaya.Imagenes.platillos.png}" Text="Platillos" BackgroundColor="White"
+                    TextColor="Black" x:Name="btnPlatillos" Clicked="btnPlatillos_Clicked"
+                    ContentLayout="Left, 10"/>
+            <Button Grid.Row="4" ImageSource="{imagenes:Images Source=Papaya.Imagenes.dieta.png}" Text="Mi dieta" BackgroundColor="White"
+                    TextColor="Black" x:Name="btnDieta" Clicked="btnDieta_Clicked"
+                    ContentLayout="Left, 10"/>
+            <Button Grid.Row="5" ImageSource="{imagenes:Images Source=Papaya.Imagenes.ejercicio.png}" Text="Ejercicios" BackgroundColor="White"
+                    TextColor="Black" x:Name="btnEjer" Clicked="btnEjer_Clicked"
+                    ContentLayout="Left, 10"/>
+            <Button Grid.Row="6" ImageSource="{imagenes:Images Source=Papaya.Imagenes.cerrar.png}" Text="Cerrar sesion" BackgroundColor="White"
+                    TextColor="Black" x:Name="btnCerrar" Clicked="btnCerrar_Clicked"
+                    ContentLayout="Left, 10"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

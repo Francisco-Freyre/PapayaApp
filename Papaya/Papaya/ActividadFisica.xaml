@@ -31,8 +31,10 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0" Grid.ColumnSpan="2" Image="Sedentario.png" x:Name="btnSedentario" Clicked="btnSedentario_Clicked" BackgroundColor="Red" TextColor="Black"/>
-                <Button Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" x:Name="btnSedentario2" Clicked="btnSedentario2_Clicked"  BackgroundColor="WhiteSmoke" Text="Sedentario" TextColor="Red" />
+                <Button Grid.Row="0" Grid.ColumnSpan="2" Image="Sedentario.png" x:Name="btnSedentario"
+                        Clicked="btnSedentario_Clicked" BackgroundColor="Red" TextColor="Black"/>
+                <Button Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" x:Name="btnSedentario2"
+                        Clicked="btnSedentario2_Clicked"  BackgroundColor="WhiteSmoke" Text="Sedentario" TextColor="Red" />
             </Grid>
 
             <Grid Grid.Row="2" >
@@ -49,8 +51,10 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Image="Ligero.png" x:Name="btnLigero" Clicked="btnLigero_Clicked" BackgroundColor="#4386D3"/>
-                <Button Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" x:Name="btnLigero2" Clicked="btnLigero2_Clicked" BackgroundColor="WhiteSmoke" Text="Ligero" TextColor="Red"/>
+                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Image="Ligero.png" x:Name="btnLigero"
+                        Clicked="btnLigero_Clicked" BackgroundColor="#4386D3"/>
+                <Button Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" x:Name="btnLigero2" Clicked="btnLigero2_Clicked"
+                        BackgroundColor="WhiteSmoke" Text="Ligero" TextColor="#4386D3"/>
             </Grid>
 
             <Grid Grid.Row="3" >
@@ -67,8 +71,10 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Image="Alto.png" x:Name="btnModerado" Clicked="btnModerado_Clicked" BackgroundColor="#17CFF8"/>
-                <Button Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" x:Name="btnModerado2" Clicked="btnModerado2_Clicked" BackgroundColor="WhiteSmoke" Text="Moderado" TextColor="Red"/>
+                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Image="Alto.png" x:Name="btnModerado"
+                        Clicked="btnModerado_Clicked" BackgroundColor="#17CFF8"/>
+                <Button Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" x:Name="btnModerado2" Clicked="btnModerado2_Clicked"
+                        BackgroundColor="WhiteSmoke" Text="Moderado" TextColor="#17CFF8"/>
             </Grid>
 
             <Grid Grid.Row="4" >
@@ -85,8 +91,10 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Image="Moderado.png" x:Name="btnAlto" Clicked="btnAlto_Clicked" BackgroundColor="Orange" />
-                <Button Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" x:Name="btnAlto2" Clicked="btnAlto2_Clicked" BackgroundColor="WhiteSmoke" Text="Alto" TextColor="Red"/>
+                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Image="Moderado.png" x:Name="btnAlto"
+                        Clicked="btnAlto_Clicked" BackgroundColor="Orange" />
+                <Button Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" x:Name="btnAlto2" Clicked="btnAlto2_Clicked"
+                        BackgroundColor="WhiteSmoke" Text="Alto" TextColor="Orange"/>
             </Grid>
         </Grid>
     </ContentPage.Content>

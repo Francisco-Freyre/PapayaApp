@@ -33,7 +33,14 @@ namespace Papaya
             public string carbohidratos { get; set; }
             public string grasas { get; set; }
             public string img { get; set; }
-            public List<string> ingredientes { get; set; }
+            public List<Ingredientes> ingredientes { get; set; }
+        }
+
+        public class Ingredientes
+        {
+            public string ingrediente { get; set; }
+
+            public bool cambiar { get; set; }
         }
 
         public async void obtenerPlatillo(int id)
@@ -63,6 +70,9 @@ namespace Papaya
                         lblProteinas.Text = "Proteinas: " + resultado.proteina + " grs";
                         lblCarbo.Text = "Carbohidratos: " + resultado.carbohidratos + " grs";
                         lblGrasas.Text = "Grasas: " + resultado.grasas + " grs";
+                        listaIngredientes.ItemsSource = resultado.ingredientes;
+                        listaIngredientes.HeightRequest = (resultado.ingredientes.Count * 25);
+                        /*
                         foreach (string ingrediente in resultado.ingredientes)
                         {
                             Label lblprueba = new Label
@@ -75,6 +85,7 @@ namespace Papaya
                             };
                             stackIngredientes.Children.Add(lblprueba);
                         }
+                        */
                     }
                     else
                     {
@@ -86,6 +97,10 @@ namespace Papaya
                     await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
                 }
             }
+        }
+
+        void MenuItem_Clicked(System.Object sender, System.EventArgs e)
+        {
         }
     }
 }
