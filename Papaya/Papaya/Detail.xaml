@@ -6,7 +6,7 @@
              xmlns:imagenes="clr-namespace:Papaya.Constantes"
              x:Class="Papaya.Detail"
              Title="Mi dieta"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=Black, Default=White}">
+             BackgroundColor="{AppThemeBinding Light=White, Dark=White, Default=White}">
 
     <ContentPage.Content>
         <ScrollView VerticalOptions="FillAndExpand">
@@ -39,7 +39,13 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" HorizontalOptions="Center" Text="Desayuno" TextColor="Black" FontSize="Title" />
+                        <Grid Grid.Row="0" ColumnDefinitions="Auto,*" RowDefinitions="Auto">
+                            <Label Grid.Column="0" HorizontalOptions="Start" Text="Desayuno" TextColor="Black"
+                                   FontSize="Title"  HorizontalTextAlignment="Start" Grid.Row="0"/>
+                            <CheckBox IsChecked="False" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
+                                      Color="Green" x:Name="checkDes" IsVisible="True" CheckedChanged="checkDes_CheckedChanged" />
+                        </Grid>
+                        
                         <Grid Grid.Row="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"></RowDefinition>
@@ -68,7 +74,13 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" HorizontalOptions="Center" Text="Colacion" TextColor="Black" FontSize="Title" />
+                        <Grid Grid.Row="0" ColumnDefinitions="Auto,*" RowDefinitions="Auto">
+                            <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"
+                                   Text="Colacion" TextColor="Black"
+                                   FontSize="Title" HorizontalTextAlignment="Start" />
+                            <CheckBox IsChecked="False" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
+                                      Color="Green" x:Name="checkCol1" IsVisible="True" CheckedChanged="checkCol1_CheckedChanged"/>
+                        </Grid>
                         <Grid Grid.Row="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"></RowDefinition>
@@ -98,7 +110,14 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" HorizontalOptions="Center" Text="Comida" TextColor="Black" FontSize="Title" />
+                        <Grid Grid.Row="0" ColumnDefinitions="Auto,*" RowDefinitions="Auto">
+                            <Label Grid.Row="0" HorizontalOptions="Start" Text="Comida"
+                                   TextColor="Black" FontSize="Title" HorizontalTextAlignment="Start"
+                                   Grid.Column="1"/>
+                            <CheckBox IsChecked="False" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
+                                      Color="Green" x:Name="checkCom" IsVisible="True" CheckedChanged="checkCom_CheckedChanged"/>
+                        </Grid>
+                        
                         <Grid Grid.Row="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"></RowDefinition>
@@ -128,7 +147,14 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" HorizontalOptions="Center" Text="Colacion" TextColor="Black" FontSize="Title" />
+                        <Grid Grid.Row="0" ColumnDefinitions="Auto,*" RowDefinitions="Auto">
+                            <Label Grid.Row="0" HorizontalOptions="Start" Text="Colacion"
+                                   TextColor="Black" FontSize="Title" Grid.Column="0"
+                                   HorizontalTextAlignment="Start"/>
+                            <CheckBox IsChecked="False" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
+                                      Color="Green" x:Name="checkCol2" IsVisible="True" CheckedChanged="checkCol2_CheckedChanged"/>
+                        </Grid>
+                        
                         <Grid Grid.Row="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"></RowDefinition>
@@ -158,7 +184,14 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" HorizontalOptions="Center" Text="Cena" TextColor="Black" FontSize="Title" />
+                        <Grid Grid.Row="0" ColumnDefinitions="Auto,*" RowDefinitions="Auto">
+                            <Label Grid.Row="0" HorizontalOptions="Start" Text="Cena"
+                                   TextColor="Black" FontSize="Title" Grid.Column="0"
+                                   HorizontalTextAlignment="Start"/>
+                            <CheckBox IsChecked="False" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
+                                      Color="Green" x:Name="checkCen" CheckedChanged="checkCen_CheckedChanged"/>
+                        </Grid>
+                        
                         <Grid Grid.Row="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"></RowDefinition>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -41,27 +42,36 @@ namespace Papaya
 
         public async void listaDietas()
         {
-            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Buscando posibles dietas"))
+            try
             {
-                var request = new HttpRequestMessage();
-                request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?dietas=" + Preferences.Get("kcal", ""));
-                request.Method = HttpMethod.Get;
-                request.Headers.Add("Accept", "application/json");
-                var client = new HttpClient();
-                HttpResponseMessage response = await client.SendAsync(request);
-
-                if (response.StatusCode == HttpStatusCode.OK)
+                using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Buscando posibles dietas"))
                 {
-                    string content = await response.Content.ReadAsStringAsync();
+                    var request = new HttpRequestMessage();
+                    request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?dietas=" + Preferences.Get("kcal", ""));
+                    request.Method = HttpMethod.Get;
+                    request.Headers.Add("Accept", "application/json");
+                    var client = new HttpClient();
+                    HttpResponseMessage response = await client.SendAsync(request);
 
-                    var resultado = JsonConvert.DeserializeObject<Respuesta1>(content);
-
-                    if (resultado.resultado)
+                    if (response.StatusCode == HttpStatusCode.OK)
                     {
-                        listaDeDietas.ItemsSource = resultado.dietas;
+                        string content = await response.Content.ReadAsStringAsync();
+
+                        var resultado = JsonConvert.DeserializeObject<Respuesta1>(content);
+
+                        if (resultado.resultado)
+                        {
+                            listaDeDietas.ItemsSource = resultado.dietas;
+                        }
                     }
                 }
             }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Source);
+                await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
+            }
+            
         }
 
         async void listaDeDietas_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)

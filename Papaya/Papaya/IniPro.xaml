@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Papaya.IniPro"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="10"
+                     VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="Has cumplido tu reto de 15 dias, vamos por tus resultados de tu esfuerzo"
+                   TextColor="Black" HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   FontSize="Title"/>
+            <Button Text="Ok" TextColor="Black" HorizontalOptions="Center"
+                    Background="White" VerticalOptions="Center"
+                    FontSize="Title" Margin="20" x:Name="btnOk"
+                    Clicked="btnOk_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

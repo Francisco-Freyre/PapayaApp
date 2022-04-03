@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -18,7 +19,7 @@ namespace Papaya
     {
         public Platillo(int idPlatillo)
         {
-            NavigationPage.SetHasNavigationBar(this, false);
+            //NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             obtenerPlatillo(idPlatillo);
         }
@@ -45,58 +46,67 @@ namespace Papaya
 
         public async void obtenerPlatillo(int id)
         {
-            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Cargando datos del platillo"))
+            try
             {
-                var request = new HttpRequestMessage();
-                request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/platillo.php?idPlatillo=" + id);
-                request.Method = HttpMethod.Get;
-                request.Headers.Add("Accept", "application/json");
-                var client = new HttpClient();
-                HttpResponseMessage response = await client.SendAsync(request);
-
-                if (response.StatusCode == HttpStatusCode.OK)
+                using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Cargando datos del platillo"))
                 {
-                    string content = await response.Content.ReadAsStringAsync();
-                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-                    if (resultado.resultado)
+                    var request = new HttpRequestMessage();
+                    request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/platillo.php?idPlatillo=" + id);
+                    request.Method = HttpMethod.Get;
+                    request.Headers.Add("Accept", "application/json");
+                    var client = new HttpClient();
+                    HttpResponseMessage response = await client.SendAsync(request);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
                     {
-                        Etiquetaimg.Source = "https://bithives.com/PapayaApp/" + resultado.img;
-                        char del = '-';
-                        string[] desa = resultado.nombre.Split(del);
-                        lblNombre.Text = desa[0];
-                        lblProcedimiento.Text = resultado.procedimiento;
-                        lblTiempo.Text = "Tiempo de elaboracion: " + resultado.tiempo + " minutos";
-                        lblEnergia.Text = "Energia: " + resultado.energia + " kcal";
-                        lblProteinas.Text = "Proteinas: " + resultado.proteina + " grs";
-                        lblCarbo.Text = "Carbohidratos: " + resultado.carbohidratos + " grs";
-                        lblGrasas.Text = "Grasas: " + resultado.grasas + " grs";
-                        listaIngredientes.ItemsSource = resultado.ingredientes;
-                        listaIngredientes.HeightRequest = (resultado.ingredientes.Count * 25);
-                        /*
-                        foreach (string ingrediente in resultado.ingredientes)
+                        string content = await response.Content.ReadAsStringAsync();
+                        var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+                        if (resultado.resultado)
                         {
-                            Label lblprueba = new Label
+                            Etiquetaimg.Source = "https://bithives.com/PapayaApp/" + resultado.img;
+                            char del = '-';
+                            string[] desa = resultado.nombre.Split(del);
+                            lblNombre.Text = desa[0];
+                            lblProcedimiento.Text = resultado.procedimiento;
+                            lblTiempo.Text = "Tiempo de elaboracion: " + resultado.tiempo + " minutos";
+                            lblEnergia.Text = "Energia: " + resultado.energia + " kcal";
+                            lblProteinas.Text = "Proteinas: " + resultado.proteina + " grs";
+                            lblCarbo.Text = "Carbohidratos: " + resultado.carbohidratos + " grs";
+                            lblGrasas.Text = "Grasas: " + resultado.grasas + " grs";
+                            listaIngredientes.ItemsSource = resultado.ingredientes;
+                            listaIngredientes.HeightRequest = (resultado.ingredientes.Count * 25);
+                            /*
+                            foreach (string ingrediente in resultado.ingredientes)
                             {
-                                Text = ingrediente,
-                                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                                HorizontalOptions = LayoutOptions.Center,
-                                HorizontalTextAlignment = TextAlignment.Center,
-                                TextColor = Color.Black
-                            };
-                            stackIngredientes.Children.Add(lblprueba);
+                                Label lblprueba = new Label
+                                {
+                                    Text = ingrediente,
+                                    FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                                    HorizontalOptions = LayoutOptions.Center,
+                                    HorizontalTextAlignment = TextAlignment.Center,
+                                    TextColor = Color.Black
+                                };
+                                stackIngredientes.Children.Add(lblprueba);
+                            }
+                            */
                         }
-                        */
+                        else
+                        {
+                            await DisplayAlert("Mensaje", "Algo fallo, recargue la pagina", "OK");
+                        }
                     }
                     else
                     {
-                        await DisplayAlert("Mensaje", "Algo fallo, recargue la pagina", "OK");
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
                     }
                 }
-                else
-                {
-                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
-                }
             }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Source);
+                await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
+            }
+            
         }
 
         void MenuItem_Clicked(System.Object sender, System.EventArgs e)

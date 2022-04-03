@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+    xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    x:Class="Papaya.Progreso1"
+    BackgroundColor="White"
+    Title="Mi Progreso">
+    <ContentPage.Content>
+        <Grid Margin="10" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10"
+              VerticalOptions="Start" HorizontalOptions="Center">
+            <Grid Grid.Row="0" RowDefinitions="Auto"
+                  ColumnDefinitions="Auto,Auto,Auto"
+                  ColumnSpacing="10" HorizontalOptions="Center">
+                <Label TextColor="Black" Text="Peso"
+                       FontSize="Large" Grid.Row="0"
+                       Grid.Column="0"/>
+                <Entry Keyboard="Numeric" FontSize="Large"
+                       TextColor="Black" BackgroundColor="White"
+                       Grid.Row="0" Grid.Column="1" x:Name="EntryPeso"
+                       WidthRequest="100"/>
+                <Label TextColor="Black" Text="Kg"
+                       FontSize="Large" Grid.Row="0"
+                       Grid.Column="2"/>
+            </Grid>
+
+            <Button Grid.Row="1" Text="Calcular" TextColor="White"
+                    BackgroundColor="#FCB322" HorizontalOptions="Center"
+                    FontSize="Medium" WidthRequest="100" x:Name="btnCalcular"
+                    Clicked="btnCalcular_Clicked"/>
+
+            <material:MaterialCard Grid.Row="2" CornerRadius="2"
+                                   Elevation="2" HorizontalOptions="FillAndExpand"
+                                   IsVisible="false" x:Name="cardIMC">
+                <StackLayout>
+                    <Label x:Name="lbldeimc" FontSize="Title" Text="Tu Indice de Masa Corporal es " TextColor="#5B5B5B" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                    <Label x:Name="lblvalor" FontSize="Title" TextColor="Black" HorizontalOptions="Center"  HorizontalTextAlignment="Center"/>
+                    <forms:ChartView x:Name="grafico" HeightRequest="200" WidthRequest="200"></forms:ChartView>
+                </StackLayout>
+            </material:MaterialCard >
+            <Label Grid.Row="3" x:Name="lblMsg"
+                   FontSize="Large" TextColor="Black" IsVisible="false"
+                   HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+            <Button Grid.Row="4" Text="Progreso" FontSize="Large"
+                    TextColor="Black" BackgroundColor="White"
+                    HorizontalOptions="End" Margin="10" IsVisible="false"
+                    x:Name="btnAvanzar" Clicked="btnAvanzar_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

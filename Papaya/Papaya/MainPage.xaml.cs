@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Net;
 using Xamarin.Essentials;
 using XF.Material.Forms.UI.Dialogs;
+using System.IO;
 
 namespace Papaya
 {
@@ -51,43 +52,51 @@ namespace Papaya
                 {
                     using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Iniciando sesiòn"))
                     {
-                        Login log = new Login
+                        try
                         {
-                            correo = txtCorreo.Text,
-                            password = txtPassword.Text
-                        };
-
-                        Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/login.php");
-
-                        var client = new HttpClient();
-
-                        var json = JsonConvert.SerializeObject(log);
-
-                        var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-                        var response = await client.PostAsync(RequestUri, contentJson);
-
-                        if (response.StatusCode == HttpStatusCode.OK)
-                        {
-                            string content = await response.Content.ReadAsStringAsync();
-
-                            var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                            if (resultado.resultado == "exito")
+                            Login log = new Login
                             {
-                                Preferences.Set("token", resultado.token);
-                                Preferences.Set("nombre", resultado.nombre);
-                                Preferences.Set("userid", resultado.userid);
-                                await Navigation.PushAsync(new IniDiag());
+                                correo = txtCorreo.Text,
+                                password = txtPassword.Text
+                            };
+
+                            Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/login.php");
+
+                            var client = new HttpClient();
+
+                            var json = JsonConvert.SerializeObject(log);
+
+                            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                            var response = await client.PostAsync(RequestUri, contentJson);
+
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                string content = await response.Content.ReadAsStringAsync();
+
+                                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                                if (resultado.resultado == "exito")
+                                {
+                                    Preferences.Set("token", resultado.token);
+                                    Preferences.Set("nombre", resultado.nombre);
+                                    Preferences.Set("userid", resultado.userid);
+                                    await Navigation.PushAsync(new IniDiag());
+                                }
+                                else if (resultado.resultado == "fallo")
+                                {
+                                    await DisplayAlert("Mensaje", resultado.msg, "OK");
+                                }
                             }
-                            else if (resultado.resultado == "fallo")
+                            else
                             {
-                                await DisplayAlert("Mensaje", resultado.msg, "OK");
+                                await DisplayAlert("Mensaje", "Datos invalidos", "OK");
                             }
                         }
-                        else
+                        catch (IOException ex)
                         {
-                            await DisplayAlert("Mensaje", "Datos invalidos", "OK");
+                            Console.WriteLine(ex.Source);
+                            await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
                         }
                     }
                 }

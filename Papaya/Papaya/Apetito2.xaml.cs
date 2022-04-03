@@ -10,10 +10,10 @@ using Xamarin.Forms;
 
 namespace Papaya
 {
-    public partial class Apetito : ContentPage
+    public partial class Apetito2 : ContentPage
     {
         double suave = 0.05, rapido = 0.10;
-        public Apetito()
+        public Apetito2()
         {
             InitializeComponent();
         }
@@ -80,7 +80,7 @@ namespace Papaya
 
                     if (resultado.resultado)
                     {
-                        await Navigation.PushAsync(new ActividadFisica());
+                        await Navigation.PushAsync(new ActividadFisica2());
                     }
                 }
             }
@@ -119,7 +119,7 @@ namespace Papaya
 
                     if (resultado.resultado)
                     {
-                        await Navigation.PushAsync(new ActividadFisica());
+                        await Navigation.PushAsync(new ActividadFisica2());
                     }
                 }
             }

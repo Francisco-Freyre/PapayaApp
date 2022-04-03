@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -90,105 +91,120 @@ namespace Papaya
             public Dieta dieta { get; set; }
         }
 
+        private class Check
+        {
+            public bool newCheck { get; set; }
+
+            public int cliente_id { get; set; }
+        }
+
         public async void dieta()
         {
-            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Obteniendo datos"))
+            try
             {
-                var request = new HttpRequestMessage();
-                request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?diet=" + idPlatillo);
-                request.Method = HttpMethod.Get;
-                request.Headers.Add("Accept", "application/json");
-                var client = new HttpClient();
-                HttpResponseMessage response = await client.SendAsync(request);
-
-                if (response.StatusCode == HttpStatusCode.OK)
+                using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Obteniendo datos"))
                 {
-                    string content = await response.Content.ReadAsStringAsync();
+                    var request = new HttpRequestMessage();
+                    request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?diet=" + idPlatillo);
+                    request.Method = HttpMethod.Get;
+                    request.Headers.Add("Accept", "application/json");
+                    var client = new HttpClient();
+                    HttpResponseMessage response = await client.SendAsync(request);
 
-                    var resultado = JsonConvert.DeserializeObject<Res>(content);
-
-                    if (resultado.resultado)
+                    if (response.StatusCode == HttpStatusCode.OK)
                     {
-                        this.diet = resultado.dieta;
-                        switch (numDia)
+                        string content = await response.Content.ReadAsStringAsync();
+
+                        var resultado = JsonConvert.DeserializeObject<Res>(content);
+
+                        if (resultado.resultado)
                         {
-                            case 0:
-                                cardDes.IsVisible = false;
-                                cardCol.IsVisible = false;
-                                cardCom.IsVisible = false;
-                                cardCol2.IsVisible = false;
-                                cardCena.IsVisible = false;
-                                cardDomingo.IsVisible = true;
-                                break;
+                            this.diet = resultado.dieta;
+                            switch (numDia)
+                            {
+                                case 0:
+                                    cardDes.IsVisible = false;
+                                    cardCol.IsVisible = false;
+                                    cardCom.IsVisible = false;
+                                    cardCol2.IsVisible = false;
+                                    cardCena.IsVisible = false;
+                                    cardDomingo.IsVisible = true;
+                                    break;
 
-                            case 1:
-                                var coms = comidas(resultado.dieta.d_lunes, resultado.dieta.c_lunes, resultado.dieta.c2_lunes, resultado.dieta.co_lunes, resultado.dieta.ce_lunes);
-                                var cos0 = individual(coms[0], coms[1], coms[2], coms[3], coms[4]);
-                                platillo(cos0[0], cos0[2], cos0[4], cos0[6], cos0[8]);
-                                lblTitleDes.Text = cos0[10];
-                                lblColcacion.Text = cos0[11];
-                                lblColacion2.Text = cos0[12];
-                                lblComida.Text = cos0[13];
-                                lblCena.Text = cos0[14];
-                                break;
+                                case 1:
+                                    var coms = comidas(resultado.dieta.d_lunes, resultado.dieta.c_lunes, resultado.dieta.c2_lunes, resultado.dieta.co_lunes, resultado.dieta.ce_lunes);
+                                    var cos0 = individual(coms[0], coms[1], coms[2], coms[3], coms[4]);
+                                    platillo(cos0[0], cos0[2], cos0[4], cos0[6], cos0[8]);
+                                    lblTitleDes.Text = cos0[10];
+                                    lblColcacion.Text = cos0[11];
+                                    lblColacion2.Text = cos0[12];
+                                    lblComida.Text = cos0[13];
+                                    lblCena.Text = cos0[14];
+                                    break;
 
-                            case 2:
-                                var coms2 = comidas(resultado.dieta.d_martes, resultado.dieta.c_martes, resultado.dieta.c2_martes, resultado.dieta.co_martes, resultado.dieta.ce_martes);
-                                var cos = individual(coms2[0], coms2[1], coms2[2], coms2[3], coms2[4]);
-                                platillo(cos[0], cos[2], cos[4], cos[6], cos[8]);
-                                lblTitleDes.Text = cos[10];
-                                lblColcacion.Text = cos[11];
-                                lblColacion2.Text = cos[12];
-                                lblComida.Text = cos[13];
-                                lblCena.Text = cos[14];
-                                break;
+                                case 2:
+                                    var coms2 = comidas(resultado.dieta.d_martes, resultado.dieta.c_martes, resultado.dieta.c2_martes, resultado.dieta.co_martes, resultado.dieta.ce_martes);
+                                    var cos = individual(coms2[0], coms2[1], coms2[2], coms2[3], coms2[4]);
+                                    platillo(cos[0], cos[2], cos[4], cos[6], cos[8]);
+                                    lblTitleDes.Text = cos[10];
+                                    lblColcacion.Text = cos[11];
+                                    lblColacion2.Text = cos[12];
+                                    lblComida.Text = cos[13];
+                                    lblCena.Text = cos[14];
+                                    break;
 
-                            case 3:
-                                var coms3 = comidas(resultado.dieta.d_miercoles, resultado.dieta.c_miercoles, resultado.dieta.c2_miercoles, resultado.dieta.co_miercoles, resultado.dieta.ce_miercoles);
-                                var cos2 = individual(coms3[0], coms3[1], coms3[2], coms3[3], coms3[4]);
-                                platillo(cos2[0], cos2[2], cos2[4], cos2[6], cos2[8]);
-                                lblTitleDes.Text = cos2[10];
-                                lblColcacion.Text = cos2[11];
-                                lblColacion2.Text = cos2[12];
-                                lblComida.Text = cos2[13];
-                                lblCena.Text = cos2[14];
-                                break;
+                                case 3:
+                                    var coms3 = comidas(resultado.dieta.d_miercoles, resultado.dieta.c_miercoles, resultado.dieta.c2_miercoles, resultado.dieta.co_miercoles, resultado.dieta.ce_miercoles);
+                                    var cos2 = individual(coms3[0], coms3[1], coms3[2], coms3[3], coms3[4]);
+                                    platillo(cos2[0], cos2[2], cos2[4], cos2[6], cos2[8]);
+                                    lblTitleDes.Text = cos2[10];
+                                    lblColcacion.Text = cos2[11];
+                                    lblColacion2.Text = cos2[12];
+                                    lblComida.Text = cos2[13];
+                                    lblCena.Text = cos2[14];
+                                    break;
 
-                            case 4:
-                                var coms4 = comidas(resultado.dieta.d_jueves, resultado.dieta.c_jueves, resultado.dieta.c2_jueves, resultado.dieta.co_jueves, resultado.dieta.ce_jueves);
-                                var cos3 = individual(coms4[0], coms4[1], coms4[2], coms4[3], coms4[4]);
-                                platillo(cos3[0], cos3[2], cos3[4], cos3[6], cos3[8]);
-                                lblTitleDes.Text = cos3[10];
-                                lblColcacion.Text = cos3[11];
-                                lblColacion2.Text = cos3[12];
-                                lblComida.Text = cos3[13];
-                                lblCena.Text = cos3[14];
-                                break;
+                                case 4:
+                                    var coms4 = comidas(resultado.dieta.d_jueves, resultado.dieta.c_jueves, resultado.dieta.c2_jueves, resultado.dieta.co_jueves, resultado.dieta.ce_jueves);
+                                    var cos3 = individual(coms4[0], coms4[1], coms4[2], coms4[3], coms4[4]);
+                                    platillo(cos3[0], cos3[2], cos3[4], cos3[6], cos3[8]);
+                                    lblTitleDes.Text = cos3[10];
+                                    lblColcacion.Text = cos3[11];
+                                    lblColacion2.Text = cos3[12];
+                                    lblComida.Text = cos3[13];
+                                    lblCena.Text = cos3[14];
+                                    break;
 
-                            case 5:
-                                var coms5 = comidas(resultado.dieta.d_viernes, resultado.dieta.c_viernes, resultado.dieta.c2_viernes, resultado.dieta.co_viernes, resultado.dieta.ce_viernes);
-                                var cos4 = individual(coms5[0], coms5[1], coms5[2], coms5[3], coms5[4]);
-                                platillo(cos4[0], cos4[2], cos4[4], cos4[6], cos4[8]);
-                                lblTitleDes.Text = cos4[10];
-                                lblColcacion.Text = cos4[11];
-                                lblColacion2.Text = cos4[12];
-                                lblComida.Text = cos4[13];
-                                lblCena.Text = cos4[14];
-                                break;
+                                case 5:
+                                    var coms5 = comidas(resultado.dieta.d_viernes, resultado.dieta.c_viernes, resultado.dieta.c2_viernes, resultado.dieta.co_viernes, resultado.dieta.ce_viernes);
+                                    var cos4 = individual(coms5[0], coms5[1], coms5[2], coms5[3], coms5[4]);
+                                    platillo(cos4[0], cos4[2], cos4[4], cos4[6], cos4[8]);
+                                    lblTitleDes.Text = cos4[10];
+                                    lblColcacion.Text = cos4[11];
+                                    lblColacion2.Text = cos4[12];
+                                    lblComida.Text = cos4[13];
+                                    lblCena.Text = cos4[14];
+                                    break;
 
-                            case 6:
-                                var coms6 = comidas(resultado.dieta.d_sabado, resultado.dieta.c_sabado, resultado.dieta.c2_sabado, resultado.dieta.co_sabado, resultado.dieta.ce_sabado);
-                                var cos5 = individual(coms6[0], coms6[1], coms6[2], coms6[3], coms6[4]);
-                                platillo(cos5[0], cos5[2], cos5[4], cos5[6], cos5[8]);
-                                lblTitleDes.Text = cos5[10];
-                                lblColcacion.Text = cos5[11];
-                                lblColacion2.Text = cos5[12];
-                                lblComida.Text = cos5[13];
-                                lblCena.Text = cos5[14];
-                                break;
+                                case 6:
+                                    var coms6 = comidas(resultado.dieta.d_sabado, resultado.dieta.c_sabado, resultado.dieta.c2_sabado, resultado.dieta.co_sabado, resultado.dieta.ce_sabado);
+                                    var cos5 = individual(coms6[0], coms6[1], coms6[2], coms6[3], coms6[4]);
+                                    platillo(cos5[0], cos5[2], cos5[4], cos5[6], cos5[8]);
+                                    lblTitleDes.Text = cos5[10];
+                                    lblColcacion.Text = cos5[11];
+                                    lblColacion2.Text = cos5[12];
+                                    lblComida.Text = cos5[13];
+                                    lblCena.Text = cos5[14];
+                                    break;
+                            }
                         }
                     }
                 }
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Source);
+                await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
             }
         }
 
@@ -228,54 +244,63 @@ namespace Papaya
 
         public async void platillo(string desayuno, string colacion, string colacion2, string comida, string cena)
         {
-            Datos dato = new Datos
+            try
             {
-                desayuno = desayuno.Trim(),
-                colacion = colacion.Trim(),
-                colacion2 = colacion2.Trim(),
-                comida = comida.Trim(),
-                cena = cena.Trim(),
-            };
-
-            Uri RequestUri = new Uri("https://www.bithives.com/PapayaApp/api/platillo.php");
-
-            var client = new HttpClient();
-
-            var json = JsonConvert.SerializeObject(dato);
-
-            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(RequestUri, contentJson);
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-
-                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                if (resultado.resultado)
+                Datos dato = new Datos
                 {
-                    idDesayuno = resultado.id_des;
-                    imgDesayuno.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_des;
-                    kcalDesayuno.Text = resultado.kcal_des + "kcal";
-                    idColacion = resultado.id_col;
-                    imgColacion.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_col;
-                    kcalColacion.Text = resultado.kcal_col + "kcal";
-                    idColacion2 = resultado.id_col2;
-                    imgColacion2.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_col2;
-                    kcalColacion2.Text = resultado.kcal_col2 + "kcal";
-                    idComida = resultado.id_com;
-                    imgComida.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_com;
-                    kcalComida.Text = resultado.kcal_com + "kcal";
-                    idCena = resultado.id_cen;
-                    imgCena.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_cen;
-                    kcalCena.Text = resultado.kcal_cen + "kcal";
-                }
-                else
+                    desayuno = desayuno.Trim(),
+                    colacion = colacion.Trim(),
+                    colacion2 = colacion2.Trim(),
+                    comida = comida.Trim(),
+                    cena = cena.Trim(),
+                };
+
+                Uri RequestUri = new Uri("https://www.bithives.com/PapayaApp/api/platillo.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(dato);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado)
+                    {
+                        idDesayuno = resultado.id_des;
+                        imgDesayuno.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_des;
+                        kcalDesayuno.Text = resultado.kcal_des + "kcal";
+                        idColacion = resultado.id_col;
+                        imgColacion.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_col;
+                        kcalColacion.Text = resultado.kcal_col + "kcal";
+                        idColacion2 = resultado.id_col2;
+                        imgColacion2.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_col2;
+                        kcalColacion2.Text = resultado.kcal_col2 + "kcal";
+                        idComida = resultado.id_com;
+                        imgComida.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_com;
+                        kcalComida.Text = resultado.kcal_com + "kcal";
+                        idCena = resultado.id_cen;
+                        imgCena.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_cen;
+                        kcalCena.Text = resultado.kcal_cen + "kcal";
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
                 }
             }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Source);
+                await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
+            }
+
         }
 
         void btnDiaAnterior_Clicked(System.Object sender, System.EventArgs e)
@@ -484,40 +509,80 @@ namespace Papaya
 
         async void seleccionarDieta_Clicked(System.Object sender, System.EventArgs e)
         {
-            Enviar dato = new Enviar
+            try
             {
-                idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
-                dieta = idPlatillo
-            };
-
-            Uri RequestUri = new Uri("https://www.bithives.com/PapayaApp/api/diag.php");
-
-            var client = new HttpClient();
-
-            var json = JsonConvert.SerializeObject(dato);
-
-            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(RequestUri, contentJson);
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-
-                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                if (resultado.resultado)
+                Enviar dato = new Enviar
                 {
-                    // Close the last PopupPage int the PopupStack
-                    await Navigation.PopPopupAsync();
-                    await Navigation.PushAsync(new Home());
-                    Application.Current.MainPage = new Home();
-                }
-                else
+                    idCliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    dieta = idPlatillo
+                };
+
+                Uri RequestUri = new Uri("https://www.bithives.com/PapayaApp/api/diag.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(dato);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado)
+                    {
+                        Check check = new Check
+                        {
+                            newCheck = true,
+                            cliente_id = Convert.ToInt32(Preferences.Get("userid", ""))
+                        };
+
+                        Uri RequestUri1 = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                        var client1 = new HttpClient();
+
+                        var json1 = JsonConvert.SerializeObject(check);
+
+                        var contentJson1 = new StringContent(json1, Encoding.UTF8, "application/json");
+
+                        var response1 = await client1.PostAsync(RequestUri1, contentJson1);
+
+                        if (response1.StatusCode == HttpStatusCode.OK)
+                        {
+                            string content1 = await response1.Content.ReadAsStringAsync();
+
+                            var resultado1 = JsonConvert.DeserializeObject<Respuesta>(content1);
+
+                            if (resultado1.resultado)
+                            {
+                                // Close the last PopupPage int the PopupStack
+                                await Navigation.PopPopupAsync();
+                                await Navigation.PushAsync(new Home());
+                                Application.Current.MainPage = new Home();
+                            }
+                            else
+                            {
+                                await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                            }
+                        }
+                        
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
                 }
             }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Source);
+                await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
+            }
+
         }
 
         void btnCerrar_Clicked(System.Object sender, System.EventArgs e)

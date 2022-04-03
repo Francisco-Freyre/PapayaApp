@@ -1,22 +1,18 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Papaya
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ActividadFisica : ContentPage
+    public partial class ActividadFisica2 : ContentPage
     {
-        public ActividadFisica()
+        public ActividadFisica2()
         {
             InitializeComponent();
         }
@@ -33,7 +29,7 @@ namespace Papaya
             public bool resultado { get; set; }
         }
 
-        private async void btnSedentario_Clicked(object sender, EventArgs e)
+        async void btnSedentario_Clicked(System.Object sender, System.EventArgs e)
         {
             try
             {
@@ -61,7 +57,7 @@ namespace Papaya
 
                     if (resultado.resultado)
                     {
-                        await Navigation.PushAsync(new Bebidas());
+                        await Navigation.PushAsync(new Bienvenida2());
                     }
                     else
                     {
@@ -76,7 +72,12 @@ namespace Papaya
             }
         }
 
-        private async void btnLigero_Clicked(object sender, EventArgs e)
+        void btnSedentario2_Clicked(System.Object sender, System.EventArgs e)
+        {
+            DisplayAlert("Sedentario", "Nada de ejercicio", "OK");
+        }
+
+        async void btnLigero_Clicked(System.Object sender, System.EventArgs e)
         {
             try
             {
@@ -104,7 +105,7 @@ namespace Papaya
 
                     if (resultado.resultado)
                     {
-                        await Navigation.PushAsync(new Bebidas());
+                        await Navigation.PushAsync(new Bienvenida2());
                     }
                     else
                     {
@@ -112,15 +113,19 @@ namespace Papaya
                     }
                 }
             }
-            catch(IOException ex)
+            catch (IOException ex)
             {
                 Console.WriteLine(ex.Source);
                 await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
             }
-            
         }
 
-        private async void btnModerado_Clicked(object sender, EventArgs e)
+        void btnLigero2_Clicked(System.Object sender, System.EventArgs e)
+        {
+            DisplayAlert("Ligero", "Ejercicio 2-3 dias por semana", "OK");
+        }
+
+        async void btnModerado_Clicked(System.Object sender, System.EventArgs e)
         {
             try
             {
@@ -148,7 +153,7 @@ namespace Papaya
 
                     if (resultado.resultado)
                     {
-                        await Navigation.PushAsync(new Bebidas());
+                        await Navigation.PushAsync(new Bienvenida2());
                     }
                     else
                     {
@@ -163,7 +168,13 @@ namespace Papaya
             }
         }
 
-        private async void btnAlto_Clicked(object sender, EventArgs e)
+        void btnModerado2_Clicked(System.Object sender, System.EventArgs e)
+        {
+            DisplayAlert("Moderado", "Ejercicio 4-5 dias por semana", "OK");
+        }
+
+
+        async void btnAlto_Clicked(System.Object sender, System.EventArgs e)
         {
             try
             {
@@ -191,7 +202,7 @@ namespace Papaya
 
                     if (resultado.resultado)
                     {
-                        await Navigation.PushAsync(new Bebidas());
+                        await Navigation.PushAsync(new Bienvenida2());
                     }
                     else
                     {
@@ -199,35 +210,14 @@ namespace Papaya
                     }
                 }
             }
-            catch(IOException ex)
+            catch (IOException ex)
             {
                 Console.WriteLine(ex.Source);
                 await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
             }
-            
         }
 
-        private void btnSedentario2_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Sedentario", "Nada de ejercicio", "OK");
-        }
-
-        private void btnLigero2_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Ligero", "Ejercicio 2-3 dias por semana", "OK");
-        }
-
-        private void btnModerado2_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Moderado", "Ejercicio 4-5 dias por semana", "OK");
-        }
-
-        private void btnAlto_Clicked_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAlto2_Clicked(object sender, EventArgs e)
+        void btnAlto2_Clicked(System.Object sender, System.EventArgs e)
         {
             DisplayAlert("Alto", "Ejercicio 6-7 dias por semana", "OK");
         }

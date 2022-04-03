@@ -2,6 +2,7 @@
 using Papaya.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -34,24 +35,32 @@ namespace Papaya
 
         public async void obtenerPlatillos()
         {
-            var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/ejercicio.php?ejercicios=0");
-            request.Method = HttpMethod.Get;
-            request.Headers.Add("Accept", "application/json");
-            var client = new HttpClient();
-            HttpResponseMessage response = await client.SendAsync(request);
-
-            if (response.StatusCode == HttpStatusCode.OK)
+            try
             {
-                string content = await response.Content.ReadAsStringAsync();
+                var request = new HttpRequestMessage();
+                request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/ejercicio.php?ejercicios=0");
+                request.Method = HttpMethod.Get;
+                request.Headers.Add("Accept", "application/json");
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.SendAsync(request);
 
-                var resultado = JsonConvert.DeserializeObject<List<Respuesta>>(content);
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
 
-                listEjercicio.ItemsSource = resultado;
+                    var resultado = JsonConvert.DeserializeObject<List<Respuesta>>(content);
+
+                    listEjercicio.ItemsSource = resultado;
+                }
+                else
+                {
+                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                }
             }
-            else
+            catch (IOException ex)
             {
-                await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                Console.WriteLine(ex.Source);
+                await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
             }
         }
 

@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Plugin.LocalNotification;
+using Android.Content;
 
 namespace Papaya.Droid
 {
@@ -20,6 +22,7 @@ namespace Papaya.Droid
             
             base.OnCreate(savedInstanceState);
 
+            NotificationCenter.CreateNotificationChannel();
             Rg.Plugins.Popup.Popup.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
@@ -30,16 +33,26 @@ namespace Papaya.Droid
 
             XF.Material.Droid.Material.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+            NotificationCenter.NotifyNotificationTapped(Intent);
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
         public override void OnBackPressed()
         {
             Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
+        }
+
+        protected override void OnNewIntent(Intent intent)
+        {
+            NotificationCenter.NotifyNotificationTapped(intent);
+            base.OnNewIntent(intent);
         }
     }
 }

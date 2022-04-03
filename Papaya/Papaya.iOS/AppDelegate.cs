@@ -27,9 +27,15 @@ namespace Papaya.iOS
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.Forms.FormsMaterial.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+            Plugin.LocalNotification.NotificationCenter.AskPermission();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        public override void WillEnterForeground(UIApplication uiApplication)
+        {
+            Plugin.LocalNotification.NotificationCenter.ResetApplicationIconBadgeNumber(uiApplication);
         }
     }
 }

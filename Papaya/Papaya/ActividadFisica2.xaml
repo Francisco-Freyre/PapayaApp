@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Papaya.ActividadFisica2"
+    Title="Actividad Fisica"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid Margin="10, 10, 10, 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Margin="30">
+                <Label Text="¿Cual es tu nivel de actividad fisica?" FontSize="Large" TextColor="Black" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+            <Grid Grid.Row="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.ColumnSpan="2" Image="Sedentario.png" x:Name="btnSedentario"
+                        Clicked="btnSedentario_Clicked" BackgroundColor="Red" TextColor="Black"/>
+                <Button Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" x:Name="btnSedentario2"
+                        Clicked="btnSedentario2_Clicked"  BackgroundColor="WhiteSmoke" Text="Sedentario" TextColor="Red" />
+            </Grid>
+
+            <Grid Grid.Row="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Image="Ligero.png" x:Name="btnLigero"
+                        Clicked="btnLigero_Clicked" BackgroundColor="#4386D3"/>
+                <Button Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" x:Name="btnLigero2" Clicked="btnLigero2_Clicked"
+                        BackgroundColor="WhiteSmoke" Text="Ligero" TextColor="#4386D3"/>
+            </Grid>
+
+            <Grid Grid.Row="3" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="130"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Image="Alto.png" x:Name="btnModerado"
+                        Clicked="btnModerado_Clicked" BackgroundColor="#17CFF8"/>
+                <Button Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" x:Name="btnModerado2" Clicked="btnModerado2_Clicked"
+                        BackgroundColor="WhiteSmoke" Text="Moderado" TextColor="#17CFF8"/>
+            </Grid>
+
+            <Grid Grid.Row="4" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Image="Moderado.png" x:Name="btnAlto"
+                        Clicked="btnAlto_Clicked" BackgroundColor="Orange" />
+                <Button Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" x:Name="btnAlto2" Clicked="btnAlto2_Clicked"
+                        BackgroundColor="WhiteSmoke" Text="Alto" TextColor="Orange"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

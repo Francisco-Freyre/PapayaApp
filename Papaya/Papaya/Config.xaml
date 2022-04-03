@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Papaya.Config"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView Margin="10">
+            <Grid RowSpacing="10"
+                  RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+                  ColumnSpacing="10"
+                  ColumnDefinitions="*,Auto,Auto">
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                       TextColor="Black" Text="Recordar la hora de:"
+                       HorizontalTextAlignment="Center" FontSize="Title"/>
+
+                <Label Grid.Row="1" Grid.Column="0"
+                       TextColor="Black" FontSize="Large"
+                       Text="Desayuno"
+                       HorizontalTextAlignment="Center"/>
+                <TimePicker Grid.Row="1" Grid.Column="1"
+                            Time="12:00" x:Name="Timehora"/>
+                <Switch Grid.Row="1" Grid.Column="2"
+                        IsToggled="True" x:Name="btnDesayuno"
+                        Toggled="btnDesayuno_Toggled"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+
+                <Label Grid.Row="2" Grid.Column="0"
+                       TextColor="Black" FontSize="Large"
+                       Text="Primer Colacion"
+                       HorizontalTextAlignment="Center"/>
+                <TimePicker Grid.Row="2" Grid.Column="1"
+                            Time="12:00" />
+                <Switch Grid.Row="2" Grid.Column="2"
+                        IsToggled="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+
+                <Label Grid.Row="3" Grid.Column="0"
+                       TextColor="Black" FontSize="Large"
+                       Text="Comida"
+                       HorizontalTextAlignment="Center"/>
+                <TimePicker Grid.Row="3" Grid.Column="1"
+                            Time="12:00" />
+                <Switch Grid.Row="3" Grid.Column="2"
+                        IsToggled="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+
+                <Label Grid.Row="4" Grid.Column="0"
+                       TextColor="Black" FontSize="Large"
+                       Text="Segunda Colacion"
+                       HorizontalTextAlignment="Center"/>
+                <TimePicker Grid.Row="4" Grid.Column="1"
+                            Time="12:00" />
+                <Switch Grid.Row="4" Grid.Column="2"
+                        IsToggled="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+
+                <Label Grid.Row="5" Grid.Column="0"
+                       TextColor="Black" FontSize="Large"
+                       Text="Cena"
+                       HorizontalTextAlignment="Center"/>
+                <TimePicker Grid.Row="5" Grid.Column="1"
+                            Time="12:00" />
+                <Switch Grid.Row="5" Grid.Column="2"
+                        IsToggled="True"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

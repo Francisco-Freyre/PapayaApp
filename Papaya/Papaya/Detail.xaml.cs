@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Papaya.Models;
 using XF.Material.Forms.UI.Dialogs;
+using System.IO;
 
 namespace Papaya
 {
@@ -22,13 +23,21 @@ namespace Papaya
         Dieta diet = new Dieta();
         DateTime fecha = DateTime.Today;
         DateTime dias = DateTime.Today;
-        int numDia, idDesayuno = 0, idColacion = 0, idColacion2 = 0, idComida = 0, idCena = 0;
+        int numDia, idDesayuno = 0, idColacion = 0, idColacion2 = 0, idComida = 0, idCena = 0, dia;
         public Detail()
         {
             InitializeComponent();
             lblFecha.Text = fecha.ToString("dddd").ToUpper();
             numDia = (int)fecha.DayOfWeek;
+            dia = numDia;
             dieta();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            GetChecks();
+
         }
 
         public class Datos
@@ -79,105 +88,222 @@ namespace Papaya
             public string kcal_cen { get; set; }
         };
 
+        public class Checks
+        {
+            public string fecha { get; set; }
+
+            public string check1 { get; set; }
+
+            public string check2 { get; set; }
+
+            public string check3 { get; set; }
+
+            public string check4 { get; set; }
+
+            public string check5 { get; set; }
+
+            public bool fechamayor { get; set; }
+        }
+
+        public class Root
+        {
+            public bool resultado { get; set; }
+
+            public Checks checks { get; set; }
+        }
+
+        public class Enviar
+        {
+            public bool check { get; set; }
+
+            public int id_cliente { get; set; }
+
+            public string numCheck { get; set; }
+
+            public string valor { get; set; }
+        }
+
+        public async void GetChecks()
+        {
+            var request = new HttpRequestMessage();
+            request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php?checks=1&cliente_id=" + Preferences.Get("userid", ""));
+            request.Method = HttpMethod.Get;
+            request.Headers.Add("Accept", "application/json");
+            var client = new HttpClient();
+            HttpResponseMessage response = await client.SendAsync(request);
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+
+                var resultado = JsonConvert.DeserializeObject<Root>(content);
+
+                if (resultado.resultado)
+                {
+                    if (resultado.checks.check1 == "0")
+                    {
+                        checkDes.IsChecked = false;
+                    }
+                    else if (resultado.checks.check1 == "1")
+                    {
+                        checkDes.IsChecked = true;
+                    }
+                    if (resultado.checks.check2 == "0")
+                    {
+                        checkCol1.IsChecked = false;
+                    }
+                    else if (resultado.checks.check2 == "1")
+                    {
+                        checkCol1.IsChecked = true;
+                    }
+                    if (resultado.checks.check3 == "0")
+                    {
+                        checkCom.IsChecked = false;
+                    }
+                    else if (resultado.checks.check3 == "1")
+                    {
+                        checkCom.IsChecked = true;
+                    }
+                    if (resultado.checks.check4 == "0")
+                    {
+                        checkCol2.IsChecked = false;
+                    }
+                    else if (resultado.checks.check4 == "1")
+                    {
+                        checkCol2.IsChecked = true;
+                    }
+                    if (resultado.checks.check5 == "0")
+                    {
+                        checkCen.IsChecked = false;
+                    }
+                    else if (resultado.checks.check5 == "1")
+                    {
+                        checkCen.IsChecked = true;
+                    }
+
+                    if (resultado.checks.fechamayor)
+                    {
+                        var answer = await DisplayAlert("¡Felicidades!", "Has completado dos semanas con tu dieta, veamos los resultados", "¡Vamos!", "Luego");
+                        if (answer)
+                        {
+                            App.MasterDet.IsPresented = false;
+                            await App.MasterDet.Detail.Navigation.PushAsync(new IniPro());
+                        }
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
+                }
+            }
+        }
+
         public async void dieta()
         {
             using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Obteniendo datos"))
             {
-                var request = new HttpRequestMessage();
-                request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?kcal=0&idCliente=" + Preferences.Get("userid", ""));
-                request.Method = HttpMethod.Get;
-                request.Headers.Add("Accept", "application/json");
-                var client = new HttpClient();
-                HttpResponseMessage response = await client.SendAsync(request);
-
-                if (response.StatusCode == HttpStatusCode.OK)
+                try
                 {
-                    string content = await response.Content.ReadAsStringAsync();
+                    var request = new HttpRequestMessage();
+                    request.RequestUri = new Uri("https://bithives.com/PapayaApp/api/diag.php?kcal=0&idCliente=" + Preferences.Get("userid", ""));
+                    request.Method = HttpMethod.Get;
+                    request.Headers.Add("Accept", "application/json");
+                    var client = new HttpClient();
+                    HttpResponseMessage response = await client.SendAsync(request);
 
-                    var resultado = JsonConvert.DeserializeObject<Dieta>(content);
-
-                    if (resultado.resultado)
+                    if (response.StatusCode == HttpStatusCode.OK)
                     {
-                        this.diet = resultado;
-                        switch (numDia)
+                        string content = await response.Content.ReadAsStringAsync();
+
+                        var resultado = JsonConvert.DeserializeObject<Dieta>(content);
+
+                        if (resultado.resultado)
                         {
-                            case 0:
-                                cardDes.IsVisible = false;
-                                cardCol.IsVisible = false;
-                                cardCom.IsVisible = false;
-                                cardCol2.IsVisible = false;
-                                cardCen.IsVisible = false;
-                                cardDomingo.IsVisible = true;
-                                break;
+                            this.diet = resultado;
+                            switch (numDia)
+                            {
+                                case 0:
+                                    cardDes.IsVisible = false;
+                                    cardCol.IsVisible = false;
+                                    cardCom.IsVisible = false;
+                                    cardCol2.IsVisible = false;
+                                    cardCen.IsVisible = false;
+                                    cardDomingo.IsVisible = true;
+                                    break;
 
-                            case 1:
-                                var coms = comidas(resultado.d_lunes, resultado.c_lunes, resultado.c2_lunes, resultado.co_lunes, resultado.ce_lunes);
-                                var cos0 = individual(coms[0], coms[1], coms[2], coms[3], coms[4]);
-                                platillo(cos0[0], cos0[1], cos0[2], cos0[3], cos0[4], cos0[5], cos0[6], cos0[7], cos0[8], cos0[9]);
-                                lblTitleDes.Text = cos0[10];
-                                lblColcacion.Text = cos0[11];
-                                lblColacion2.Text = cos0[12];
-                                lblComida.Text = cos0[13];
-                                lblCena.Text = cos0[14];
-                                break;
+                                case 1:
+                                    var coms = comidas(resultado.d_lunes, resultado.c_lunes, resultado.c2_lunes, resultado.co_lunes, resultado.ce_lunes);
+                                    var cos0 = individual(coms[0], coms[1], coms[2], coms[3], coms[4]);
+                                    platillo(cos0[0], cos0[1], cos0[2], cos0[3], cos0[4], cos0[5], cos0[6], cos0[7], cos0[8], cos0[9]);
+                                    lblTitleDes.Text = cos0[10];
+                                    lblColcacion.Text = cos0[11];
+                                    lblColacion2.Text = cos0[12];
+                                    lblComida.Text = cos0[13];
+                                    lblCena.Text = cos0[14];
+                                    break;
 
-                            case 2:
-                                var coms2 = comidas(resultado.d_martes, resultado.c_martes, resultado.c2_martes, resultado.co_martes, resultado.ce_martes);
-                                var cos = individual(coms2[0], coms2[1], coms2[2], coms2[3], coms2[4]);
-                                platillo(cos[0], cos[1], cos[2], cos[3], cos[4], cos[5], cos[6], cos[7], cos[8], cos[9]);
-                                lblTitleDes.Text = cos[10];
-                                lblColcacion.Text = cos[11];
-                                lblColacion2.Text = cos[12];
-                                lblComida.Text = cos[13];
-                                lblCena.Text = cos[14];
-                                break;
+                                case 2:
+                                    var coms2 = comidas(resultado.d_martes, resultado.c_martes, resultado.c2_martes, resultado.co_martes, resultado.ce_martes);
+                                    var cos = individual(coms2[0], coms2[1], coms2[2], coms2[3], coms2[4]);
+                                    platillo(cos[0], cos[1], cos[2], cos[3], cos[4], cos[5], cos[6], cos[7], cos[8], cos[9]);
+                                    lblTitleDes.Text = cos[10];
+                                    lblColcacion.Text = cos[11];
+                                    lblColacion2.Text = cos[12];
+                                    lblComida.Text = cos[13];
+                                    lblCena.Text = cos[14];
+                                    break;
 
-                            case 3:
-                                var coms3 = comidas(resultado.d_miercoles, resultado.c_miercoles, resultado.c2_miercoles, resultado.co_miercoles, resultado.ce_miercoles);
-                                var cos2 = individual(coms3[0], coms3[1], coms3[2], coms3[3], coms3[4]);
-                                platillo(cos2[0], cos2[1], cos2[2], cos2[3], cos2[4], cos2[5], cos2[6], cos2[7], cos2[8], cos2[9]);
-                                lblTitleDes.Text = cos2[10];
-                                lblColcacion.Text = cos2[11];
-                                lblColacion2.Text = cos2[12];
-                                lblComida.Text = cos2[13];
-                                lblCena.Text = cos2[14];
-                                break;
+                                case 3:
+                                    var coms3 = comidas(resultado.d_miercoles, resultado.c_miercoles, resultado.c2_miercoles, resultado.co_miercoles, resultado.ce_miercoles);
+                                    var cos2 = individual(coms3[0], coms3[1], coms3[2], coms3[3], coms3[4]);
+                                    platillo(cos2[0], cos2[1], cos2[2], cos2[3], cos2[4], cos2[5], cos2[6], cos2[7], cos2[8], cos2[9]);
+                                    lblTitleDes.Text = cos2[10];
+                                    lblColcacion.Text = cos2[11];
+                                    lblColacion2.Text = cos2[12];
+                                    lblComida.Text = cos2[13];
+                                    lblCena.Text = cos2[14];
+                                    break;
 
-                            case 4:
-                                var coms4 = comidas(resultado.d_jueves, resultado.c_jueves, resultado.c2_jueves, resultado.co_jueves, resultado.ce_jueves);
-                                var cos3 = individual(coms4[0], coms4[1], coms4[2], coms4[3], coms4[4]);
-                                platillo(cos3[0], cos3[1], cos3[2], cos3[3], cos3[4], cos3[5], cos3[6], cos3[7], cos3[8], cos3[9]);
-                                lblTitleDes.Text = cos3[10];
-                                lblColcacion.Text = cos3[11];
-                                lblColacion2.Text = cos3[12];
-                                lblComida.Text = cos3[13];
-                                lblCena.Text = cos3[14];
-                                break;
+                                case 4:
+                                    var coms4 = comidas(resultado.d_jueves, resultado.c_jueves, resultado.c2_jueves, resultado.co_jueves, resultado.ce_jueves);
+                                    var cos3 = individual(coms4[0], coms4[1], coms4[2], coms4[3], coms4[4]);
+                                    platillo(cos3[0], cos3[1], cos3[2], cos3[3], cos3[4], cos3[5], cos3[6], cos3[7], cos3[8], cos3[9]);
+                                    lblTitleDes.Text = cos3[10];
+                                    lblColcacion.Text = cos3[11];
+                                    lblColacion2.Text = cos3[12];
+                                    lblComida.Text = cos3[13];
+                                    lblCena.Text = cos3[14];
+                                    break;
 
-                            case 5:
-                                var coms5 = comidas(resultado.d_viernes, resultado.c_viernes, resultado.c2_viernes, resultado.co_viernes, resultado.ce_viernes);
-                                var cos4 = individual(coms5[0], coms5[1], coms5[2], coms5[3], coms5[4]);
-                                platillo(cos4[0], cos4[1], cos4[2], cos4[3], cos4[4], cos4[5], cos4[6], cos4[7], cos4[8], cos4[9]);
-                                lblTitleDes.Text = cos4[10];
-                                lblColcacion.Text = cos4[11];
-                                lblColacion2.Text = cos4[12];
-                                lblComida.Text = cos4[13];
-                                lblCena.Text = cos4[14];
-                                break;
+                                case 5:
+                                    var coms5 = comidas(resultado.d_viernes, resultado.c_viernes, resultado.c2_viernes, resultado.co_viernes, resultado.ce_viernes);
+                                    var cos4 = individual(coms5[0], coms5[1], coms5[2], coms5[3], coms5[4]);
+                                    platillo(cos4[0], cos4[1], cos4[2], cos4[3], cos4[4], cos4[5], cos4[6], cos4[7], cos4[8], cos4[9]);
+                                    lblTitleDes.Text = cos4[10];
+                                    lblColcacion.Text = cos4[11];
+                                    lblColacion2.Text = cos4[12];
+                                    lblComida.Text = cos4[13];
+                                    lblCena.Text = cos4[14];
+                                    break;
 
-                            case 6:
-                                var coms6 = comidas(resultado.d_sabado, resultado.c_sabado, resultado.c2_sabado, resultado.co_sabado, resultado.ce_sabado);
-                                var cos5 = individual(coms6[0], coms6[1], coms6[2], coms6[3], coms6[4]);
-                                platillo(cos5[0], cos5[1], cos5[2], cos5[3], cos5[4], cos5[5], cos5[6], cos5[7], cos5[8], cos5[9]);
-                                lblTitleDes.Text = cos5[10];
-                                lblColcacion.Text = cos5[11];
-                                lblColacion2.Text = cos5[12];
-                                lblComida.Text = cos5[13];
-                                lblCena.Text = cos5[14];
-                                break;
+                                case 6:
+                                    var coms6 = comidas(resultado.d_sabado, resultado.c_sabado, resultado.c2_sabado, resultado.co_sabado, resultado.ce_sabado);
+                                    var cos5 = individual(coms6[0], coms6[1], coms6[2], coms6[3], coms6[4]);
+                                    platillo(cos5[0], cos5[1], cos5[2], cos5[3], cos5[4], cos5[5], cos5[6], cos5[7], cos5[8], cos5[9]);
+                                    lblTitleDes.Text = cos5[10];
+                                    lblColcacion.Text = cos5[11];
+                                    lblColacion2.Text = cos5[12];
+                                    lblComida.Text = cos5[13];
+                                    lblCena.Text = cos5[14];
+                                    break;
+                            }
+                            //await DisplayAlert("Mensaje", resultado.kcal + resultado.categoria + resultado.descripcion, "OK");
                         }
-                        //await DisplayAlert("Mensaje", resultado.kcal + resultado.categoria + resultado.descripcion, "OK");
                     }
+                }
+                catch (IOException ex)
+                {
+                    Console.WriteLine(ex.Source);
+                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
                 }
             }
         }
@@ -226,6 +352,22 @@ namespace Papaya
         {
             dias = dias.AddDays(-1);
             int numerodias = (int)dias.DayOfWeek;
+            if (numerodias == dia)
+            {
+                checkDes.IsVisible = true;
+                checkCol1.IsVisible = true;
+                checkCom.IsVisible = true;
+                checkCol2.IsVisible = true;
+                checkCen.IsVisible = true;
+            }
+            else
+            {
+                checkDes.IsVisible = false;
+                checkCol1.IsVisible = false;
+                checkCom.IsVisible = false;
+                checkCol2.IsVisible = false;
+                checkCen.IsVisible = false;
+            }
             switch (numerodias)
             {
                 case 0:
@@ -328,6 +470,22 @@ namespace Papaya
         {
             dias = dias.AddDays(1);
             int numerodias = (int)dias.DayOfWeek;
+            if (numerodias == dia)
+            {
+                checkDes.IsVisible = true;
+                checkCol1.IsVisible = true;
+                checkCom.IsVisible = true;
+                checkCol2.IsVisible = true;
+                checkCen.IsVisible = true;
+            }
+            else
+            {
+                checkDes.IsVisible = false;
+                checkCol1.IsVisible = false;
+                checkCom.IsVisible = false;
+                checkCol2.IsVisible = false;
+                checkCen.IsVisible = false;
+            }
             switch (numerodias)
             {
                 case 0:
@@ -462,52 +620,420 @@ namespace Papaya
 
         public async void platillo(string desayuno, string deskcal, string colacion, string colkcal, string colacion2, string col2kcal, string comida, string comkcal, string cena, string cenkcal)
         {
-            Datos dato = new Datos
+            try
             {
-                desayuno = desayuno.Trim(),
-                colacion = colacion.Trim(),
-                colacion2 = colacion2.Trim(),
-                comida = comida.Trim(),
-                cena = cena.Trim(),
-            };
-
-            Uri RequestUri = new Uri("https://www.bithives.com/PapayaApp/api/platillo.php");
-
-            var client = new HttpClient();
-
-            var json = JsonConvert.SerializeObject(dato);
-
-            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(RequestUri, contentJson);
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-
-                var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
-
-                if (resultado.resultado)
+                Datos dato = new Datos
                 {
-                    idDesayuno = resultado.id_des;
-                    imgDesayuno.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_des;
-                    kcalDesayuno.Text = resultado.kcal_des + " kcal";
-                    idColacion = resultado.id_col;
-                    imgColacion.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_col;
-                    kcalColacion.Text = resultado.kcal_col + " kcal";
-                    idColacion2 = resultado.id_col2;
-                    imgColacion2.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_col2;
-                    kcalColacion2.Text = resultado.kcal_col2 + " kcal";
-                    idComida = resultado.id_com;
-                    imgComida.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_com;
-                    kcalComida.Text = resultado.kcal_com + " kcal";
-                    idCena = resultado.id_cen;
-                    imgCena.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_cen;
-                    kcalCena.Text = resultado.kcal_cen + " kcal";
+                    desayuno = desayuno.Trim(),
+                    colacion = colacion.Trim(),
+                    colacion2 = colacion2.Trim(),
+                    comida = comida.Trim(),
+                    cena = cena.Trim(),
+                };
+
+                Uri RequestUri = new Uri("https://www.bithives.com/PapayaApp/api/platillo.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(dato);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado)
+                    {
+                        idDesayuno = resultado.id_des;
+                        imgDesayuno.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_des;
+                        kcalDesayuno.Text = resultado.kcal_des + " kcal";
+                        idColacion = resultado.id_col;
+                        imgColacion.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_col;
+                        kcalColacion.Text = resultado.kcal_col + " kcal";
+                        idColacion2 = resultado.id_col2;
+                        imgColacion2.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_col2;
+                        kcalColacion2.Text = resultado.kcal_col2 + " kcal";
+                        idComida = resultado.id_com;
+                        imgComida.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_com;
+                        kcalComida.Text = resultado.kcal_com + " kcal";
+                        idCena = resultado.id_cen;
+                        imgCena.Source = "https://www.bithives.com/PapayaApp/" + resultado.img_cen;
+                        kcalCena.Text = resultado.kcal_cen + " kcal";
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
                 }
-                else
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Source);
+                await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
+            }
+        }
+
+        async void checkDes_CheckedChanged(System.Object sender, Xamarin.Forms.CheckedChangedEventArgs e)
+        {
+            if (checkDes.IsChecked)
+            {
+                Enviar enviar = new Enviar
                 {
-                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    check = true,
+                    id_cliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    numCheck = "check1",
+                    valor = "1"
+                };
+
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(enviar);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == false)
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", "Has completado tu desayuno", "OK");
+                    }
+                }
+            }
+            else
+            {
+                Enviar enviar = new Enviar
+                {
+                    check = true,
+                    id_cliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    numCheck = "check1",
+                    valor = "0"
+                };
+
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(enviar);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == false)
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
+                }
+            }
+        }
+
+        async void checkCol1_CheckedChanged(System.Object sender, Xamarin.Forms.CheckedChangedEventArgs e)
+        {
+            if (checkCol1.IsChecked)
+            {
+                Enviar enviar = new Enviar
+                {
+                    check = true,
+                    id_cliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    numCheck = "check2",
+                    valor = "1"
+                };
+
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(enviar);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == false)
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", "Has completado tu colacion", "OK");
+                    }
+                }
+            }
+            else
+            {
+                Enviar enviar = new Enviar
+                {
+                    check = true,
+                    id_cliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    numCheck = "check2",
+                    valor = "0"
+                };
+
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(enviar);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == false)
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
+                }
+            }
+        }
+
+        async void checkCom_CheckedChanged(System.Object sender, Xamarin.Forms.CheckedChangedEventArgs e)
+        {
+            if (checkCom.IsChecked)
+            {
+                Enviar enviar = new Enviar
+                {
+                    check = true,
+                    id_cliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    numCheck = "check3",
+                    valor = "1"
+                };
+
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(enviar);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == false)
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", "Has completado tu comida", "OK");
+                    }
+                }
+            }
+            else
+            {
+                Enviar enviar = new Enviar
+                {
+                    check = true,
+                    id_cliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    numCheck = "check3",
+                    valor = "0"
+                };
+
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(enviar);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == false)
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
+                }
+            }
+        }
+
+        async void checkCol2_CheckedChanged(System.Object sender, Xamarin.Forms.CheckedChangedEventArgs e)
+        {
+            if (checkCol2.IsChecked)
+            {
+                Enviar enviar = new Enviar
+                {
+                    check = true,
+                    id_cliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    numCheck = "check4",
+                    valor = "1"
+                };
+
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(enviar);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == false)
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", "Has completado tu colacion", "OK");
+                    }
+                }
+            }
+            else
+            {
+                Enviar enviar = new Enviar
+                {
+                    check = true,
+                    id_cliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    numCheck = "check4",
+                    valor = "0"
+                };
+
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(enviar);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == false)
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
+                }
+            }
+        }
+
+        async void checkCen_CheckedChanged(System.Object sender, Xamarin.Forms.CheckedChangedEventArgs e)
+        {
+            if (checkCen.IsChecked)
+            {
+                Enviar enviar = new Enviar
+                {
+                    check = true,
+                    id_cliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    numCheck = "check5",
+                    valor = "1"
+                };
+
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(enviar);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == false)
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Bien hecho", "Has completado tu dia", "OK");
+                    }
+                }
+            }
+            else
+            {
+                Enviar enviar = new Enviar
+                {
+                    check = true,
+                    id_cliente = Convert.ToInt32(Preferences.Get("userid", "")),
+                    numCheck = "check5",
+                    valor = "0"
+                };
+
+                Uri RequestUri = new Uri("https://bithives.com/PapayaApp/api/check.php");
+
+                var client = new HttpClient();
+
+                var json = JsonConvert.SerializeObject(enviar);
+
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(RequestUri, contentJson);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var resultado = JsonConvert.DeserializeObject<Respuesta>(content);
+
+                    if (resultado.resultado == false)
+                    {
+                        await DisplayAlert("Mensaje", "Fallo la conexion al servidor", "OK");
+                    }
                 }
             }
         }

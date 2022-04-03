@@ -49,10 +49,24 @@ namespace Papaya
 
         private async void btnCerrar_Clicked(object sender, EventArgs e)
         {
-            Preferences.Clear();
+            Preferences.Remove("token");
+            Preferences.Remove("nombre");
+            Preferences.Remove("userid");
             App.MasterDet.IsPresented = false;
             await App.MasterDet.Detail.Navigation.PushAsync(new MainPage());
             Application.Current.MainPage = new NavigationPage(new MainPage());
+        }
+
+        async void btnConfig_Clicked(System.Object sender, System.EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new Config());
+        }
+
+        async void btnProgreso_Clicked(System.Object sender, System.EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new IniPro());
         }
     }
 }

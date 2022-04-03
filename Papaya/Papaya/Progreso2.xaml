@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material" xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    x:Class="Papaya.Progreso2"
+    Title="Mi Progreso"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="Center" VerticalOptions="Start"
+              Margin="10" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+              RowSpacing="10">
+            <Label Text="Dias completados" TextColor="Black"
+                   FontSize="Large" HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" Grid.Row="0"/>
+            <Grid Grid.Row="1" HorizontalOptions="Center"
+                  RowDefinitions="Auto,Auto" RowSpacing="10"
+                  ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+                <Button Grid.Column="0" Grid.Row="0"
+                        Text="L" TextColor="Black" x:Name="d1"
+                        FontSize="Medium"/>
+                <Button Grid.Column="1" Grid.Row="0" x:Name="d2"
+                        Text="M" TextColor="Black"
+                        FontSize="Medium"/>
+                <Button Grid.Column="2" Grid.Row="0" x:Name="d3"
+                        Text="M" TextColor="Black"
+                        FontSize="Medium"/>
+                <Button Grid.Column="3" Grid.Row="0" x:Name="d4"
+                        Text="J" TextColor="Black"
+                        FontSize="Medium"/>
+                <Button Grid.Column="4" Grid.Row="0" x:Name="d5"
+                        Text="V" TextColor="Black"
+                        FontSize="Medium"/>
+                <Button Grid.Column="5" Grid.Row="0" x:Name="d6"
+                        Text="S" TextColor="Black"
+                        FontSize="Medium"/>
+
+                <Button Grid.Column="0" Grid.Row="1" x:Name="d7"
+                        Text="L" TextColor="Black"
+                        FontSize="Medium"/>
+                <Button Grid.Column="1" Grid.Row="1" x:Name="d8"
+                        Text="M" TextColor="Black"
+                        FontSize="Medium"/>
+                <Button Grid.Column="2" Grid.Row="1" x:Name="d9"
+                        Text="M" TextColor="Black"
+                        FontSize="Medium"/>
+                <Button Grid.Column="3" Grid.Row="1" x:Name="d10"
+                        Text="J" TextColor="Black"
+                        FontSize="Medium"/>
+                <Button Grid.Column="4" Grid.Row="1" x:Name="d11"
+                        Text="V" TextColor="Black"
+                        FontSize="Medium"/>
+                <Button Grid.Column="5" Grid.Row="1" x:Name="d12"
+                        Text="S" TextColor="Black"
+                        FontSize="Medium"/>
+            </Grid>
+            <Label Text="Calorias" TextColor="Black"
+                   Grid.Row="2" FontSize="Large"
+                   HorizontalOptions="Start"
+                   HorizontalTextAlignment="Start"/>
+            <Label Text="1865 - 1900" TextColor="Black"
+                   FontSize="Medium" HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" Grid.Row="3"/>
+            <material:MaterialCard Grid.Row="4" Margin="5" CornerRadius="2"
+                                   Elevation="2" HorizontalOptions="FillAndExpand">
+                <forms:ChartView x:Name="grafico" HeightRequest="170" WidthRequest="250"></forms:ChartView>
+            </material:MaterialCard>
+
+            <Label Grid.Row="5" TextColor="Black"
+                   Text="¿El progreso ha sido de tu agrado?"
+                   FontSize="Large" HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+            <Grid Grid.Row="6" HorizontalOptions="Center"
+                  ColumnDefinitions="Auto,Auto" ColumnSpacing="10" >
+                <Button Grid.Column="0" Text="Si" TextColor="Black"
+                        BackgroundColor="White" FontSize="Medium"
+                        WidthRequest="100" x:Name="btnSi"
+                        Clicked="btnSi_Clicked"/>
+                <Button Grid.Column="1" Text="No" TextColor="Black"
+                        BackgroundColor="White" FontSize="Medium"
+                        WidthRequest="100" x:Name="btnNo"
+                        Clicked="btnNo_Clicked"/>
+            </Grid>
+            <Label Grid.Row="7" TextColor="Black" IsVisible="false"
+                   Text="¿Deseas recalcular tu menu?"
+                   FontSize="Large" HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   x:Name="lblPregunta"/>
+            <Grid Grid.Row="8" HorizontalOptions="Center" IsVisible="false"
+                  ColumnDefinitions="Auto,Auto" ColumnSpacing="10"
+                  x:Name="gridRespuesta">
+                <Button Grid.Column="0" Text="Si" TextColor="Black"
+                        BackgroundColor="White" FontSize="Medium"
+                        WidthRequest="100" x:Name="btnRecalSi"
+                        Clicked="btnRecalSi_Clicked"/>
+                <Button Grid.Column="1" Text="No" TextColor="Black"
+                        BackgroundColor="White" FontSize="Medium"
+                        WidthRequest="100"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
