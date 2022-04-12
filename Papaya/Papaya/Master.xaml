@@ -18,29 +18,44 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Grid.Row="0" Source="userpic.png" WidthRequest="120" HeightRequest="120" Margin="0, 30, 0, 30" />
 
-            <Label Grid.Row="1"  HorizontalOptions="Center" Padding="20" VerticalOptions="CenterAndExpand"
-                   TextColor="Black" FontSize="Large" x:Name="LblNombre" HeightRequest="100" />
-            <Button Grid.Row="2" ImageSource="{imagenes:Images Source=Papaya.Imagenes.user.png}" Text="Perfil" BackgroundColor="White"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Source="userpic.png" WidthRequest="100"
+                   HeightRequest="100" Margin="0, 30, 0, 0" Grid.ColumnSpan="2" />
+
+            <Label Grid.Row="1"  HorizontalOptions="Center" Padding="0" VerticalOptions="CenterAndExpand"
+                   TextColor="Black" FontSize="Large" x:Name="LblNombre" HeightRequest="75"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="2"/>
+            <Button Grid.Row="2" ImageSource="{imagenes:Images Source=Papaya.Imagenes.user.png}"
+                    Text="Perfil" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnPerfil" Clicked="btnPerfil_Clicked"
                     ContentLayout="Left, 10"/>
-            <Button Grid.Row="3" ImageSource="{imagenes:Images Source=Papaya.Imagenes.platillos.png}" Text="Platillos" BackgroundColor="White"
+            <Button Grid.Row="3" ImageSource="{imagenes:Images Source=Papaya.Imagenes.platillos.png}"
+                    Text="Platillos" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnPlatillos" Clicked="btnPlatillos_Clicked"
                     ContentLayout="Left, 10"/>
-            <Button Grid.Row="4" ImageSource="{imagenes:Images Source=Papaya.Imagenes.dieta.png}" Text="Mi dieta" BackgroundColor="White"
+            <Button Grid.Row="4" ImageSource="{imagenes:Images Source=Papaya.Imagenes.dieta.png}"
+                    Text="Mi dieta" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnDieta" Clicked="btnDieta_Clicked"
                     ContentLayout="Left, 10"/>
-            <Button Grid.Row="5" Text="Progreso" BackgroundColor="White"
+            <Button Grid.Row="5" ImageSource="{imagenes:Images Source=Papaya.Imagenes.grarfic.png}"
+                    Text="Progreso" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnProgreso" Clicked="btnProgreso_Clicked"
-                    ContentLayout="Left, 10"/>
-            <Button Grid.Row="6" ImageSource="{imagenes:Images Source=Papaya.Imagenes.ejercicio.png}" Text="Ejercicios" BackgroundColor="White"
+                    ContentLayout="Left, 10" IsVisible="False"/>
+            <Button Grid.Row="6" ImageSource="{imagenes:Images Source=Papaya.Imagenes.ejercicio.png}"
+                    Text="Ejercicios" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnEjer" Clicked="btnEjer_Clicked"
                     ContentLayout="Left, 10"/>
+            <!--
             <Button Grid.Row="7" Text="Configuracion" BackgroundColor="White"
                     TextColor="Black" x:Name="btnConfig" Clicked="btnConfig_Clicked"
-                    ContentLayout="Left, 10"/>
-            <Button Grid.Row="8" ImageSource="{imagenes:Images Source=Papaya.Imagenes.cerrar.png}" Text="Cerrar sesion" BackgroundColor="White"
+                    ContentLayout="Left, 10"/> -->
+            <Button Grid.Row="8" ImageSource="{imagenes:Images Source=Papaya.Imagenes.cerrar.png}"
+                    Text="Cerrar sesion" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnCerrar" Clicked="btnCerrar_Clicked"
                     ContentLayout="Left, 10"/>
         </Grid>

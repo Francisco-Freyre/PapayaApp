@@ -27,17 +27,11 @@ namespace Papaya
         public Detail()
         {
             InitializeComponent();
+            GetChecks();
             lblFecha.Text = fecha.ToString("dddd").ToUpper();
             numDia = (int)fecha.DayOfWeek;
             dia = numDia;
             dieta();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            GetChecks();
-
         }
 
         public class Datos
@@ -123,6 +117,13 @@ namespace Papaya
             public string valor { get; set; }
         }
 
+        public class Verify
+        {
+            public bool resultado { get; set; }
+
+            public string id { get; set; }
+        }
+
         public async void GetChecks()
         {
             var request = new HttpRequestMessage();
@@ -192,7 +193,9 @@ namespace Papaya
                 }
                 else
                 {
-                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
+                    App.MasterDet.IsPresented = false;
+                    await App.MasterDet.Detail.Navigation.PushAsync(new IniDiag());
+                    Application.Current.MainPage = new NavigationPage(new IniDiag());
                 }
             }
         }

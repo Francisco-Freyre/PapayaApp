@@ -341,6 +341,7 @@
     <EmbeddedResource Include="Imagenes\ejercicio.png" />
     <EmbeddedResource Include="Imagenes\cerrar.png" />
     <EmbeddedResource Include="Imagenes\platillos.png" />
+    <EmbeddedResource Include="Imagenes\grarfic.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="ActividadFisica.xaml">
@@ -522,6 +523,7 @@
     <None Remove="Imagenes\ejercicio.png" />
     <None Remove="Imagenes\cerrar.png" />
     <None Remove="Imagenes\platillos.png" />
+    <None Remove="Imagenes\grarfic.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imagenes\" />

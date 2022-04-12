@@ -104,22 +104,22 @@ namespace Papaya
                     int cantidad = resultado.pesos.Count;
                     if (cantidad == 2)
                     {
-                        var entrie0 = resultado.pesos[0];
-                        var entrie1 = resultado.pesos[1];
+                        var entrie0 = resultado.pesos[1];
+                        var entrie1 = resultado.pesos[0];
 
                         var entries = new[]
                         {
-                            new ChartEntry(Convert.ToInt32(entrie0.peso))
+                            new ChartEntry(Convert.ToSingle(entrie0.peso))
                             {
                                 Label = entrie0.fecha,
-                                ValueLabel = entrie0.peso,
-                                ValueLabelColor = SKColor.Parse("#188BFF"),
+                                ValueLabel = entrie0.peso + " Kg",
+                                ValueLabelColor = SKColor.Parse("#4DC253"),
                                 Color = SKColor.Parse("#4DC253")
                             },
-                            new ChartEntry(Convert.ToInt32(entrie1.peso))
+                            new ChartEntry(Convert.ToSingle(entrie1.peso))
                             {
                                 Label = entrie1.fecha,
-                                ValueLabel = entrie1.peso,
+                                ValueLabel = entrie1.peso + " Kg",
                                 ValueLabelColor = SKColor.Parse("#4DC253"),
                                 Color = SKColor.Parse("#4DC253")
                             }
@@ -135,22 +135,107 @@ namespace Papaya
                             LineMode = LineMode.Straight,
                             LineSize = 10,
                             PointSize = 20,
-                            MinValue = Convert.ToInt32(resultado.pesoBajo),
-                            MaxValue = Convert.ToInt32(resultado.pesoAlto)
+                            MinValue = Convert.ToSingle(resultado.pesoBajo) - 10,
+                            MaxValue = Convert.ToSingle(resultado.pesoAlto) + 10
                         };
                     }
                     else if(cantidad == 3)
                     {
-                        var entrie0 = resultado.pesos[0];
+                        var entrie0 = resultado.pesos[2];
                         var entrie1 = resultado.pesos[1];
-                        var entrie2 = resultado.pesos[2];
+                        var entrie2 = resultado.pesos[0];
+
+                        var entries = new[]
+                        {
+                            new ChartEntry(Convert.ToSingle(entrie0.peso))
+                            {
+                                Label = entrie0.fecha,
+                                ValueLabel = entrie0.peso + " Kg",
+                                ValueLabelColor = SKColor.Parse("#4DC253"),
+                                Color = SKColor.Parse("#4DC253")
+                            },
+                            new ChartEntry(Convert.ToSingle(entrie1.peso))
+                            {
+                                Label = entrie1.fecha,
+                                ValueLabel = entrie1.peso + " Kg",
+                                ValueLabelColor = SKColor.Parse("#4DC253"),
+                                Color = SKColor.Parse("#4DC253")
+                            },
+                            new ChartEntry(Convert.ToSingle(entrie2.peso))
+                            {
+                                Label = entrie2.fecha,
+                                ValueLabel = entrie2.peso + " Kg",
+                                ValueLabelColor = SKColor.Parse("#4DC253"),
+                                Color = SKColor.Parse("#4DC253")
+                            }
+                        };
+
+                        grafico.Chart = new LineChart()
+                        {
+                            Entries = entries,
+                            LabelTextSize = 20,
+                            LabelColor = SKColor.Parse("#000000"),
+                            ValueLabelOrientation = Orientation.Horizontal,
+                            LabelOrientation = Orientation.Horizontal,
+                            LineMode = LineMode.Straight,
+                            LineSize = 10,
+                            PointSize = 20,
+                            MinValue = Convert.ToSingle(resultado.pesoBajo) - 10,
+                            MaxValue = Convert.ToSingle(resultado.pesoAlto) + 10
+                        };
                     }
                     else if (cantidad == 4)
                     {
-                        var entrie0 = resultado.pesos[0];
-                        var entrie1 = resultado.pesos[1];
-                        var entrie2 = resultado.pesos[2];
-                        var entrie3 = resultado.pesos[3];
+                        var entrie0 = resultado.pesos[3];
+                        var entrie1 = resultado.pesos[2];
+                        var entrie2 = resultado.pesos[1];
+                        var entrie3 = resultado.pesos[0];
+
+                        var entries = new[]
+                        {
+                            new ChartEntry(Convert.ToSingle(entrie0.peso))
+                            {
+                                Label = entrie0.fecha,
+                                ValueLabel = entrie0.peso + " Kg",
+                                ValueLabelColor = SKColor.Parse("#4DC253"),
+                                Color = SKColor.Parse("#4DC253")
+                            },
+                            new ChartEntry(Convert.ToSingle(entrie1.peso))
+                            {
+                                Label = entrie1.fecha,
+                                ValueLabel = entrie1.peso + " Kg",
+                                ValueLabelColor = SKColor.Parse("#4DC253"),
+                                Color = SKColor.Parse("#4DC253")
+                            },
+                            new ChartEntry(Convert.ToSingle(entrie2.peso))
+                            {
+                                Label = entrie2.fecha,
+                                ValueLabel = entrie2.peso + " Kg",
+                                ValueLabelColor = SKColor.Parse("#4DC253"),
+                                Color = SKColor.Parse("#4DC253")
+                            },
+                            new ChartEntry(Convert.ToSingle(entrie3.peso))
+                            {
+                                Label = entrie3.fecha,
+                                ValueLabel = entrie3.peso + " Kg",
+                                ValueLabelColor = SKColor.Parse("#4DC253"),
+                                Color = SKColor.Parse("#4DC253")
+                            }
+                        };
+
+                        grafico.Chart = new LineChart()
+                        {
+                            Entries = entries,
+                            LabelTextSize = 20,
+                            LabelColor = SKColor.Parse("#000000"),
+                            ValueLabelOrientation = Orientation.Horizontal,
+                            LabelOrientation = Orientation.Horizontal,
+                            LineMode = LineMode.Straight,
+                            LineSize = 10,
+                            PointSize = 20,
+                            MinValue = Convert.ToSingle(resultado.pesoBajo) - 10,
+                            MaxValue = Convert.ToSingle(resultado.pesoAlto) + 10
+                        };
                     }
                 }
                 else

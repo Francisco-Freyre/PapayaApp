@@ -13,8 +13,15 @@
                    FontSize="Large" HorizontalOptions="Center"
                    HorizontalTextAlignment="Center" Grid.Row="0"/>
             <Grid Grid.Row="1" HorizontalOptions="Center"
-                  RowDefinitions="Auto,Auto" RowSpacing="10"
-                  ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+                  RowDefinitions="Auto,Auto" RowSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" Grid.Row="0"
                         Text="L" TextColor="Black" x:Name="d1"
                         FontSize="Medium"/>

@@ -42,7 +42,7 @@
                         <Grid Grid.Row="0" ColumnDefinitions="Auto,*" RowDefinitions="Auto">
                             <Label Grid.Column="0" HorizontalOptions="Start" Text="Desayuno" TextColor="Black"
                                    FontSize="Title"  HorizontalTextAlignment="Start" Grid.Row="0"/>
-                            <CheckBox IsChecked="False" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
+                            <CheckBox IsChecked="True" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
                                       Color="Green" x:Name="checkDes" IsVisible="True" CheckedChanged="checkDes_CheckedChanged" />
                         </Grid>
                         
@@ -78,7 +78,7 @@
                             <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"
                                    Text="Colacion" TextColor="Black"
                                    FontSize="Title" HorizontalTextAlignment="Start" />
-                            <CheckBox IsChecked="False" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
+                            <CheckBox IsChecked="True" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
                                       Color="Green" x:Name="checkCol1" IsVisible="True" CheckedChanged="checkCol1_CheckedChanged"/>
                         </Grid>
                         <Grid Grid.Row="1">
@@ -114,7 +114,7 @@
                             <Label Grid.Row="0" HorizontalOptions="Start" Text="Comida"
                                    TextColor="Black" FontSize="Title" HorizontalTextAlignment="Start"
                                    Grid.Column="1"/>
-                            <CheckBox IsChecked="False" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
+                            <CheckBox IsChecked="True" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
                                       Color="Green" x:Name="checkCom" IsVisible="True" CheckedChanged="checkCom_CheckedChanged"/>
                         </Grid>
                         
@@ -151,7 +151,7 @@
                             <Label Grid.Row="0" HorizontalOptions="Start" Text="Colacion"
                                    TextColor="Black" FontSize="Title" Grid.Column="0"
                                    HorizontalTextAlignment="Start"/>
-                            <CheckBox IsChecked="False" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
+                            <CheckBox IsChecked="True" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
                                       Color="Green" x:Name="checkCol2" IsVisible="True" CheckedChanged="checkCol2_CheckedChanged"/>
                         </Grid>
                         
@@ -188,7 +188,7 @@
                             <Label Grid.Row="0" HorizontalOptions="Start" Text="Cena"
                                    TextColor="Black" FontSize="Title" Grid.Column="0"
                                    HorizontalTextAlignment="Start"/>
-                            <CheckBox IsChecked="False" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
+                            <CheckBox IsChecked="True" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"
                                       Color="Green" x:Name="checkCen" CheckedChanged="checkCen_CheckedChanged"/>
                         </Grid>
                         

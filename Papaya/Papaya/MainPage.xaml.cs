@@ -36,6 +36,13 @@ namespace Papaya
             public string msg { get; set; }
         }
 
+        public class Root
+        {
+            public bool resultado { get; set; }
+
+            public string id { get; set; }
+        }
+
         private async void btnLogin_Clicked(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(txtCorreo.Text))
@@ -78,10 +85,7 @@ namespace Papaya
 
                                 if (resultado.resultado == "exito")
                                 {
-                                    Preferences.Set("token", resultado.token);
-                                    Preferences.Set("nombre", resultado.nombre);
-                                    Preferences.Set("userid", resultado.userid);
-                                    await Navigation.PushAsync(new IniDiag());
+                                    Loadad(resultado.token, resultado.nombre, resultado.userid);
                                 }
                                 else if (resultado.resultado == "fallo")
                                 {
@@ -124,6 +128,46 @@ namespace Papaya
             else
             {
                 btnVerPass.Source = "noteye.png";
+            }
+        }
+
+        public async void Loadad(string token, string nombre, string userid)
+        {
+            var request = new HttpRequestMessage();
+            request.RequestUri = new Uri("https://www.bithives.com/PapayaApp/api/diag.php?kcal=0&idCliente=" + userid);
+            request.Method = HttpMethod.Get;
+            request.Headers.Add("Accept", "application/json");
+            var client = new HttpClient();
+            HttpResponseMessage response = await client.SendAsync(request);
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+
+                var resultado = JsonConvert.DeserializeObject<Root>(content);
+
+                if (resultado.resultado)
+                {
+                    if (Convert.ToInt32(resultado.id) > 0 || resultado.id != null)
+                    {
+                        Preferences.Set("token", token);
+                        Preferences.Set("nombre", nombre);
+                        Preferences.Set("userid", userid);
+                        await Navigation.PushAsync(new Home());
+                        Application.Current.MainPage = new Home();
+                        
+                    }
+                    else
+                    {
+                        Preferences.Set("token", token);
+                        Preferences.Set("nombre", nombre);
+                        Preferences.Set("userid", userid);
+                        await Navigation.PushAsync(new IniDiag());
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
+                }
             }
         }
     }
