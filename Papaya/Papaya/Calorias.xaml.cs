@@ -186,5 +186,10 @@ namespace Papaya
             }
             
         }
+
+        async void btnAtras_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new Bienvenida());
+        }
     }
 }

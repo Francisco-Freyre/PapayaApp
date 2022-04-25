@@ -21,8 +21,8 @@
     </pages:PopupPage.Animation>
     <!--You can use any elements here which are extended from Xamarin.Forms.View-->
     <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="WhiteSmoke">
-        <Frame CornerRadius="20">
-            <Grid RowSpacing="10">
+        <Frame CornerRadius="20" BackgroundColor="White">
+            <Grid RowSpacing="10" BackgroundColor="White">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>

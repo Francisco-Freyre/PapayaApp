@@ -50,6 +50,7 @@
                                          Margin="0,-20,0,0"/>
                         </StackLayout>
                         <Entry TextColor="Black" x:Name="entryPesoObjetivo" Keyboard="Numeric" WidthRequest="150"
+                               BackgroundColor="White"
                                Grid.Row="2" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="End" FontSize="Medium" />
                         <Label Text="Kg" TextColor="Black" VerticalTextAlignment="End" FontSize="Medium"
                                HorizontalTextAlignment="Start" Grid.Column="3" Grid.Row="2" Margin="0,-20,0,10" />

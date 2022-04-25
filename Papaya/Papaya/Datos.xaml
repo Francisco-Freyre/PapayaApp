@@ -9,7 +9,8 @@
             <StackLayout Margin="20, 20, 20, 20">
                 <Label Text="Estatura" TextColor="Black" FontSize="Large" />
                 <StackLayout>
-                    <Picker x:Name="PickerEstatura" Title="Selecciona tu estatura" TextColor="Black">
+                    <Picker x:Name="PickerEstatura" Title="Selecciona tu estatura" TextColor="Black"
+                            BackgroundColor="White" TitleColor="Black">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>1.10 Mts</x:String>
@@ -118,8 +119,9 @@
                     </Picker>
                 </StackLayout>
                 <Label Text="Peso actual" TextColor="Black" FontSize="Large" />
-                <StackLayout>
-                    <Picker x:Name="PickerPeso" Title="Selecciona tu peso" TextColor="Black">
+                <StackLayout BackgroundColor="White">
+                    <Picker x:Name="PickerPeso" Title="Selecciona tu peso" TextColor="Black"
+                            BackgroundColor="White" TitleColor="Black">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}" >
                                 <x:String>30 Kg</x:String>
@@ -469,7 +471,8 @@
                 </StackLayout>
                 <Label Text="¿Cual es tu sexo?" FontSize="Large" TextColor="Black"/>
                 <StackLayout >
-                    <Picker x:Name="PickerSexo" Title="Selecciona tu sexo" TextColor="Black" SelectedIndexChanged="PickerSexo_SelectedIndexChanged">
+                    <Picker x:Name="PickerSexo" Title="Selecciona tu sexo" TextColor="Black" SelectedIndexChanged="PickerSexo_SelectedIndexChanged"
+                            BackgroundColor="White" TitleColor="Black">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}" >
                                 <x:String>Mujer</x:String>
@@ -479,7 +482,8 @@
                     </Picker>
                 </StackLayout>
                 <Label Text="Fecha de nacimiento" TextColor="Black" FontSize="Large" />
-                <DatePicker Date="01/01/2000" TextColor="Black" x:Name="fechaNacimiento"/>
+                <DatePicker Date="01/01/2000" TextColor="Black" x:Name="fechaNacimiento"
+                            BackgroundColor="White"/>
                 <Button Text="Continuar" Margin="10, 70, 10, 10" x:Name="btnContinuar" Clicked="btnContinuar_Clicked" BackgroundColor="#FCB322" CornerRadius="15" TextColor="White" HeightRequest="60" />
             </StackLayout>
         </Grid>

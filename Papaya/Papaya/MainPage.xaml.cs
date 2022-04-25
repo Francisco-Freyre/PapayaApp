@@ -43,6 +43,13 @@ namespace Papaya
             public string id { get; set; }
         }
 
+        public class Roots
+        {
+            public bool resultado { get; set; }
+
+            public string msg { get; set; }
+        }
+
         private async void btnLogin_Clicked(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(txtCorreo.Text))
@@ -152,9 +159,29 @@ namespace Papaya
                         Preferences.Set("token", token);
                         Preferences.Set("nombre", nombre);
                         Preferences.Set("userid", userid);
-                        await Navigation.PushAsync(new Home());
-                        Application.Current.MainPage = new Home();
-                        
+
+                        var request2 = new HttpRequestMessage();
+                        request2.RequestUri = new Uri("https://bithives.com/PapayaApp/api/helpers.php?continuar=1&cliente_id=" + userid);
+                        request2.Method = HttpMethod.Get;
+                        request2.Headers.Add("Accept", "application/json");
+                        var client2 = new HttpClient();
+                        HttpResponseMessage response2 = await client2.SendAsync(request2);
+                        if (response2.StatusCode == HttpStatusCode.OK)
+                        {
+                            string content2 = await response2.Content.ReadAsStringAsync();
+
+                            var resultado2 = JsonConvert.DeserializeObject<Roots>(content2);
+
+                            if (resultado2.resultado)
+                            {
+                                await Navigation.PushAsync(new Home());
+                                Application.Current.MainPage = new Home();
+                            }
+                            else
+                            {
+                                await Navigation.PushAsync(new IniDiag());
+                            }
+                        }                        
                     }
                     else
                     {
@@ -166,7 +193,10 @@ namespace Papaya
                 }
                 else
                 {
-                    await DisplayAlert("Mensaje", "Fallo la conexion al servidor, intente de nuevo", "OK");
+                    Preferences.Set("token", token);
+                    Preferences.Set("nombre", nombre);
+                    Preferences.Set("userid", userid);
+                    await Navigation.PushAsync(new IniDiag());
                 }
             }
         }

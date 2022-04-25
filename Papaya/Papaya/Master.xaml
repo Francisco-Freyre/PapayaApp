@@ -38,15 +38,16 @@
                     Text="Platillos" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnPlatillos" Clicked="btnPlatillos_Clicked"
                     ContentLayout="Left, 10"/>
+            <!--
             <Button Grid.Row="4" ImageSource="{imagenes:Images Source=Papaya.Imagenes.dieta.png}"
                     Text="Mi dieta" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnDieta" Clicked="btnDieta_Clicked"
-                    ContentLayout="Left, 10"/>
-            <Button Grid.Row="5" ImageSource="{imagenes:Images Source=Papaya.Imagenes.grarfic.png}"
+                    ContentLayout="Left, 10"/> -->
+            <Button Grid.Row="4" ImageSource="{imagenes:Images Source=Papaya.Imagenes.grarfic.png}"
                     Text="Progreso" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnProgreso" Clicked="btnProgreso_Clicked"
                     ContentLayout="Left, 10" IsVisible="False"/>
-            <Button Grid.Row="6" ImageSource="{imagenes:Images Source=Papaya.Imagenes.ejercicio.png}"
+            <Button Grid.Row="5" ImageSource="{imagenes:Images Source=Papaya.Imagenes.ejercicio.png}"
                     Text="Ejercicios" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnEjer" Clicked="btnEjer_Clicked"
                     ContentLayout="Left, 10"/>
@@ -54,7 +55,7 @@
             <Button Grid.Row="7" Text="Configuracion" BackgroundColor="White"
                     TextColor="Black" x:Name="btnConfig" Clicked="btnConfig_Clicked"
                     ContentLayout="Left, 10"/> -->
-            <Button Grid.Row="8" ImageSource="{imagenes:Images Source=Papaya.Imagenes.cerrar.png}"
+            <Button Grid.Row="6" ImageSource="{imagenes:Images Source=Papaya.Imagenes.cerrar.png}"
                     Text="Cerrar sesion" BackgroundColor="White" Grid.ColumnSpan="2"
                     TextColor="Black" x:Name="btnCerrar" Clicked="btnCerrar_Clicked"
                     ContentLayout="Left, 10"/>

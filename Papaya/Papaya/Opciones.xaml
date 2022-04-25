@@ -7,9 +7,10 @@
     Title="Elige tu dieta">
     <ContentPage.Content>
         <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="Center" BackgroundColor="White">
-            <StackLayout Margin="20,20,20,20">
+            <StackLayout Margin="20,20,20,20" BackgroundColor="White">
                 <Label TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="Selecciona una dieta" />
-                <ListView x:Name="listaDeDietas" HasUnevenRows="True" ItemSelected="listaDeDietas_ItemSelected">
+                <ListView x:Name="listaDeDietas" HasUnevenRows="True" ItemSelected="listaDeDietas_ItemSelected"
+                          BackgroundColor="White">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

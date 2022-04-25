@@ -44,7 +44,8 @@
                     <Label Text="¿Con que frecuencia?" TextColor="Black" HorizontalOptions="Center" FontSize="Large" Grid.Row="0" />
 
                     <StackLayout Grid.Row="1" Margin="10, 10, 10, 10">
-                        <Picker x:Name="PickerFrecuencia" SelectedIndexChanged="PickerFrecuencia_SelectedIndexChanged" Title="Selecciona una frecuencia" TitleColor="Black">
+                        <Picker x:Name="PickerFrecuencia" SelectedIndexChanged="PickerFrecuencia_SelectedIndexChanged" Title="Selecciona una frecuencia" TitleColor="Black"
+                                BackgroundColor="White" TextColor="Black" HorizontalOptions="Center">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}" >
                                     <x:String>Diario</x:String>
