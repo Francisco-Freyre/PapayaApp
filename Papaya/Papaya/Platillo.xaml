@@ -53,15 +53,17 @@
                                                     <ColumnDefinition />
                                                     <ColumnDefinition Width="25" />
                                                 </Grid.ColumnDefinitions>
+                                                <!--
                                                 <ImageButton Grid.Row="0" Grid.Column="0" BackgroundColor="White"
                                                              Source="{imagenes:Images Source=Papaya.Imagenes.arrowiz.png}" WidthRequest="10"
-                                                             HeightRequest="10" Aspect="AspectFill" IsVisible="{Binding cambiar}"/>
+                                                             HeightRequest="10" Aspect="AspectFill" IsVisible="{Binding cambiar}"/> -->
                                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding ingrediente}"
                                                        FontSize="Medium" HorizontalOptions="Center"
                                                        HorizontalTextAlignment="Center" TextColor="Black"/>
+                                                <!--
                                                 <ImageButton Grid.Row="0" Grid.Column="2" BackgroundColor="White"
                                                              Source="{imagenes:Images Source=Papaya.Imagenes.arrowde.png}" WidthRequest="10"
-                                                             HeightRequest="10" Aspect="AspectFill" IsVisible="{Binding cambiar}"/>
+                                                             HeightRequest="10" Aspect="AspectFill" IsVisible="{Binding cambiar}"/> -->
                                             </Grid>
                                         </ViewCell>
                                     </DataTemplate>

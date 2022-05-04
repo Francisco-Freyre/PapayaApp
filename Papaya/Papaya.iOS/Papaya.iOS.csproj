@@ -169,6 +169,10 @@
       <SubType></SubType>
       <Generator></Generator>
     </BundleResource>
+    <BundleResource Include="Resources\userpic.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\logo.png" />

@@ -10,12 +10,11 @@ using Xamarin.Forms;
 
 namespace Papaya
 {
-    public partial class Progreso2 : ContentPage
+    public partial class Avances : ContentPage
     {
-        public Progreso2()
+        public Avances()
         {
             InitializeComponent();
-
             Datos();
         }
 
@@ -57,22 +56,6 @@ namespace Papaya
             public List<Peso> pesos { get; set; }
         }
 
-        void btnSi_Clicked(System.Object sender, System.EventArgs e)
-        {
-        }
-
-        void btnNo_Clicked(System.Object sender, System.EventArgs e)
-        {
-            lblPregunta.IsVisible = true;
-            gridRespuesta.IsVisible = true;
-        }
-
-        async void btnRecalSi_Clicked(System.Object sender, System.EventArgs e)
-        {
-            App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Apetito2());
-        }
-
         public async void Datos()
         {
             var request = new HttpRequestMessage();
@@ -104,7 +87,36 @@ namespace Papaya
                     d12.BackgroundColor = (Convert.ToInt32(resultado.semanas.d12) > 3) ? Color.FromHex("4ADC40") : (Convert.ToInt32(resultado.semanas.d12) >= 2 && Convert.ToInt32(resultado.semanas.d12) <= 3) ? Color.Yellow : Color.White;
                     lblCalorias.Text = resultado.kcal;
                     int cantidad = resultado.pesos.Count;
-                    if (cantidad == 2)
+                    if (cantidad == 1)
+                    {
+                        var entrie0 = resultado.pesos[0];
+
+                        var entries = new[]
+                        {
+                            new ChartEntry(Convert.ToSingle(entrie0.peso))
+                            {
+                                Label = entrie0.fecha,
+                                ValueLabel = entrie0.peso + " Kg",
+                                ValueLabelColor = SKColor.Parse("#4DC253"),
+                                Color = SKColor.Parse("#4DC253")
+                            }
+                        };
+
+                        grafico.Chart = new LineChart()
+                        {
+                            Entries = entries,
+                            LabelTextSize = 20,
+                            LabelColor = SKColor.Parse("#000000"),
+                            ValueLabelOrientation = Orientation.Horizontal,
+                            LabelOrientation = Orientation.Horizontal,
+                            LineMode = LineMode.Straight,
+                            LineSize = 10,
+                            PointSize = 20,
+                            MinValue = Convert.ToSingle(resultado.pesoBajo) - 10,
+                            MaxValue = Convert.ToSingle(resultado.pesoAlto) + 10
+                        };
+                    }
+                    else if (cantidad == 2)
                     {
                         var entrie0 = resultado.pesos[1];
                         var entrie1 = resultado.pesos[0];
@@ -141,7 +153,7 @@ namespace Papaya
                             MaxValue = Convert.ToSingle(resultado.pesoAlto) + 10
                         };
                     }
-                    else if(cantidad == 3)
+                    else if (cantidad == 3)
                     {
                         var entrie0 = resultado.pesos[2];
                         var entrie1 = resultado.pesos[1];

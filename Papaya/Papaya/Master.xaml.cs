@@ -125,5 +125,11 @@ namespace Papaya
                 }
             }
         }
+
+        async void btnAvances_Clicked(System.Object sender, System.EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new Avances());
+        }
     }
 }

@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material" xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
-    x:Class="Papaya.Progreso2"
-    Title="Mi Progreso"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+    xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    x:Class="Papaya.Avances"
+    Title="Avances"
     BackgroundColor="White">
     <ContentPage.Content>
         <Grid HorizontalOptions="Center" VerticalOptions="Start"
-              Margin="10" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+              Margin="10" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
               RowSpacing="10">
             <Label Text="Dias completados" TextColor="Black"
                    FontSize="Large" HorizontalOptions="Center"
@@ -69,44 +71,12 @@
                    HorizontalTextAlignment="Center" Grid.Row="3"/>
             <Label Text="Ultimos pesos registrados" TextColor="Black"
                    Grid.Row="4" FontSize="Large"
-                   HorizontalOptions="Start"
-                   HorizontalTextAlignment="Start"/>
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
             <material:MaterialCard Grid.Row="5" Margin="5" CornerRadius="2"
                                    Elevation="2" HorizontalOptions="FillAndExpand">
                 <forms:ChartView x:Name="grafico" HeightRequest="170" WidthRequest="250"></forms:ChartView>
             </material:MaterialCard>
-
-            <Label Grid.Row="6" TextColor="Black"
-                   Text="¿El progreso ha sido de tu agrado?"
-                   FontSize="Large" HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center"/>
-            <Grid Grid.Row="7" HorizontalOptions="Center"
-                  ColumnDefinitions="Auto,Auto" ColumnSpacing="10" >
-                <Button Grid.Column="0" Text="Si" TextColor="Black"
-                        BackgroundColor="White" FontSize="Medium"
-                        WidthRequest="100" x:Name="btnSi"
-                        Clicked="btnSi_Clicked"/>
-                <Button Grid.Column="1" Text="No" TextColor="Black"
-                        BackgroundColor="White" FontSize="Medium"
-                        WidthRequest="100" x:Name="btnNo"
-                        Clicked="btnNo_Clicked"/>
-            </Grid>
-            <Label Grid.Row="8" TextColor="Black" IsVisible="false"
-                   Text="¿Deseas recalcular tu menu?"
-                   FontSize="Large" HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center"
-                   x:Name="lblPregunta"/>
-            <Grid Grid.Row="9" HorizontalOptions="Center" IsVisible="false"
-                  ColumnDefinitions="Auto,Auto" ColumnSpacing="10"
-                  x:Name="gridRespuesta">
-                <Button Grid.Column="0" Text="Si" TextColor="Black"
-                        BackgroundColor="White" FontSize="Medium"
-                        WidthRequest="100" x:Name="btnRecalSi"
-                        Clicked="btnRecalSi_Clicked"/>
-                <Button Grid.Column="1" Text="No" TextColor="Black"
-                        BackgroundColor="White" FontSize="Medium"
-                        WidthRequest="100"/>
-            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
